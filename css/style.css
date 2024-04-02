@@ -4228,3 +4228,14 @@ html.is-animating .mil-menu-frame {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
+
+
+/* Homepage */
+
+.schedule-btn{
+  margin-right: 30px;
+  padding-left: 15px;
+  .mil-arrow{
+    margin-left: 3px;
+  }
+}
