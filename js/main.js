@@ -227,6 +227,52 @@ $(function () {
             toggleActions: "play none reverse none"
         }
     });
+
+    /*********************
+    
+   CTA Button
+
+    *****************/
+    const cta = document.querySelector(".cta-btn");
+    gsap.set(cta, {
+        x: 30,
+        opacity:0,
+    });
+
+    gsap.to(cta, {
+        x:0,
+        opacity: 1,
+        ease: 'sine',
+        scrollTrigger: {
+            trigger: "body",
+            start: "top -40%",
+            end: "top -40%",
+            toggleActions: "play none reverse none"
+        }
+    })
+    
+    const cta_icon = document.querySelector(".cta-btn .cta-icon")
+    let animation = gsap.to(cta_icon,{
+        paused: true,
+        opacity:0,
+    })
+
+    let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
+    gsap.set(cta_btn_text, {
+        x: 0,
+        opacity:0,
+    });
+    let cta_text_animation = gsap.to(cta_btn_text,{
+        paused:true,
+        x:30,
+        opacity:1,
+    })
+    cta.addEventListener("mouseenter",()=> animation.play());
+    cta.addEventListener("mouseleave",()=>animation.reverse());
+    cta.addEventListener("mouseenter",()=> cta_text_animation.play());
+    cta.addEventListener("mouseleave",()=>cta_text_animation.reverse());
+    
+
     /***************************
 
     cursor
