@@ -4231,7 +4231,10 @@ html.is-animating .mil-menu-frame {
 
 
 /* Homepage */
-
+.mil-logo-pointblank{
+  font-size: 22px;
+  font-weight: 700;
+}
 .schedule-btn{
   margin-right: 30px;
   padding-left: 15px;
@@ -4281,4 +4284,34 @@ html.is-animating .mil-menu-frame {
   width: 65px;
   height: auto;
 }
+
+.main-title-hp{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width:768px) and (max-width:1200px) {
+  .main-title-hp{ 
+    font-size: 58px;
+  }
+}
+
+.banner-content-hp{
+  padding-bottom: 60px !important;
+}
+@media screen and (max-width:420px) {
+  .banner-content-hp{
+    padding-bottom: 10px !important;
+  }
+  .main-para-hp{
+    margin-bottom: 20px;
+  }
+  
+}
+@media screen and (min-width:992px) {
+  .left-col-team-hp{
+    width: 40%;
+  }
+}
+
 
