@@ -269,10 +269,13 @@ $(function () {
             x:30,
             opacity:1,
         })
-        cta.addEventListener("mouseenter",()=> animation.play());
-        cta.addEventListener("mouseleave",()=>animation.reverse());
-        cta.addEventListener("mouseenter",()=> cta_text_animation.play());
+        cta_icon.addEventListener("mouseenter",()=> animation.play());
+        cta_btn_text.addEventListener("mouseleave",()=>animation.reverse());
+        cta_icon.addEventListener("mouseenter",()=> cta_text_animation.play());
+        cta_btn_text.addEventListener("mouseleave",()=>cta_text_animation.reverse());
         cta.addEventListener("mouseleave",()=>cta_text_animation.reverse());
+        cta.addEventListener("mouseleave",()=>animation.reverse());
+
     }
    
     /*********************
@@ -315,10 +318,12 @@ $(function () {
         x:30,
         opacity:1,
     })
-    cta_gen.addEventListener("mouseenter",()=> animation_gen.play());
-    cta_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
-    cta_gen.addEventListener("mouseenter",()=> cta_text_animation_gen.play());
+    cta_icon_gen.addEventListener("mouseenter",()=> animation_gen.play());
+    cta_btn_text_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
+    cta_icon_gen.addEventListener("mouseenter",()=> cta_text_animation_gen.play());
+    cta_btn_text_gen.addEventListener("mouseleave",()=>cta_text_animation_gen.reverse());
     cta_gen.addEventListener("mouseleave",()=>cta_text_animation_gen.reverse());
+    cta_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
    }
    
    
