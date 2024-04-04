@@ -4284,7 +4284,47 @@ html.is-animating .mil-menu-frame {
   width: 65px;
   height: auto;
 }
-
+.cta-btn-gen{
+  position: fixed;
+  right: 5vw;
+  bottom: 5vh;
+  z-index: 100;
+  
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: center;
+  
+}
+.cta-btn-undelayed{
+  position: fixed;
+  right: 5vw;
+  bottom: 5vh;
+  z-index: 100;
+  
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: center;
+  
+}
+.cta-btn-gen .cta-icon-gen{
+  border-radius: 50%;
+  padding: 15px;
+  background-color: white;
+  border: 5px solid rgb(255, 152, 0);
+}
+.cta-btn-gen .cta-btn-text-gen {
+  opacity: 0;
+  /* background-color: rgb(255, 152, 0); */
+  
+}
+.cta-btn-gen img{
+  width: 65px;
+  height: auto;
+}
 .main-title-hp{
   margin-top: 60px;
   margin-bottom: 20px;

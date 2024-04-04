@@ -233,51 +233,101 @@ $(function () {
    CTA Button
 
     *****************/
+   
     const cta = document.querySelector(".cta-btn");
-    gsap.set(cta, {
+    if(cta){
+        gsap.set(cta, {
+            x: 30,
+            opacity:0,
+        });
+    
+        gsap.to(cta, {
+            x:0,
+            opacity: 1,
+            ease: 'sine',
+            scrollTrigger: {
+                trigger: "body",
+                start: "top -40%",
+                end: "top -40%",
+                toggleActions: "play none reverse none"
+            }
+        })
+        
+        const cta_icon = document.querySelector(".cta-btn .cta-icon")
+        let animation = gsap.to(cta_icon,{
+            paused: true,
+            opacity:0,
+        })
+    
+        let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
+        gsap.set(cta_btn_text, {
+            x: 0,
+            opacity:0,
+        });
+        let cta_text_animation = gsap.to(cta_btn_text,{
+            paused:true,
+            x:30,
+            opacity:1,
+        })
+        cta.addEventListener("mouseenter",()=> animation.play());
+        cta.addEventListener("mouseleave",()=>animation.reverse());
+        cta.addEventListener("mouseenter",()=> cta_text_animation.play());
+        cta.addEventListener("mouseleave",()=>cta_text_animation.reverse());
+    }
+   
+    /*********************
+    
+   CTA Button General (except homepage)
+
+    *****************/
+   const cta_gen = document.querySelector(".cta-btn-gen");
+   if(cta_gen){
+    gsap.set(cta_gen, {
         x: 30,
         opacity:0,
     });
-
-    gsap.to(cta, {
+ 
+    gsap.to(cta_gen, {
         x:0,
         opacity: 1,
         ease: 'sine',
         scrollTrigger: {
             trigger: "body",
-            start: "top -40%",
-            end: "top -40%",
+            start: "top -1%",
+            end: "top -1%",
             toggleActions: "play none reverse none"
         }
     })
     
-    const cta_icon = document.querySelector(".cta-btn .cta-icon")
-    let animation = gsap.to(cta_icon,{
+    const cta_icon_gen = document.querySelector(".cta-btn-gen .cta-icon-gen")
+    let animation_gen = gsap.to(cta_icon_gen,{
         paused: true,
         opacity:0,
     })
-
-    let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
-    gsap.set(cta_btn_text, {
+ 
+    let cta_btn_text_gen = document.querySelector(".cta-btn-gen .cta-btn-text-gen")
+    gsap.set(cta_btn_text_gen, {
         x: 0,
         opacity:0,
     });
-    let cta_text_animation = gsap.to(cta_btn_text,{
+    let cta_text_animation_gen = gsap.to(cta_btn_text_gen,{
         paused:true,
         x:30,
         opacity:1,
     })
-    cta.addEventListener("mouseenter",()=> animation.play());
-    cta.addEventListener("mouseleave",()=>animation.reverse());
-    cta.addEventListener("mouseenter",()=> cta_text_animation.play());
-    cta.addEventListener("mouseleave",()=>cta_text_animation.reverse());
-    
+    cta_gen.addEventListener("mouseenter",()=> animation_gen.play());
+    cta_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
+    cta_gen.addEventListener("mouseenter",()=> cta_text_animation_gen.play());
+    cta_gen.addEventListener("mouseleave",()=>cta_text_animation_gen.reverse());
+   }
+   
+   
 
-    /***************************
+   /***************************
 
-    cursor
+   cursor
 
-    ***************************/
+   ***************************/
     const cursor = document.querySelector('.mil-ball');
 
     gsap.set(cursor, {
