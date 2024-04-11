@@ -4256,7 +4256,7 @@ html.is-animating .mil-menu-frame {
   max-width: 130px;
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1200px) and (max-width:1440px) {
   .logo-pointblank-md{
     display: none;
   }
@@ -4273,6 +4273,41 @@ html.is-animating .mil-menu-frame {
     top: 2px;
   }
 }
+@media screen and (min-width:1440px) and (max-width:1900px) {
+  .logo-pointblank-md{
+    display: none;
+  }
+  .logo-pointblank-lg-white{
+    display: block;
+    position: absolute;
+    left: 20px;
+    top:20px;
+  }
+  .logo-pointblank-lg-black{
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+}
+@media screen and (min-width:1900px) {
+  .logo-pointblank-md{
+    display: none;
+  }
+  .logo-pointblank-lg-white{
+    display: block;
+    position: absolute;
+    left: 40px;
+    top:40px;
+  }
+  .logo-pointblank-lg-black{
+    opacity: 0;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+  }
+}
+
 .schedule-btn{
   margin-right: 30px;
   padding-left: 15px;

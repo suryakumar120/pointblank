@@ -348,9 +348,9 @@ $(function () {
                 display:"block",
                 paused:true,
                 scrollTrigger:{
-                    trigger: "body",
-                    start: "top -95%",
-                    end: "top -95%",
+                    trigger: ".about",
+                    start: "top 5%",
+                    end: "top 5%",
                     toggleActions: "play none reverse none",
                     // markers:"true",
                 }
@@ -360,9 +360,9 @@ $(function () {
                 opacity:"1",
                 paused:true,
                 scrollTrigger:{
-                    trigger: "body",
-                    start: "top -95%",
-                    end: "top -95%",
+                    trigger: ".about",
+                    start: "top 5%",
+                    end: "top 5%",
                     toggleActions: "play none reverse none",
                     // markers:"true",
                 }
@@ -382,9 +382,9 @@ $(function () {
                 opacity:"0",
                 paused:true,
                 scrollTrigger:{
-                    trigger: "body",
-                    start: "top -220%",
-                    end: "top -220%",
+                    trigger: ".services",
+                    start: "top 5%",
+                    end: "top 5%",
                     toggleActions: "play none reverse none",
                     // markers:"true",
                 }
@@ -394,9 +394,9 @@ $(function () {
                 opacity:"1",
                 paused:true,
                 scrollTrigger:{
-                    trigger: "body",
-                    start: "top -335%",
-                    end: "top -335%",
+                    trigger: ".team",
+                    start: "top 5%",
+                    end: "top 5%",
                     toggleActions: "play none reverse none",
                     // markers:"true",
                 }
