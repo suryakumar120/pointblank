@@ -326,7 +326,84 @@ $(function () {
     cta_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
    }
    
-   
+   /*****************
+        Logo  
+   *****************/
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 1200px)", () => {
+            const logo_white = document.querySelector('.logo-pointblank-lg-white');
+            const logo_black = document.querySelector('.logo-pointblank-lg-black');
+            
+            // gsap.to(logo_white,{
+            //     display:"none",
+            //     scrollTrigger: {
+            //         trigger: "body",
+            //         start: "top -95%",
+            //         end: "top -95%",
+            //         toggleActions: "play none reverse none"
+            //     }
+            // })
+            gsap.to(logo_black,{
+                display:"block",
+                paused:true,
+                scrollTrigger:{
+                    trigger: "body",
+                    start: "top -95%",
+                    end: "top -95%",
+                    toggleActions: "play none reverse none",
+                    // markers:"true",
+                }
+            })
+            gsap.set(logo_black,{
+                
+                opacity:"1",
+                paused:true,
+                scrollTrigger:{
+                    trigger: "body",
+                    start: "top -95%",
+                    end: "top -95%",
+                    toggleActions: "play none reverse none",
+                    // markers:"true",
+                }
+            })
+            // gsap.to(logo_black,{
+            //     opacity:"1",
+            //     paused:true,
+            //     scrollTrigger:{
+            //         trigger: "body",
+            //         start: "top -193%",
+            //         end: "top -193%",
+            //         toggleActions: "none none play play",
+            //         markers:"true",
+            //     }
+            // })
+            gsap.set(logo_black,{
+                opacity:"0",
+                paused:true,
+                scrollTrigger:{
+                    trigger: "body",
+                    start: "top -220%",
+                    end: "top -220%",
+                    toggleActions: "play none reverse none",
+                    // markers:"true",
+                }
+            })
+            gsap.to(logo_black,{
+                
+                opacity:"1",
+                paused:true,
+                scrollTrigger:{
+                    trigger: "body",
+                    start: "top -335%",
+                    end: "top -335%",
+                    toggleActions: "play none reverse none",
+                    // markers:"true",
+                }
+            })
+        });
+        
+        
 
    /***************************
 

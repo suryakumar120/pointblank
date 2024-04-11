@@ -1202,9 +1202,9 @@ frame
 }
 
 .mil-frame {
-  padding: 50px 60px 60px 60px;
+  padding: 30px 60px 60px 5px;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1388,7 +1388,7 @@ menu
   top: 0;
   left: 0;
   width: 100%;
-  padding: 50px 60px;
+  padding: 50px 0px;
 }
 @media screen and (max-width: 1200px) {
   .mil-menu-frame .mil-frame-top {
@@ -4240,6 +4240,38 @@ html.is-animating .mil-menu-frame {
 .mil-logo-pointblank{
   font-size: 22px;
   font-weight: 700;
+  background-color: black;
+}
+.logo-pointblank{
+  opacity: 1;
+  z-index: 100;
+}
+.logo-pointblank-lg-white,.logo-pointblank-lg-black{
+  display: none;
+}
+.logo-pointblank-lg-white img{
+   max-width: 130px;
+}
+.logo-pointblank-lg-black img{
+  max-width: 130px;
+}
+
+@media screen and (min-width:1200px) {
+  .logo-pointblank-md{
+    display: none;
+  }
+  .logo-pointblank-lg-white{
+    display: block;
+    position: absolute;
+    left: 2px;
+    top:2px;
+  }
+  .logo-pointblank-lg-black{
+    opacity: 0;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+  }
 }
 .schedule-btn{
   margin-right: 30px;
