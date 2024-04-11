@@ -4383,8 +4383,15 @@ html.is-animating .mil-menu-frame {
 .font-50{
   font-size: 50px;
 }
-
-.max-h-20{
-  max-height: 20vh;
+@media screen and (max-width:500px) {
+    .sm-font-40{
+      font-size: 40px;
+    }
 }
+@media screen and (min-width:500px) {
+  .max-h-20{
+    max-height: 20vh;
+  }
+}
+
 
