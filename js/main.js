@@ -144,6 +144,16 @@ $(function () {
         $(".mil-lines").clone().appendTo(".mil-lines-place");
         $(".mil-main-menu ul li.mil-active > a").clone().appendTo(".mil-current-page");
     });
+
+
+    /****************** Homepage logo*******/
+    $(document).ready(function(){
+        // Attach click event handler to the logo
+        $('logo-pointblank').click(function(){
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+    });
     /***************************
 
     accordion
