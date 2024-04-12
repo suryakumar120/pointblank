@@ -1219,6 +1219,24 @@ frame
   width: 100%;
   height: 100%;
 }
+.mil-frame-duplicate {
+  padding: 30px 60px 60px 5px;
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
 @media screen and (max-width: 1200px) {
   .mil-frame {
     padding: 30px;
@@ -1388,7 +1406,7 @@ menu
   top: 0;
   left: 0;
   width: 100%;
-  padding: 50px 0px;
+  padding: 50px 60px;
 }
 @media screen and (max-width: 1200px) {
   .mil-menu-frame .mil-frame-top {
@@ -4245,25 +4263,41 @@ html.is-animating .mil-menu-frame {
 .logo-pointblank{
   opacity: 1;
   z-index: 100;
+
+}
+.main-title img{
+  max-width: 130px;
+  max-height: 29.6px;
+}
+.logo-pointblank-menu-frame img{
+  max-width: 130px;
 }
 .logo-pointblank-lg-white,.logo-pointblank-lg-black{
   display: none;
 }
 .logo-pointblank-lg-white img{
    max-width: 130px;
+   max-height: 54.6px;
+
 }
 .logo-pointblank-lg-black img{
   max-width: 130px;
+  max-height: 54.6px;
 }
 
 @media screen and (min-width:1200px) and (max-width:1440px) {
   .logo-pointblank-md{
     display: none;
   }
+  .main-title img{
+    position: absolute;
+    left: 3px;
+    top: 70.5px;
+  }
   .logo-pointblank-lg-white{
     display: block;
     position: absolute;
-    left: 2px;
+    left: 37.4px;
     top:2px;
   }
   .logo-pointblank-lg-black{
@@ -4277,10 +4311,15 @@ html.is-animating .mil-menu-frame {
   .logo-pointblank-md{
     display: none;
   }
+  .main-title img{
+    position: absolute;
+    left: 20px;
+    top: 88.5px;
+  }
   .logo-pointblank-lg-white{
     display: block;
     position: absolute;
-    left: 20px;
+    left: 55.4px;
     top:20px;
   }
   .logo-pointblank-lg-black{
@@ -4294,10 +4333,15 @@ html.is-animating .mil-menu-frame {
   .logo-pointblank-md{
     display: none;
   }
+  .main-title img{
+    position: absolute;
+    left: 40px;
+    top: 108.5px;
+  }
   .logo-pointblank-lg-white{
     display: block;
     position: absolute;
-    left: 40px;
+    left: 75.4px;
     top:40px;
   }
   .logo-pointblank-lg-black{
@@ -4305,6 +4349,31 @@ html.is-animating .mil-menu-frame {
     position: absolute;
     left: 40px;
     top: 40px;
+  }
+}
+@media screen and (min-width:1200px) and (max-width:1440px) {
+  .logo-pointblank-menu-frame{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+  }
+}
+@media screen and (min-width:1440px) and (max-width:1900px) {
+
+  .logo-pointblank-menu-frame{
+    display: block;
+    position: absolute;
+    left: 20px;
+    top:20px;
+  }
+}
+@media screen and (min-width:1900px) {
+
+  .logo-pointblank-menu-frame{
+    display: block;
+    position: absolute;
+    left: 40px;
+    top:40px;
   }
 }
 
