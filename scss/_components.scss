@@ -1577,8 +1577,8 @@ revievs
 .mil-revi-pagination {
     display: flex;
     justify-content: center;
-
-    @media screen and (max-width: 992px) {
+    // changed from 992px
+    @media screen and (max-width: 1800px) {
         flex-wrap: wrap;
     }
 
@@ -1592,16 +1592,16 @@ revievs
         background-color: transparent;
         margin: 0 !important;
         transition: $t-md !important;
-
-        @media screen and (max-width: 992px) {
+        // changed from 992px
+        @media screen and (max-width: 1800px) {
             width: 90px;
             height: 90px;
         }
 
         &:nth-child(2n) {
             margin-top: 30px !important;
-
-            @media screen and (max-width: 992px) {
+            // changed from 992px
+            @media screen and (max-width: 1800px) {
                 margin-top: 0 !important;
             }
         }
@@ -1618,8 +1618,8 @@ revievs
             background-size: cover;
             background-position: top;
             transition: $t-md !important;
-
-            @media screen and (max-width: 992px) {
+            // changed from 992px
+            @media screen and (max-width: 1800px) {
                 width: 70px;
                 height: 70px;
             }
@@ -1650,6 +1650,28 @@ revievs
             }
 
             &.mil-slide-7 {
+                background-image: url(../img/faces/customers/7.jpg);
+            }
+            &.mil-slide-8 {
+                background-image: url(../img/faces/customers/7.jpg);
+            }
+            &.mil-slide-9 {
+                background-image: url(../img/faces/customers/3.jpg);
+            }
+
+            &.mil-slide-10 {
+                background-image: url(../img/faces/customers/4.jpg);
+            }
+
+            &.mil-slide-11 {
+                background-image: url(../img/faces/customers/5.jpg);
+            }
+
+            &.mil-slide-12 {
+                background-image: url(../img/faces/customers/6.jpg);
+            }
+
+            &.mil-slide-13 {
                 background-image: url(../img/faces/customers/7.jpg);
             }
         }
