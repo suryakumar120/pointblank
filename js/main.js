@@ -133,6 +133,18 @@ $(function () {
             scrollTop: target.offset().top - offset
         }, 400);
     });
+    // $(document).ready(function() {
+    //     // Find the Facebook link
+    //     var facebookLink = $('a[href="https://www.facebook.com/pointblankadv/"]');
+
+    //     // Add a click event listener to the link
+    //     facebookLink.on('click', function(event) {
+    //         // Prevent the default behavior of the link
+    //         // event.preventDefault();
+    //         // Open the link in a new tab
+    //         window.open($(this).attr('href'), '_blank');
+    //     });
+    // });
     /***************************
 
     append
@@ -154,6 +166,7 @@ $(function () {
             window.location.href = 'index.html';
         });
     });
+
     /***************************
 
     accordion
@@ -749,6 +762,22 @@ $(function () {
             },
         },
     });
+    var swiper2 = new Swiper('.mil-infinite-show-2', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        speed: 5000,
+        autoplay: true,
+        autoplay: {
+            delay: 0,
+        },
+        loop: true,
+        freeMode: true,
+        breakpoints: {
+            992: {
+                slidesPerView: 4,
+            },
+        },
+    });
 
     /***************************
 
@@ -1181,6 +1210,22 @@ $(function () {
             autoplay: true,
             autoplay: {
                 delay: 0,
+            },
+            loop: true,
+            freeMode: true,
+            breakpoints: {
+                992: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+        var swiper2 = new Swiper('.mil-infinite-show-2', {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            speed: 5000,
+            autoplay: true,
+            autoplay: {
+                delay: 2000,
             },
             loop: true,
             freeMode: true,

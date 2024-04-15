@@ -867,6 +867,9 @@ spaces
 .mil-mb-30 {
   margin-bottom: 30px;
 }
+.mil-mb-45{
+  margin-bottom: 45px;
+}
 
 .mil-mb-60 {
   margin-bottom: 60px;
@@ -915,7 +918,14 @@ spaces
     padding-bottom: 60px;
   }
 }
-
+.mil-p-0-60 {
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 992px) {
+  .mil-p-0-60 {
+    padding-bottom: 40px;
+  }
+}
 .mil-p-0-120 {
   padding-bottom: 120px;
 }
@@ -2297,6 +2307,10 @@ partners
 
 ------------------------------------------- */
 .mil-infinite-show .swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+.mil-infinite-show-2 .swiper-wrapper {
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
 }
@@ -4541,7 +4555,9 @@ html.is-animating .mil-menu-frame {
   }
 }
 
-
+.font-jost{
+  font-family: "Jost",sans-serif;
+}
 .font-60{
   font-size: 60px;
 }
@@ -4553,6 +4569,18 @@ html.is-animating .mil-menu-frame {
 }
 .font-50{
   font-size: 50px;
+}
+.font-wt-300{
+  font-weight: 300;
+}
+
+.max-w-220px{
+  max-width: 220px;
+}
+@media screen and (min-width:2000px) {
+  .max-w-220px{
+      max-width: 250px;
+  }
 }
 @media screen and (max-width:500px) {
     .sm-font-40{

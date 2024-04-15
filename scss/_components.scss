@@ -1175,6 +1175,11 @@ partners
         transition-timing-function: linear;
     }
 }
+.mil-infinite-show-2 {
+    & .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+}
 
 .mil-partner-frame {
     display: block;
