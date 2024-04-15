@@ -1713,6 +1713,18 @@ banner
       -ms-flex-align: end;
           align-items: flex-end;
 }
+@media screen and (min-width:1600px) {
+  .main-banner-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+}
+
 .mil-banner .mil-banner-content {
   width: 100%;
   padding-bottom: 120px;
@@ -4521,7 +4533,12 @@ html.is-animating .mil-menu-frame {
   margin-bottom: 20px;
   
 }
-@media screen and (min-width:1300px) {
+@media screen and (min-width:1600px) {
+   .main-title-hp{
+    font-size: 80px;
+   }
+} 
+@media screen and (min-width:1300px) and (max-width:1600px) {
   .main-title-hp{ 
     font-size: 70px;
   }
@@ -4539,6 +4556,11 @@ html.is-animating .mil-menu-frame {
 
 .banner-content-hp{
   padding-bottom: 60px !important;
+}
+@media screen and (min-width:1600px) {
+  .banner-content-hp{
+    margin-top: 10vh;
+  }
 }
 @media screen and (max-width:420px) {
   .banner-content-hp{
@@ -4587,7 +4609,7 @@ html.is-animating .mil-menu-frame {
       font-size: 40px;
     }
 }
-@media screen and (min-width:500px) {
+@media screen and (min-width:500px) and (max-width:1600px) {
   .max-h-20{
     max-height: 20vh;
   }

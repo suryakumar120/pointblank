@@ -1179,24 +1179,46 @@ $(function () {
 
         ***************************/
 
-        var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>']
-        var mySwiper = new Swiper('.mil-reviews-slider', {
-            // If we need pagination
-            pagination: {
-                el: '.mil-revi-pagination',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
-                },
+        var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>', '<div class="mil-custom-dot mil-slide-8"></div>','<div class="mil-custom-dot mil-slide-9"></div>', '<div class="mil-custom-dot mil-slide-10"></div>','<div class="mil-custom-dot mil-slide-11"></div>', '<div class="mil-custom-dot mil-slide-12"></div>','<div class="mil-custom-dot mil-slide-13"></div>']
+    var numVisibleDots = 8; // Number of dots visible at a time
+    var mySwiper = new Swiper('.mil-reviews-slider', {
+        // If we need pagination
+        pagination: {
+            el: '.mil-revi-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (menu[index]) + '</span>';
             },
-            speed: 800,
-            effect: 'fade',
-            parallax: true,
-            navigation: {
-                nextEl: '.mil-revi-next',
-                prevEl: '.mil-revi-prev',
-            },
-        })
+        },
+        speed: 800,
+        effect: 'fade',
+        parallax: true,
+        navigation: {
+            nextEl: '.mil-revi-next',
+            prevEl: '.mil-revi-prev',
+        },
+        on: {
+            slideChange: function () {
+                var activeIndex = this.activeIndex;
+                if (activeIndex % 4 === 0) {
+                    var lastIndex = this.slides.length - 1;
+                    var startIndex = Math.max(0, activeIndex - Math.floor(numVisibleDots / 2));
+                    var endIndex = Math.min(lastIndex, startIndex + numVisibleDots - 1);
+        
+                    // Hide all bullets
+                    this.pagination.bullets.forEach(function (bullet) {
+                        bullet.style.display = 'none';
+                    });
+        
+                    // Show visible bullets
+                    for (var i = startIndex; i <= endIndex; i++) {
+                        this.pagination.bullets[i].style.display = 'block';
+                    }
+                }
+                
+            }
+        }
+    })
 
         /***************************
 
