@@ -47,9 +47,9 @@ $(function () {
     preloader
     
     ***************************/
-    $(document).ready(function(){
-        $(".mil-preloader").hide();
-    });
+    // $(document).ready(function(){
+    //     $(".mil-preloader").hide();
+    // });
     var timeline = gsap.timeline();
 
     timeline.to(".mil-preloader-animation", {
