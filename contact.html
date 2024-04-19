@@ -194,17 +194,45 @@
         <!-- frame -->
         <div class="mil-frame">
             <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">A.</a>
-                <div class="mil-menu-btn">
+                <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
+                <a href="index.html" id="logo-pointblank"><span class="logo-pointblank logo-pointblank-lg-white" id="logo-pointblank"> <img
+                            src="/img/icons/main_logo.png" /></span></a>
+                <!-- <a href="index.html"> <span class="logo-pointblank logo-pointblank-lg-black"> <img
+                            src="/img/icons/logo_vertical_black.png" /></span>
+                </a> -->
+                <a href="index.html"> <span class="logo-pointblank logo-pointblank-md"> <img
+                            src="/img/icons/pointblank_logo_white.png" /></span>
+                </a>
+
+
+                <!-- <div class="mil-menu-btn">
                     <span></span>
-                </div>
+                </div> -->
             </div>
             <div class="mil-frame-bottom">
                 <div class="mil-current-page"></div>
-                <div class="mil-back-to-top">
+                <!-- <div class="mil-back-to-top">
                     <a href="#top" class="mil-link mil-dark mil-arrow-place">
                         <span>Back to top</span>
                     </a>
+                </div> -->
+            </div>
+        </div>
+        <div class="mil-frame-duplicate">
+            <div class="mil-frame-top">
+                <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
+                <a href="index.html" id="logo-pointblank"><span class="logo-pointblank main-title" id="logo-pointblank"> <img
+                            src="/img/icons/main_title_black.png" /></span></a>
+                <!-- <a href="index.html"> <span class="logo-pointblank logo-pointblank-lg-black"> <img
+                            src="/img/icons/logo_vertical_black.png" /></span>
+                </a>
+                <a href="index.html"> <span class="logo-pointblank logo-pointblank-md"> <img
+                            src="/img/icons/pointblank_logo_white.png" /></span>
+                </a> -->
+
+
+                <div class="mil-menu-btn">
+                    <span></span>
                 </div>
             </div>
         </div>
@@ -280,13 +308,14 @@
                             <div class="row justify-content-between">
                                 <div class="col-md-4 col-lg-4 mil-mb-60">
 
-                                    <div class="mil-muted mil-logo mil-up mil-mb-30">Ashley.</div>
+                                    <div class="mil-muted mil-logo mil-up mil-mb-30 font-jost">pointblank.</div>
 
                                     <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
 
                                     <form class="mil-subscribe-form mil-up">
-                                        <input type="text" placeholder="Enter our email">
-                                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                                        <input type="text" placeholder="Enter your email">
+                                        <button type="submit"
+                                            class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                                     </form>
 
                                 </div>
@@ -294,18 +323,18 @@
                                     <div class="row justify-content-end">
                                         <div class="col-md-6 col-lg-7">
 
-                                            <nav class="mil-footer-menu mil-mb-60">
+                                            <nav class="mil-footer-menu mil-mb-60 font-jost">
                                                 <ul>
-                                                    <li class="mil-up mil-active">
+                                                    <li class="mil-up">
                                                         <a href="index.html">Home</a>
                                                     </li>
                                                     <li class="mil-up">
-                                                        <a href="portfolio-1.html">Portfolio</a>
+                                                        <a href="portfolio-1.html">Services</a>
                                                     </li>
                                                     <li class="mil-up">
-                                                        <a href="services.html">Services</a>
+                                                        <a href="services.html">Our Work</a>
                                                     </li>
-                                                    <li class="mil-up">
+                                                    <li class="mil-up mil-active">
                                                         <a href="contact.html">Contact</a>
                                                     </li>
                                                     <li class="mil-up">
@@ -336,19 +365,23 @@
 
                                         <div class="col-md-6 col-lg-10 mil-mb-60">
 
-                                            <h6 class="mil-muted mil-up mil-mb-30">Address</h6>
+                                            <a href="/contact.html#map"><h6 class="mil-muted mil-up mil-mb-30 font-jost">Address</h6></a>
+                                            <a href="/contact.html#map">
+                                                <p class="mil-light-soft mil-up">Godrej & Boyce, Gate No 2, Plant No. 6, LBS Marg,<br> Opposite Vikhroli Bus Depot, Vikhroli West, Mumbai, <br>Maharashtra 40007
 
-                                            <p class="mil-light-soft mil-up">Godrej & Boyce, Gate No 2, Plant No. 6, LBS Marg, Opposite Vikhroli Bus Depot, Vikhroli West, Mumbai, Maharashtra 40007
-
-                                                <!-- <span class="mil-no-wrap">+51 174 705 812</span> -->
-                                            </p>
+                                                    <!-- <span class="mil-no-wrap">+51 174 705 812</span> -->
+                                                </p>
+                                            </a>
+                                            
 
                                         </div>
                                         <!-- <div class="col-md-6 col-lg-5 mil-mb-60">
 
                                             <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
 
-                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands
+                                                <span class="mil-no-wrap">+31 174 705 811</span>
+                                            </p>
 
                                         </div> -->
                                     </div>
@@ -359,13 +392,15 @@
                                     <div class="mil-vert-between">
                                         <div class="mil-mb-30">
                                             <ul class="mil-social-icons mil-up">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                                                <li><a href="https://www.facebook.com/pointblankadv/" class="social-icon" target="_blank" data-no-swup> <img src="/img/socail_icons/facebook_icon.png" style="max-width: 30px;"/></a></li>
+                                                <li><a href="https://www.linkedin.com/company/point-blank-advertising-pvt-ltd" target="_blank" class="social-icon" data-no-swup> <img src="/img/socail_icons/linkedin_icon.png" style="max-width: 32px;"/></a></li>
+                                                <li><a href="https://twitter.com/pointblankindia" target="_blank" class="social-icon" data-no-swup> <img src="/img/socail_icons/x_icon_white.png" style="max-width: 32px;"/></a></li>
+                                                <!-- <li><a href="#." target="_blank" class="social-icon"> <i
+                                                            class="far fa-circle"></i></a></li> -->
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
+                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Pointblank. All Rights Reserved.
+                                        </p>
                                     </div>
 
                                 </div>
