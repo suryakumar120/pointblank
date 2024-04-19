@@ -4589,6 +4589,13 @@ html.is-animating .mil-menu-frame {
   }
 }
 
+.items-center{
+  align-self: center !important;
+}
+.justify-center{
+  justify-self: center !important;
+}
+
 .font-jost{
   font-family: "Jost",sans-serif;
 }
