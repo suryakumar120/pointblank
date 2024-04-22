@@ -1140,7 +1140,7 @@ $(function () {
 
         scroll animations
 
-        ***************************/
+        ***************************/ 
 
         const appearance = document.querySelectorAll(".mil-up");
 
