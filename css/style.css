@@ -2597,16 +2597,16 @@ team
 }
 .mil-team-card img {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -o-object-position: bottom;
+     object-position: bottom;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -2662,8 +2662,8 @@ team
   color: #fecc16;
 }
 .mil-team-card:hover img {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .mil-team-card:hover:after {
   width: 100%;
@@ -3315,7 +3315,26 @@ portfolio
 .swiper-slide.swiper-slide-active .mil-portfolio-item .mil-descr {
   pointer-events: all;
 }
+.number-number{
+  font-size: 6.5em;
+  font-weight: 600;
+  line-height: 1;
+}
+.number-subtitle-wrap{
+  max-width: 11.5em;
+  margin-top: 0.5em;
+  margin-left: 0.75em;
+}
+.number-subtitle-p{
+  font-size: 1.25em;
+  font-weight: 600;
+}
 
+@media screen and (max-width: 767px) {
+  .number-number{
+    font-size: 5.94em;
+  }
+}
 .mil-portfolio {
   position: relative;
 }
