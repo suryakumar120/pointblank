@@ -51,9 +51,9 @@ $(function () {
         // Load the script after page transition
         jQuery.getScript("/js/custom-animations.js");
     });
-    // $(document).ready(function(){
-    //     $(".mil-preloader").hide();
-    // });
+    $(document).ready(function(){
+        $(".mil-preloader").hide();
+    });
     var timeline = gsap.timeline();
 
     timeline.to(".mil-preloader-animation", {
