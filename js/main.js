@@ -492,6 +492,82 @@ $(function () {
     e1.fromTo(".envelope5",{y:"1000"},{y:"0",duration:1},"-=1")
   
 
+    /***********************
+     * 
+    Procress Cards 
+
+
+     */
+    const p1 = gsap.timeline(
+        {
+            scrollTrigger:{
+                trigger: ".process-cards-container",
+                start:"top 10%",
+                end: "+=100%",
+                scrub: 1,
+                // pin:true,
+                // markers:true,
+            }
+        }
+    )
+    p1.to(".process-card-1",{scale: 1.3, duration: 1,y:"-120",x:"-300"},"-=1");
+    p1.to(".process-card-2",{scale: 1.3, duration: 1,y:"-120",x:"300"},"-=1");
+    p1.to(".process-card-3",{scale: 1.3, duration: 1,y:"120",x:"-300"},"-=1");
+    p1.to(".process-card-4",{scale: 1.3, duration: 1,y:"120",x:"300"},"-=1");
+    p1.fromTo(".process-title",{scale:0.5},{scale: 1.0, duration: 1,opacity: "1"},"-=1");
+    gsap.to(".process-cards-container", {
+        scrollTrigger: {
+            trigger:".process-cards-container",
+            pin: true,
+            start: "top top", // Adjust start position if needed
+            end: "+=100%",
+            scrub: 1,
+        }
+    });
+
+    /**********
+    Branding-casestudies
+     **********/
+    const branding = gsap.timeline(
+        {
+            scrollTrigger:{
+                trigger:".brand-casestudies",
+                start:"top 10%",
+                end : "+=300%",
+                scrub:1,
+                pin: true,
+                markers: true
+            }
+        }
+    )
+    branding.fromTo(".title-1",{y:"0"},{yPercent:"-100",duration:1},"-=1");
+    branding.fromTo(".image-1",{x:"0"},{xPercent:"-100",duration:1,scale:0.7},"-=1");
+    branding.fromTo(".title-2",{yPercent:"0"},{yPercent:"-100",duration:1},"-=1");
+    branding.fromTo(".image-2",{xPercent:"0",scale:0.7},{xPercent:"-100",duration:1,scale:1},"-=1");
+    branding.fromTo(".title-3",{yPercent:"0"},{yPercent:"-100",duration:1},"-=1");
+    branding.fromTo(".image-3",{xPercent:"0"},{xPercent:"-100",duration:1,scale:0.7},"-=1");
+    branding.to(".title-1",{yPercent:"-200",duration:1});
+    branding.to(".image-1",{xPercent:"-200",duration:1},"-=1");
+    branding.to(".title-2",{yPercent:"-200",duration:1},"-=1");
+    branding.to(".image-2",{xPercent:"-200",duration:1,scale:0.7},"-=1");
+    branding.to(".title-3",{yPercent:"-200",duration:1},"-=1");
+    branding.to(".image-3",{xPercent:"-200",duration:1,scale:1},"-=1");
+
+    //  const branding_img = gsap.timeline(
+    //         {
+    //             scrollTrigger:{
+    //                 trigger:".brand-casestudies",
+    //                 start:"top 10%",
+    //                 end : "+=400%",
+    //                 scrub:1,
+    //                 // pin: true,
+    //                 markers: true
+    //             }
+    //         }
+    //     )
+        // branding_img.to(".image-2",{xPercent:"-200",duration:1,scale:0.7},"-=1");
+        // branding_img.to(".image-3",{xPercent:"-200",duration:1,scale:1},"-=1");
+
    /***************************
 
    cursor

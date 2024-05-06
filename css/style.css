@@ -4779,6 +4779,98 @@ html.is-animating .mil-menu-frame {
 
 
 
+/* Service-branding */
+
+.process-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: 600;
+  z-index: 0; /* Set a lower z-index value than that of .process-cards */
+  opacity: 0;
+}
+
+.process-cards {
+  position: relative; /* Make the parent container of .process-title a positioned container */
+  z-index: 2; /* Set a higher z-index value than that of .process-title */
+  width: 32rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.process-card {
+  height: 10rem;
+  width: 15rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:1.5rem;
+  border-radius: 2%;
+}
+.process-card img{
+  height: 50px;
+}
+.process-card svg{
+  height: 50px;
+}
+.process-card h6{
+  color: white;
+}
+.process-card-3 svg{
+  color : #f39019;
+}
+.brand-casestudies{
+  font-weight: 500;
+  color: black;
+  text-align: start;
+}
+.brand-casestudies-titles{
+  width: 40%;
+  /* overflow-y: scroll; */
+  
+}
+.brand-casestudies-images{
+  width:  60%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.casestudies-image{
+  display: inline-block;
+}
+.casestudies-image .image-2{
+  position: absolute;
+  right: 0px;
+}
+.casestudies-image .image-2{
+  position: absolute;
+  right: 0px;
+}
+.casestudies-title{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-left: 4rem;
+  padding-right: 1rem;
+  padding-bottom: 3rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+}
+.casestudies-image{
+  padding: 10% 20%;
+}
+.casestudies-image img{
+    height: 70%;
+}
 
 
 
@@ -4803,24 +4895,15 @@ html.is-animating .mil-menu-frame {
   height: 100dvh;
 }
 .w-screen{
-  width: 100vh;
-  width: 100dvh;
+  width: 100vw;
+  width: 100dvw;
+}
+.relative{
+  position: relative;
 }
 .h-screen{
   height: 100vh;
   height: 100dvh;
-}
-.w-screen{
-  width: 100vh;
-  width: 100dvh;
-}
-.h-screen{
-  height: 100vh;
-  height: 100dvh;
-}
-.w-screen{
-  width: 100vh;
-  width: 100dvh;
 }
 .h-4screen{
   height: 400vh;
@@ -4857,6 +4940,12 @@ html.is-animating .mil-menu-frame {
 .mb-2{
   margin-bottom: 10px;
 }
+.mb-5{
+  margin-bottom: 30px;
+}
+.mb-20p{
+  margin-bottom: 20%;
+}
 .mt-60{
   margin-top: 60px;
 }
@@ -4884,6 +4973,25 @@ html.is-animating .mil-menu-frame {
   .m-l-16p-lg{
     margin-left: 16%;
   }
+}
+
+.bg-blue{
+  background-color: blue;
+}
+.bg-red{
+  background-color: red;
+}
+.bg-green{
+  background-color: green;
+}
+.bg-gray{
+  background-color: gray;
+}
+.bg-yellow{
+  background-color: yellow;
+}
+.bg-skyblue{
+  background-color: skyblue;
 }
 
 
