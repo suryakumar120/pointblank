@@ -661,8 +661,15 @@ button
   margin-left: 0;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.mil-button.mil-icon-button-sm-blue svg {
+  margin-left: 0;
+  background-color: #53baa1;
+}
 .mil-button.mil-icon-button-sm svg path {
   fill: rgb(255, 255, 255);
+}
+.mil-button.mil-icon-button-sm-blue svg path {
+  fill: rgba(0, 0, 0);
 }
 .mil-button:hover {
   -webkit-transform: scale(1.015);
@@ -2500,7 +2507,7 @@ services
   left: 0;
   height: 4px;
   width: 0;
-  background-color: black;
+  background-color: #53baa1;
   -webkit-transition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
 }

@@ -8,7 +8,9 @@ Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=Mille
 p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
 
 ------------------------------------------- */
-
+// import * as THREE from 'three';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 $(function () {
 
     "use strict";
@@ -51,9 +53,9 @@ $(function () {
         // Load the script after page transition
         jQuery.getScript("/js/custom-animations.js");
     });
-    $(document).ready(function(){
-        $(".mil-preloader").hide();
-    });
+    // $(document).ready(function () {
+    //     $(".mil-preloader").hide();
+    // });
     var timeline = gsap.timeline();
 
     timeline.to(".mil-preloader-animation", {
@@ -62,13 +64,13 @@ $(function () {
 
     timeline.fromTo(
         ".mil-animation-1 .mil-h3", {
-            y: "30px",
-            opacity: 0
-        }, {
-            y: "0px",
-            opacity: 1,
-            stagger: 0.4
-        },
+        y: "30px",
+        opacity: 0
+    }, {
+        y: "0px",
+        opacity: 1,
+        stagger: 0.4
+    },
     );
 
     timeline.to(".mil-animation-1 .mil-h3", {
@@ -165,9 +167,9 @@ $(function () {
 
 
     /****************** Homepage logo*******/
-    $(document).ready(function(){
+    $(document).ready(function () {
         // Attach click event handler to the logo
-        $('logo-pointblank').click(function(){
+        $('logo-pointblank').click(function () {
             // Redirect to index.html
             window.location.href = 'index.html';
         });
@@ -262,16 +264,16 @@ $(function () {
    CTA Button
 
     *****************/
-   
+
     const cta = document.querySelector(".cta-btn");
-    if(cta){
+    if (cta) {
         gsap.set(cta, {
             x: 30,
-            opacity:0,
+            opacity: 0,
         });
-    
+
         gsap.to(cta, {
-            x:0,
+            x: 0,
             opacity: 1,
             ease: 'sine',
             scrollTrigger: {
@@ -281,181 +283,181 @@ $(function () {
                 toggleActions: "play none reverse none"
             }
         })
-        
+
         const cta_icon = document.querySelector(".cta-btn .cta-icon")
-        let animation = gsap.to(cta_icon,{
+        let animation = gsap.to(cta_icon, {
             paused: true,
-            opacity:0,
+            opacity: 0,
         })
-    
+
         let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
         gsap.set(cta_btn_text, {
             x: 0,
-            opacity:0,
+            opacity: 0,
         });
-        let cta_text_animation = gsap.to(cta_btn_text,{
-            paused:true,
-            x:30,
-            opacity:1,
+        let cta_text_animation = gsap.to(cta_btn_text, {
+            paused: true,
+            x: 30,
+            opacity: 1,
         })
-        cta_icon.addEventListener("mouseenter",()=> animation.play());
-        cta_btn_text.addEventListener("mouseleave",()=>animation.reverse());
-        cta_icon.addEventListener("mouseenter",()=> cta_text_animation.play());
-        cta_btn_text.addEventListener("mouseleave",()=>cta_text_animation.reverse());
-        cta.addEventListener("mouseleave",()=>cta_text_animation.reverse());
-        cta.addEventListener("mouseleave",()=>animation.reverse());
+        cta_icon.addEventListener("mouseenter", () => animation.play());
+        cta_btn_text.addEventListener("mouseleave", () => animation.reverse());
+        cta_icon.addEventListener("mouseenter", () => cta_text_animation.play());
+        cta_btn_text.addEventListener("mouseleave", () => cta_text_animation.reverse());
+        cta.addEventListener("mouseleave", () => cta_text_animation.reverse());
+        cta.addEventListener("mouseleave", () => animation.reverse());
 
     }
-   
+
     /*********************
     
    CTA Button General (except homepage)
 
     *****************/
-   const cta_gen = document.querySelector(".cta-btn-gen");
-   if(cta_gen){
-    gsap.set(cta_gen, {
-        x: 30,
-        opacity:0,
-    });
- 
-    gsap.to(cta_gen, {
-        x:0,
-        opacity: 1,
-        ease: 'sine',
-        scrollTrigger: {
-            trigger: "body",
-            start: "top -1%",
-            end: "top -1%",
-            toggleActions: "play none reverse none"
-        }
-    })
-    
-    const cta_icon_gen = document.querySelector(".cta-btn-gen .cta-icon-gen")
-    let animation_gen = gsap.to(cta_icon_gen,{
-        paused: true,
-        opacity:0,
-    })
- 
-    let cta_btn_text_gen = document.querySelector(".cta-btn-gen .cta-btn-text-gen")
-    gsap.set(cta_btn_text_gen, {
-        x: 0,
-        opacity:0,
-    });
-    let cta_text_animation_gen = gsap.to(cta_btn_text_gen,{
-        paused:true,
-        x:30,
-        opacity:1,
-    })
-    cta_icon_gen.addEventListener("mouseenter",()=> animation_gen.play());
-    cta_btn_text_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
-    cta_icon_gen.addEventListener("mouseenter",()=> cta_text_animation_gen.play());
-    cta_btn_text_gen.addEventListener("mouseleave",()=>cta_text_animation_gen.reverse());
-    cta_gen.addEventListener("mouseleave",()=>cta_text_animation_gen.reverse());
-    cta_gen.addEventListener("mouseleave",()=>animation_gen.reverse());
-   }
-   
-//    /*****************
-//         Logo  
-//    *****************/
-//         let mm = gsap.matchMedia();
+    const cta_gen = document.querySelector(".cta-btn-gen");
+    if (cta_gen) {
+        gsap.set(cta_gen, {
+            x: 30,
+            opacity: 0,
+        });
 
-//         mm.add("(min-width: 1200px)", () => {
-//             const logo_white = document.querySelector('.logo-pointblank-lg-white');
-//             const logo_black = document.querySelector('.logo-pointblank-lg-black');
-            
-//             // gsap.to(logo_white,{
-//             //     display:"none",
-//             //     scrollTrigger: {
-//             //         trigger: "body",
-//             //         start: "top -95%",
-//             //         end: "top -95%",
-//             //         toggleActions: "play none reverse none"
-//             //     }
-//             // })
-//             gsap.to(logo_black,{
-//                 display:"block",
-//                 paused:true,
-//                 scrollTrigger:{
-//                     trigger: ".about",
-//                     start: "top 5%",
-//                     end: "top 5%",
-//                     toggleActions: "play none reverse none",
-//                     // markers:"true",
-//                 }
-//             })
-//             gsap.set(logo_black,{
-                
-//                 opacity:"1",
-//                 paused:true,
-//                 scrollTrigger:{
-//                     trigger: ".about",
-//                     start: "top 5%",
-//                     end: "top 5%",
-//                     toggleActions: "play none reverse none",
-//                     // markers:"true",
-//                 }
-//             })
-//             // gsap.to(logo_black,{
-//             //     opacity:"1",
-//             //     paused:true,
-//             //     scrollTrigger:{
-//             //         trigger: "body",
-//             //         start: "top -193%",
-//             //         end: "top -193%",
-//             //         toggleActions: "none none play play",
-//             //         markers:"true",
-//             //     }
-//             // })
-//             gsap.set(logo_black,{
-//                 opacity:"0",
-//                 paused:true,
-//                 scrollTrigger:{
-//                     trigger: ".services",
-//                     start: "top 5%",
-//                     end: "top 5%",
-//                     toggleActions: "play none reverse none",
-//                     // markers:"true",
-//                 }
-//             })
-//             gsap.to(logo_black,{
-                
-//                 opacity:"1",
-//                 paused:true,
-//                 scrollTrigger:{
-//                     trigger: ".team",
-//                     start: "top 5%",
-//                     end: "top 5%",
-//                     toggleActions: "play none reverse none",
-//                     // markers:"true",
-//                 }
-//             })
-//         });
+        gsap.to(cta_gen, {
+            x: 0,
+            opacity: 1,
+            ease: 'sine',
+            scrollTrigger: {
+                trigger: "body",
+                start: "top -1%",
+                end: "top -1%",
+                toggleActions: "play none reverse none"
+            }
+        })
+
+        const cta_icon_gen = document.querySelector(".cta-btn-gen .cta-icon-gen")
+        let animation_gen = gsap.to(cta_icon_gen, {
+            paused: true,
+            opacity: 0,
+        })
+
+        let cta_btn_text_gen = document.querySelector(".cta-btn-gen .cta-btn-text-gen")
+        gsap.set(cta_btn_text_gen, {
+            x: 0,
+            opacity: 0,
+        });
+        let cta_text_animation_gen = gsap.to(cta_btn_text_gen, {
+            paused: true,
+            x: 30,
+            opacity: 1,
+        })
+        cta_icon_gen.addEventListener("mouseenter", () => animation_gen.play());
+        cta_btn_text_gen.addEventListener("mouseleave", () => animation_gen.reverse());
+        cta_icon_gen.addEventListener("mouseenter", () => cta_text_animation_gen.play());
+        cta_btn_text_gen.addEventListener("mouseleave", () => cta_text_animation_gen.reverse());
+        cta_gen.addEventListener("mouseleave", () => cta_text_animation_gen.reverse());
+        cta_gen.addEventListener("mouseleave", () => animation_gen.reverse());
+    }
+
+    //    /*****************
+    //         Logo  
+    //    *****************/
+    //         let mm = gsap.matchMedia();
+
+    //         mm.add("(min-width: 1200px)", () => {
+    //             const logo_white = document.querySelector('.logo-pointblank-lg-white');
+    //             const logo_black = document.querySelector('.logo-pointblank-lg-black');
+
+    //             // gsap.to(logo_white,{
+    //             //     display:"none",
+    //             //     scrollTrigger: {
+    //             //         trigger: "body",
+    //             //         start: "top -95%",
+    //             //         end: "top -95%",
+    //             //         toggleActions: "play none reverse none"
+    //             //     }
+    //             // })
+    //             gsap.to(logo_black,{
+    //                 display:"block",
+    //                 paused:true,
+    //                 scrollTrigger:{
+    //                     trigger: ".about",
+    //                     start: "top 5%",
+    //                     end: "top 5%",
+    //                     toggleActions: "play none reverse none",
+    //                     // markers:"true",
+    //                 }
+    //             })
+    //             gsap.set(logo_black,{
+
+    //                 opacity:"1",
+    //                 paused:true,
+    //                 scrollTrigger:{
+    //                     trigger: ".about",
+    //                     start: "top 5%",
+    //                     end: "top 5%",
+    //                     toggleActions: "play none reverse none",
+    //                     // markers:"true",
+    //                 }
+    //             })
+    //             // gsap.to(logo_black,{
+    //             //     opacity:"1",
+    //             //     paused:true,
+    //             //     scrollTrigger:{
+    //             //         trigger: "body",
+    //             //         start: "top -193%",
+    //             //         end: "top -193%",
+    //             //         toggleActions: "none none play play",
+    //             //         markers:"true",
+    //             //     }
+    //             // })
+    //             gsap.set(logo_black,{
+    //                 opacity:"0",
+    //                 paused:true,
+    //                 scrollTrigger:{
+    //                     trigger: ".services",
+    //                     start: "top 5%",
+    //                     end: "top 5%",
+    //                     toggleActions: "play none reverse none",
+    //                     // markers:"true",
+    //                 }
+    //             })
+    //             gsap.to(logo_black,{
+
+    //                 opacity:"1",
+    //                 paused:true,
+    //                 scrollTrigger:{
+    //                     trigger: ".team",
+    //                     start: "top 5%",
+    //                     end: "top 5%",
+    //                     toggleActions: "play none reverse none",
+    //                     // markers:"true",
+    //                 }
+    //             })
+    //         });
     /**************  
         Envelope Container title
     *********/
 
     const e_title = gsap.timeline({
-        scrollTrigger:{
-            trigger:".envelope-container-title",
+        scrollTrigger: {
+            trigger: ".envelope-container-title",
             start: "top 60%",
-            end:"+=50%",
-            scrub:1,
+            end: "+=50%",
+            scrub: 1,
             // pin:true,
-            once:true,
+            once: true,
             // markers:true,
         }
     })
-    e_title.to(".envelope-rectangle",{duration: 1,borderColor:'black',y:'0'})
-    e_title.to(".e-word-1",{duration: 1,color:'black',y:'0'});
-    e_title.to(".e-word-2",{duration: 1,color:'black',y:'0'});
-    e_title.to(".e-word-3",{duration: 1,color:'black',y:'0'});
-    e_title.to(".e-word-4",{duration: 1,color:'black',y:'0'});
-   
-    
+    e_title.to(".envelope-rectangle", { duration: 1, borderColor: 'black', y: '0' })
+    e_title.to(".e-word-1", { duration: 1, color: 'black', y: '0' });
+    e_title.to(".e-word-2", { duration: 1, color: 'black', y: '0' });
+    e_title.to(".e-word-3", { duration: 1, color: 'black', y: '0' });
+    e_title.to(".e-word-4", { duration: 1, color: 'black', y: '0' });
 
-    
-    
+
+
+
+
     /***********************
      
     Envelopes
@@ -465,32 +467,32 @@ $(function () {
     const envelope1 = document.querySelector('.envelope1')
     const e1 = gsap.timeline(
         {
-            scrollTrigger:{
-                trigger:".envelope-container",
-                start:"top top",
+            scrollTrigger: {
+                trigger: ".envelope-container",
+                start: "top top",
                 end: "+=200%",
-                scrub:0.5,
-                pin:true,
+                scrub: 0.5,
+                pin: true,
                 // markers:true,
             }
         }
     );
     // e1.to(".envelope1", {yPercent: -350, duration: 1});
-    e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1,ease: "power1.easeIn"});
-    e1.fromTo(".envelope2",{y:"1000"},{y:"0",duration:1},"-=1");
+    e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1, ease: "power1.easeIn" });
+    e1.fromTo(".envelope2", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
     e1.to(".envelope1", { scale: 0.87, opacity: 0.3, duration: 1 });
-    e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 },"-=1");
-    e1.fromTo(".envelope3",{y:"1000"},{y:"0",duration:1},"-=1");
+    e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+    e1.fromTo(".envelope3", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
     e1.to(".envelope1", { scale: 0.82, opacity: 0.2, duration: 1 });
-    e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 },"-=1");
-    e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 },"-=1");
-    e1.fromTo(".envelope4",{y:"1000"},{y:"0",duration:1},"-=1");
+    e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 }, "-=1");
+    e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+    e1.fromTo(".envelope4", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
     e1.to(".envelope1", { scale: 0.82, opacity: 0.15, duration: 1 });
-    e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 },"-=1");
-    e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 },"-=1");
-    e1.to(".envelope4", { scale: 0.95, opacity: 0.9, duration: 1 },"-=1");
-    e1.fromTo(".envelope5",{y:"1000"},{y:"0",duration:1},"-=1")
-  
+    e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 }, "-=1");
+    e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 }, "-=1");
+    e1.to(".envelope4", { scale: 0.95, opacity: 0.9, duration: 1 }, "-=1");
+    e1.fromTo(".envelope5", { y: "1000" }, { y: "0", duration: 1 }, "-=1")
+
 
     /***********************
      * 
@@ -500,9 +502,9 @@ $(function () {
      */
     const p1 = gsap.timeline(
         {
-            scrollTrigger:{
+            scrollTrigger: {
                 trigger: ".process-cards-container",
-                start:"top 10%",
+                start: "top 10%",
                 end: "+=100%",
                 scrub: 1,
                 // pin:true,
@@ -510,14 +512,14 @@ $(function () {
             }
         }
     )
-    p1.to(".process-card-1",{scale: 1.3, duration: 1,y:"-120",x:"-300"},"-=1");
-    p1.to(".process-card-2",{scale: 1.3, duration: 1,y:"-120",x:"300"},"-=1");
-    p1.to(".process-card-3",{scale: 1.3, duration: 1,y:"120",x:"-300"},"-=1");
-    p1.to(".process-card-4",{scale: 1.3, duration: 1,y:"120",x:"300"},"-=1");
-    p1.fromTo(".process-title",{scale:0.5},{scale: 1.0, duration: 1,opacity: "1"},"-=1");
+    p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
+    p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
+    p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
+    p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
+    p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
     gsap.to(".process-cards-container", {
         scrollTrigger: {
-            trigger:".process-cards-container",
+            trigger: ".process-cards-container",
             pin: true,
             start: "top top", // Adjust start position if needed
             end: "+=100%",
@@ -530,28 +532,28 @@ $(function () {
      **********/
     const branding = gsap.timeline(
         {
-            scrollTrigger:{
-                trigger:".brand-casestudies",
-                start:"top 10%",
-                end : "+=300%",
-                scrub:1,
+            scrollTrigger: {
+                trigger: ".brand-casestudies",
+                start: "top 10%",
+                end: "+=300%",
+                scrub: 1,
                 pin: true,
-                markers: true
+                // markers: true
             }
         }
     )
-    branding.fromTo(".title-1",{y:"0"},{yPercent:"-100",duration:1},"-=1");
-    branding.fromTo(".image-1",{x:"0"},{xPercent:"-100",duration:1,scale:0.7},"-=1");
-    branding.fromTo(".title-2",{yPercent:"0"},{yPercent:"-100",duration:1},"-=1");
-    branding.fromTo(".image-2",{xPercent:"0",scale:0.7},{xPercent:"-100",duration:1,scale:1},"-=1");
-    branding.fromTo(".title-3",{yPercent:"0"},{yPercent:"-100",duration:1},"-=1");
-    branding.fromTo(".image-3",{xPercent:"0"},{xPercent:"-100",duration:1,scale:0.7},"-=1");
-    branding.to(".title-1",{yPercent:"-200",duration:1});
-    branding.to(".image-1",{xPercent:"-200",duration:1},"-=1");
-    branding.to(".title-2",{yPercent:"-200",duration:1},"-=1");
-    branding.to(".image-2",{xPercent:"-200",duration:1,scale:0.7},"-=1");
-    branding.to(".title-3",{yPercent:"-200",duration:1},"-=1");
-    branding.to(".image-3",{xPercent:"-200",duration:1,scale:1},"-=1");
+    branding.fromTo(".title-1", { y: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+    branding.fromTo(".image-1", { x: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
+    branding.fromTo(".title-2", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+    branding.fromTo(".image-2", { xPercent: "0", scale: 0.7 }, { xPercent: "-100", duration: 1, scale: 1 }, "-=1");
+    branding.fromTo(".title-3", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+    branding.fromTo(".image-3", { xPercent: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
+    branding.to(".title-1", { yPercent: "-200", duration: 1 });
+    branding.to(".image-1", { xPercent: "-200", duration: 1 }, "-=1");
+    branding.to(".title-2", { yPercent: "-200", duration: 1 }, "-=1");
+    branding.to(".image-2", { xPercent: "-200", duration: 1, scale: 0.7 }, "-=1");
+    branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
+    branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
 
     //  const branding_img = gsap.timeline(
     //         {
@@ -565,14 +567,131 @@ $(function () {
     //             }
     //         }
     //     )
-        // branding_img.to(".image-2",{xPercent:"-200",duration:1,scale:0.7},"-=1");
-        // branding_img.to(".image-3",{xPercent:"-200",duration:1,scale:1},"-=1");
+    // branding_img.to(".image-2",{xPercent:"-200",duration:1,scale:0.7},"-=1");
+    // branding_img.to(".image-3",{xPercent:"-200",duration:1,scale:1},"-=1");
 
-   /***************************
 
-   cursor
 
-   ***************************/
+
+
+    /**********
+     Team Globe
+    */
+
+
+    // const loader = new GLTFLoader();
+    // loader.load(
+    //     '/img/3d/magic_sphere/scene.gltf', // Path to the GLTF file
+    //     function (gltf) {
+    //         // Initialize Three.js
+    //         const scene = gltf.scene || new THREE.Group();
+    //         const renderer = new THREE.WebGLRenderer({ alpha: true });
+    //         renderer.setSize(window.innerWidth, window.innerHeight);
+    //         document.getElementById('model').appendChild(renderer.domElement);
+
+    //         // const scene = new THREE.Scene();
+    //         renderer.setPixelRatio(window.devicePixelRatio);
+    //         renderer.setSize(window.innerWidth, window.innerHeight);
+    //         const camera = new THREE.PerspectiveCamera(
+    //             45,
+    //             window.innerWidth / window.innerHeight,
+    //             1,
+    //             10000
+    //         );
+
+    //         camera.position.set(0, 0, 100);
+    //         const controls = new OrbitControls(camera, renderer.domElement);
+    //         controls.update();
+    //         renderer.render(scene, camera);
+
+    //         /// lighting ///
+
+    //         const light = new THREE.AmbientLight(0xffaaff);
+    //         light.position.set(10, 10, 10);
+    //         scene.add(light);
+
+    //         /// geometry ///
+
+    //         // const boxGeometry = new THREE.Mesh(
+    //         //     new THREE.BoxGeometry(100, 100, 100),
+    //         //     new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    //         // );
+    //         // scene.add(boxGeometry);
+
+    //         console.log(scene);
+    //         animate();
+
+    //         function animate() {
+    //             requestAnimationFrame(animate);
+    //             renderer.render(scene, camera);
+    //         }
+    //     },
+    //     undefined,
+    //     function (error) {
+    //         console.error(error);
+    //     }
+    // );
+    // const loader = new GLTFLoader();
+    // loader.load(
+    //     '/img/3d/magic_sphere/scene.gltf',
+    //     function (gltf) {
+    //         const scene = new THREE.Scene();
+    //         const renderer = new THREE.WebGLRenderer({ alpha: true });
+    //         renderer.setSize(window.innerWidth, window.innerHeight);
+    //         document.getElementById('model').appendChild(renderer.domElement);
+    //         const camera = new THREE.PerspectiveCamera(
+    //             45,
+    //             window.innerWidth / window.innerHeight,
+    //             1,
+    //             10000
+    //         );
+
+    //         scene.add(gltf.scene);
+
+    //         const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
+    //         const objectCenter = new THREE.Vector3();
+    //         boundingBox.getCenter(objectCenter);
+
+    //         camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 50);
+    //         gltf.scene.position.copy(objectCenter.negate());
+            
+
+    //         const controls = new OrbitControls(camera, renderer.domElement);
+    //         controls.enabled = false;
+
+    //         const light = new THREE.AmbientLight(0xffaaff);
+    //         light.position.set(10, 10, 10);
+    //         scene.add(light);
+
+    //         renderer.render(scene, camera);
+
+    //         function animate() {
+    //             requestAnimationFrame(animate);
+    //             gltf.camera.y += 0.01;
+    //             renderer.render(scene, camera);
+    //         }
+    //         animate();
+
+    //         window.addEventListener('resize', function () {
+    //             renderer.setSize(window.innerWidth, window.innerHeight);
+    //             camera.aspect = window.innerWidth / window.innerHeight;
+    //             camera.updateProjectionMatrix();
+    //         });
+    //     },
+    //     undefined,
+    //     function (error) {
+    //         console.error(error);
+    //     }
+    // );
+
+
+
+    /***************************
+ 
+    cursor
+ 
+    ***************************/
+
     const cursor = document.querySelector('.mil-ball');
 
     gsap.set(cursor, {
@@ -829,7 +948,7 @@ $(function () {
             "zoom",
             "fullScreen",
             "close"
-          ],
+        ],
         loop: false,
         protect: true
     });
@@ -840,7 +959,7 @@ $(function () {
 
     ***************************/
 
-    var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>', '<div class="mil-custom-dot mil-slide-8"></div>','<div class="mil-custom-dot mil-slide-9"></div>', '<div class="mil-custom-dot mil-slide-10"></div>','<div class="mil-custom-dot mil-slide-11"></div>', '<div class="mil-custom-dot mil-slide-12"></div>','<div class="mil-custom-dot mil-slide-13"></div>']
+    var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>', '<div class="mil-custom-dot mil-slide-8"></div>', '<div class="mil-custom-dot mil-slide-9"></div>', '<div class="mil-custom-dot mil-slide-10"></div>', '<div class="mil-custom-dot mil-slide-11"></div>', '<div class="mil-custom-dot mil-slide-12"></div>', '<div class="mil-custom-dot mil-slide-13"></div>']
     var numVisibleDots = 8; // Number of dots visible at a time
     var mySwiper = new Swiper('.mil-reviews-slider', {
         // If we need pagination
@@ -865,18 +984,18 @@ $(function () {
                     var lastIndex = this.slides.length - 1;
                     var startIndex = Math.max(0, activeIndex - Math.floor(numVisibleDots / 2));
                     var endIndex = Math.min(lastIndex, startIndex + numVisibleDots - 1);
-        
+
                     // Hide all bullets
                     this.pagination.bullets.forEach(function (bullet) {
                         bullet.style.display = 'none';
                     });
-        
+
                     // Show visible bullets
                     for (var i = startIndex; i <= endIndex; i++) {
                         this.pagination.bullets[i].style.display = 'block';
                     }
                 }
-                
+
             }
         }
     })
@@ -1216,7 +1335,7 @@ $(function () {
 
         scroll animations
 
-        ***************************/ 
+        ***************************/
 
         const appearance = document.querySelectorAll(".mil-up");
 
@@ -1304,11 +1423,11 @@ $(function () {
         ***************************/
         $('[data-fancybox="gallery"]').fancybox({
             buttons: [
-            "slideShow",
-            "zoom",
-            "fullScreen",
-            "close"
-          ],
+                "slideShow",
+                "zoom",
+                "fullScreen",
+                "close"
+            ],
             loop: false,
             protect: true
         });
@@ -1319,46 +1438,46 @@ $(function () {
 
         ***************************/
 
-        var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>', '<div class="mil-custom-dot mil-slide-8"></div>','<div class="mil-custom-dot mil-slide-9"></div>', '<div class="mil-custom-dot mil-slide-10"></div>','<div class="mil-custom-dot mil-slide-11"></div>', '<div class="mil-custom-dot mil-slide-12"></div>','<div class="mil-custom-dot mil-slide-13"></div>']
-    var numVisibleDots = 8; // Number of dots visible at a time
-    var mySwiper = new Swiper('.mil-reviews-slider', {
-        // If we need pagination
-        pagination: {
-            el: '.mil-revi-pagination',
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (menu[index]) + '</span>';
+        var menu = ['<div class="mil-custom-dot mil-slide-1"></div>', '<div class="mil-custom-dot mil-slide-2"></div>', '<div class="mil-custom-dot mil-slide-3"></div>', '<div class="mil-custom-dot mil-slide-4"></div>', '<div class="mil-custom-dot mil-slide-5"></div>', '<div class="mil-custom-dot mil-slide-6"></div>', '<div class="mil-custom-dot mil-slide-7"></div>', '<div class="mil-custom-dot mil-slide-8"></div>', '<div class="mil-custom-dot mil-slide-9"></div>', '<div class="mil-custom-dot mil-slide-10"></div>', '<div class="mil-custom-dot mil-slide-11"></div>', '<div class="mil-custom-dot mil-slide-12"></div>', '<div class="mil-custom-dot mil-slide-13"></div>']
+        var numVisibleDots = 8; // Number of dots visible at a time
+        var mySwiper = new Swiper('.mil-reviews-slider', {
+            // If we need pagination
+            pagination: {
+                el: '.mil-revi-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                },
             },
-        },
-        speed: 800,
-        effect: 'fade',
-        parallax: true,
-        navigation: {
-            nextEl: '.mil-revi-next',
-            prevEl: '.mil-revi-prev',
-        },
-        on: {
-            slideChange: function () {
-                var activeIndex = this.activeIndex;
-                if (activeIndex % 4 === 0) {
-                    var lastIndex = this.slides.length - 1;
-                    var startIndex = Math.max(0, activeIndex - Math.floor(numVisibleDots / 2));
-                    var endIndex = Math.min(lastIndex, startIndex + numVisibleDots - 1);
-        
-                    // Hide all bullets
-                    this.pagination.bullets.forEach(function (bullet) {
-                        bullet.style.display = 'none';
-                    });
-        
-                    // Show visible bullets
-                    for (var i = startIndex; i <= endIndex; i++) {
-                        this.pagination.bullets[i].style.display = 'block';
+            speed: 800,
+            effect: 'fade',
+            parallax: true,
+            navigation: {
+                nextEl: '.mil-revi-next',
+                prevEl: '.mil-revi-prev',
+            },
+            on: {
+                slideChange: function () {
+                    var activeIndex = this.activeIndex;
+                    if (activeIndex % 4 === 0) {
+                        var lastIndex = this.slides.length - 1;
+                        var startIndex = Math.max(0, activeIndex - Math.floor(numVisibleDots / 2));
+                        var endIndex = Math.min(lastIndex, startIndex + numVisibleDots - 1);
+
+                        // Hide all bullets
+                        this.pagination.bullets.forEach(function (bullet) {
+                            bullet.style.display = 'none';
+                        });
+
+                        // Show visible bullets
+                        for (var i = startIndex; i <= endIndex; i++) {
+                            this.pagination.bullets[i].style.display = 'block';
+                        }
                     }
+
                 }
-                
             }
-        }
-    })
+        })
 
         /***************************
 
