@@ -1852,7 +1852,7 @@ $(function () {
      ********/
     const loader = new GLTFLoader();
     loader.load(
-        '/img/3d/nasa.glb',
+        '/img/3d/geometrynodes_scifi_sphere.glb',
         function (gltf) {
             const scene = new THREE.Scene();
             const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -1871,7 +1871,7 @@ $(function () {
             const objectCenter = new THREE.Vector3();
             boundingBox.getCenter(objectCenter);
 
-            camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 1500);
+            camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
             gltf.scene.position.copy(objectCenter.negate());
             
 
