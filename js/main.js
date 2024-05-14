@@ -743,18 +743,18 @@ $(function () {
     globe.fromTo(".team-picture-1", { bottom:"0" }, { top:"0", duration:  3, opacity:1 }, "-=1");
     globe.fromTo(".team-picture-2", { bottom:"0" }, { top:"0", duration:  3, opacity:1 }, "-=1");
 
-    globe.to(".team-picture-1", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-2", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-3", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, );
-    globe.fromTo(".team-picture-4", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, "-=1");
+    // globe.to(".team-picture-1", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-2", {  duration: 1 , opacity:0 }, );
+    globe.fromTo(".team-picture-3", { bottom:"0" }, { top:"25%", duration: 3 , opacity:1 }, );
+    globe.fromTo(".team-picture-4", { bottom:"0" }, { top:"25%", duration: 3 , opacity:1 }, "-=1");
 
-    globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"0", duration: 3, opacity:1 });
-    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, "-=1");
+    // globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
+    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 3, opacity:1 });
+    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 3 , opacity:1 }, "-=1");
 
-    globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
+    // globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
     // globe.fromTo(".team-picture-7", { bottom:"0" }, { top:"0", duration: 2 , opacity:1 });
     // branding.fromTo(".image-1", { x: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
     // branding.fromTo(".title-2", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
@@ -1896,18 +1896,18 @@ $(function () {
     globe.fromTo(".team-picture-1", { bottom:"0" }, { top:"0", duration:  3, opacity:1 }, "-=1");
     globe.fromTo(".team-picture-2", { bottom:"0" }, { top:"0", duration:  3, opacity:1 }, "-=1");
 
-    globe.to(".team-picture-1", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-2", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-3", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, );
-    globe.fromTo(".team-picture-4", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, "-=1");
+    // globe.to(".team-picture-1", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-2", {  duration: 1 , opacity:0 }, );
+    globe.fromTo(".team-picture-3", { bottom:"0" }, { top:"25%", duration: 3 , opacity:1 }, );
+    globe.fromTo(".team-picture-4", { bottom:"0" }, { top:"25%", duration: 3 , opacity:1 }, "-=1");
 
-    globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"0", duration: 3, opacity:1 });
-    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"0", duration: 3 , opacity:1 }, "-=1");
+    // globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
+    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 3, opacity:1 });
+    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 3 , opacity:1 }, "-=1");
 
-    globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
-    globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
+    // globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
+    // globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
         /***************************
 
         1 item slider
