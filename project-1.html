@@ -635,7 +635,18 @@
     <!-- scroll to js -->
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
-    <script src="js/main.js"></script>
+     <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+          }
+        }
+      </script>
+    <!-- ashley js -->
+    <script src="js/main.js" type="module"></script>
+    <!-- <script src="js/custom-animations.js" type="module"></script> -->
+    <!-- <script src="js/main.js"></script> -->
 
 </body>
 

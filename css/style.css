@@ -810,7 +810,7 @@ breadcrumbs
   color: rgb(0, 0, 0);
 }
 .mil-breadcrumbs li a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
@@ -2646,6 +2646,17 @@ services
 .mil-service-list.mil-dark li:first-child {
   border-top: solid 1px rgba(0, 0, 0, 0.1);
 }
+.numbers-slider{
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+.numbers-slide svg{
+  max-width: 30px;
+  max-height: 30px;
+}
+.numbers-slide svg path{
+  color: black;
+}
 
 /* -------------------------------------------
 
@@ -2761,7 +2772,33 @@ team
   top: -120px;
   left: -22.5%;
 }
+.team-picture{
+  width: 15rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: black;
+}
+.team-picture-odd{
+  left: 20%;
+  bottom: 20%;
+}
+.team-picture-even{
+  right: 20%;
+  bottom: 20%;
+}
 
+.globe-canvas{
+
+}
+@media screen and (min-width:1500px) {
+    .globe-canvas canvas{
+      width: 70% !important;
+      height: 90% !important;
+    }
+}
 /* -------------------------------------------
 
 social icons
@@ -4926,8 +4963,17 @@ html.is-animating .mil-menu-frame {
 .h-full{
   height: 100%;
 }
+.w-50p{
+  width: 50%;
+}
+.h-22rem{
+  height: 22.5rem;
+}
 .font-jost{
   font-family: "Jost",sans-serif;
+}
+.font-100{
+  font-size: 100px;
 }
 .font-60{
   font-size: 60px;
