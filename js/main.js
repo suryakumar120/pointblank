@@ -643,9 +643,63 @@ $(function () {
     //         console.error(error);
     //     }
     // );
+    // const loader = new GLTFLoader();
+    // loader.load(
+    //     '/img/3d/geometrynodes_scifi_sphere.glb',
+    //     function (gltf) {
+    //         const scene = new THREE.Scene();
+    //         const renderer = new THREE.WebGLRenderer({ alpha: true });
+    //         renderer.setSize(window.innerWidth, window.innerHeight);
+    //         document.getElementById('model').appendChild(renderer.domElement);
+    //         const camera = new THREE.PerspectiveCamera(
+    //             45,
+    //             window.innerWidth / window.innerHeight,
+    //             1,
+    //             10000
+    //         );
+
+    //         scene.add(gltf.scene);
+
+    //         const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
+    //         const objectCenter = new THREE.Vector3();
+    //         boundingBox.getCenter(objectCenter);
+
+    //         camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 1500);
+    //         gltf.scene.position.copy(objectCenter.negate());
+            
+
+    //         const controls = new OrbitControls(camera, renderer.domElement);
+    //         controls.enabled = false;
+    //         // controls.update();
+
+    //         const light = new THREE.AmbientLight(0xffaaff);
+    //         light.position.set(10, 10, 10);
+    //         scene.add(light);
+
+    //         renderer.render(scene, camera);
+
+    //         function animate() {
+    //             requestAnimationFrame(animate);
+    //             // gltf.camera.y += 0.01;
+    //             gltf.scene.rotation.y += 0.01;
+    //             renderer.render(scene, camera);
+    //         }
+    //         animate();
+
+    //         window.addEventListener('resize', function () {
+    //             renderer.setSize(window.innerWidth, window.innerHeight);
+    //             camera.aspect = window.innerWidth / window.innerHeight;
+    //             camera.updateProjectionMatrix();
+    //         });
+    //     },
+    //     undefined,
+    //     function (error) {
+    //         console.error(error);
+    //     }
+    // );
     const loader = new GLTFLoader();
     loader.load(
-        '/img/3d/nasa.glb',
+        '/img/3d/geometrynodes_scifi_sphere.glb',
         function (gltf) {
             const scene = new THREE.Scene();
             const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -664,9 +718,9 @@ $(function () {
             const objectCenter = new THREE.Vector3();
             boundingBox.getCenter(objectCenter);
 
-            camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 1500);
+            camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
             gltf.scene.position.copy(objectCenter.negate());
-            
+            console.log("objectCenter = ",boundingBox);
 
             const controls = new OrbitControls(camera, renderer.domElement);
             controls.enabled = false;
@@ -704,7 +758,7 @@ $(function () {
                 trigger: ".globe",
                 start: "top 10%",
                 end: "+=300%",
-                scrub: 2,
+                scrub: 1,
                 pin: true,
                 // markers: true
             }
@@ -750,8 +804,8 @@ $(function () {
 
     // globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
     // globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 4, opacity:1 });
-    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 4 , opacity:1 }, "-=4");
+    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 2, opacity:1 });
+    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 2 , opacity:1 }, "-=2");
 
     // globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
     // globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
@@ -1857,7 +1911,7 @@ $(function () {
                 trigger: ".globe",
                 start: "top 10%",
                 end: "+=300%",
-                scrub: 2,
+                scrub: 1,
                 pin: true,
                 // markers: true
             }
