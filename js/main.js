@@ -750,8 +750,8 @@ $(function () {
 
     // globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
     // globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
-    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 3, opacity:1 });
-    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 3 , opacity:1 }, "-=1");
+    globe.fromTo(".team-picture-5", { bottom:"0" }, { top:"50%", duration: 4, opacity:1 });
+    globe.fromTo(".team-picture-6", { bottom:"0" }, { top:"50%", duration: 4 , opacity:1 }, "-=4");
 
     // globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
     // globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
