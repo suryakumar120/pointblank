@@ -5098,6 +5098,7 @@ html.is-animating .mil-menu-frame {
   flex-grow: 1;
   min-height: 5rem;
   padding: 20px;
+  line-height: 1em;
 }
 @media  screen and (min-width:1800px) {
     .intro_service_title{
