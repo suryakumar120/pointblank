@@ -34,6 +34,40 @@ $(function () {
 
     ***************************/
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // if (typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
+    //     // Register the plugin with GSAP
+    //     gsap.registerPlugin(ScrollSmoother);
+
+    //     // Initialize ScrollSmoother
+    //     ScrollSmoother.create({
+    //         wrapper: "#smooth-wrapper",
+    //         content: "#smooth-content",
+    //         smooth: 2,
+    //         speed: 2,             // how smooth the scrolling is (default is 1)
+    //         effects: true,           // looks for data-speed and data-lag attributes on elements
+    //         smoothTouch: 0.1,        // how smooth scrolling is on touch devices (default is 0.1)
+    //     });
+
+    //     // Log to confirm initialization
+    //     console.log("ScrollSmoother has been initialized");
+    // } else {
+    //     console.error("GSAP or ScrollSmoother is not loaded");
+    // }
+
+
+    /***************
+     
+    Scroll Smoother
+
+     ***************/
+
+    ScrollSmoother.create({
+        smooth: 2,
+        speed: 2,
+        effects: true,
+        smoothTouch: 0.1,
+    })
     /***************************
 
     color variables
@@ -223,9 +257,9 @@ $(function () {
     
     // text_rotate_1.play();
 
-    // $(document).ready(function () {
-    //     $(".mil-preloader").hide();
-    // });
+    $(document).ready(function () {
+        $(".mil-preloader").hide();
+    });
 
 
     var timeline = gsap.timeline();
