@@ -95,7 +95,41 @@ $(function () {
     //     document.head.appendChild(script);
     // });
 
+    /*************
+     
+    Concept Intro
 
+
+     ***************/
+    // $(document).ready(function(){
+    //     // if(!sessionStorage.getItem('newUser')){
+    //     //     $('#smooth-content').hide();
+    //     //     $('#mil-frame').hide();
+    //     //     $('#mil-frame-duplicate').hide();
+    //     //     $('#concept_intro_content').show();
+    //     //     $('#cta-btn').hide();
+    //     //     sessionStorage.setItem('newUser',false);
+    //     // }
+    //     // else{
+    //     //     $('#concept_intro_content').hide();
+    //     //     $('#smooth-content').show();
+
+    //     // }
+    //     $('#smooth-content').hide();
+    //         $('#mil-frame').hide();
+    //         $('#mil-frame-duplicate').hide();
+    //         $('#concept_intro_content').show();
+    //         $('#cta-btn').hide();
+        
+    // })
+    // ScrollSmoother.create({
+    //     wrapper:'concept_intro_wrapper',
+    //     content:'concept_intro_content',
+    //     smooth: 2,
+    //     speed: 2,
+    //     effects: true,
+    //     smoothTouch: 0.1,
+    // })
 
     /****************
      
@@ -108,7 +142,7 @@ $(function () {
 
     // gsap.set(".intro_main",{opacity:'0'});
 
-
+    // Need to uncomment
     $(document).ready(function () {
         if (!sessionStorage.getItem('newUser')) {
             $('#intro_page').show();
@@ -131,6 +165,48 @@ $(function () {
         $('#intro_page').hide();
         console.log("came to click")
     })
+    $("#intro_meeting_btn").on("click",function(){
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect2").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect3").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect4").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect5").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+    $("#intro_service_redirect6").on("click",function(){
+        // event.preventDefault();
+        sessionStorage.setItem('newUser', 'false');
+        $('#intro_page').hide();
+        console.log("came to click")
+    })
+
 
 
 
@@ -331,9 +407,9 @@ $(function () {
         },
     }, "-=1");
     // timeline.fromTo(".intro_main",2, {left:'100%',opacity:'0'}, {left:'0',ease: "elastic.out(0.1, 5)",opacity:'1'},"+=.2");
-    timeline.fromTo(".intro_main",2, {left:'100%',opacity:'0'}, {left:'0',ease: "expo.out",opacity:'1'},"+=.2");
-    timeline.fromTo(".intro_main_sub",2, {right:'-100%',opacity:'0'}, {right:'0',ease: "expo.out",opacity:'1'},"-=2");
-    timeline.fromTo(".intro_service_title-1",{rotationX:180,transformPerspective: 1000},{rotationX: 0 ,transformPerspective: 1000 });
+    // timeline.fromTo(".intro_main",2, {left:'100%',opacity:'0'}, {left:'0',ease: "expo.out",opacity:'1'},"+=.2");
+    // timeline.fromTo(".intro_main_sub",2, {right:'-100%',opacity:'0'}, {right:'0',ease: "expo.out",opacity:'1'},"-=2");
+    // timeline.fromTo(".intro_service_title-1",{rotationX:180,transformPerspective: 1000},{rotationX: 0 ,transformPerspective: 1000 });
 
     /***************************
 
@@ -1538,7 +1614,13 @@ $(function () {
             $('#intro_page').hide();
             console.log("came to click")
         })
-        $("#intro_close").on("click",function(){
+        $("#intro_close").on("click",function(event){
+            event.preventDefault();
+            $('#intro_page').hide();
+            console.log("came to click")
+        })
+        $("#intro_meeting_btn").on("click",function(event){
+            event.preventDefault();
             $('#intro_page').hide();
             console.log("came to click")
         })
