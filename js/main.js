@@ -62,12 +62,12 @@ $(function () {
 
      ***************/
 
-    ScrollSmoother.create({
-        smooth: 2,
-        speed: 2,
-        effects: true,
-        smoothTouch: 0.1,
-    })
+    // ScrollSmoother.create({
+    //     smooth: 2,
+    //     speed: 2,
+    //     effects: true,
+    //     smoothTouch: 0.1,
+    // })
     /***************************
 
     color variables
@@ -335,9 +335,9 @@ $(function () {
     
     // text_rotate_1.play();
 
-    // $(document).ready(function () {
-    //     $(".mil-preloader").hide();
-    // });
+    $(document).ready(function () {
+        $(".mil-preloader").hide();
+    });
 
 
     var timeline = gsap.timeline();
