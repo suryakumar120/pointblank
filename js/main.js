@@ -554,49 +554,49 @@ $(function () {
 
     *****************/
 
-    const cta = document.querySelector(".cta-btn");
-    if (cta) {
-        gsap.set(cta, {
-            x: 30,
-            opacity: 0,
-        });
+    // const cta = document.querySelector(".cta-btn");
+    // if (cta) {
+    //     gsap.set(cta, {
+    //         x: 30,
+    //         opacity: 0,
+    //     });
 
-        gsap.to(cta, {
-            x: 0,
-            opacity: 1,
-            ease: 'sine',
-            scrollTrigger: {
-                trigger: "body",
-                start: "top -40%",
-                end: "top -40%",
-                toggleActions: "play none reverse none"
-            }
-        })
+    //     gsap.to(cta, {
+    //         x: 0,
+    //         opacity: 1,
+    //         ease: 'sine',
+    //         scrollTrigger: {
+    //             trigger: "body",
+    //             start: "top -40%",
+    //             end: "top -40%",
+    //             toggleActions: "play none reverse none"
+    //         }
+    //     })
 
-        const cta_icon = document.querySelector(".cta-btn .cta-icon")
-        let animation = gsap.to(cta_icon, {
-            paused: true,
-            opacity: 0,
-        })
+    //     const cta_icon = document.querySelector(".cta-btn .cta-icon")
+    //     let animation = gsap.to(cta_icon, {
+    //         paused: true,
+    //         opacity: 0,
+    //     })
 
-        let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
-        gsap.set(cta_btn_text, {
-            x: 0,
-            opacity: 0,
-        });
-        let cta_text_animation = gsap.to(cta_btn_text, {
-            paused: true,
-            x: 30,
-            opacity: 1,
-        })
-        cta_icon.addEventListener("mouseenter", () => animation.play());
-        cta_btn_text.addEventListener("mouseleave", () => animation.reverse());
-        cta_icon.addEventListener("mouseenter", () => cta_text_animation.play());
-        cta_btn_text.addEventListener("mouseleave", () => cta_text_animation.reverse());
-        cta.addEventListener("mouseleave", () => cta_text_animation.reverse());
-        cta.addEventListener("mouseleave", () => animation.reverse());
+    //     let cta_btn_text = document.querySelector(".cta-btn .cta-btn-text")
+    //     gsap.set(cta_btn_text, {
+    //         x: 0,
+    //         opacity: 0,
+    //     });
+    //     let cta_text_animation = gsap.to(cta_btn_text, {
+    //         paused: true,
+    //         x: 30,
+    //         opacity: 1,
+    //     })
+    //     cta_icon.addEventListener("mouseenter", () => animation.play());
+    //     cta_btn_text.addEventListener("mouseleave", () => animation.reverse());
+    //     cta_icon.addEventListener("mouseenter", () => cta_text_animation.play());
+    //     cta_btn_text.addEventListener("mouseleave", () => cta_text_animation.reverse());
+    //     cta.addEventListener("mouseleave", () => cta_text_animation.reverse());
+    //     cta.addEventListener("mouseleave", () => animation.reverse());
 
-    }
+    // }
 
     /*********************
     
@@ -1624,6 +1624,21 @@ $(function () {
             $('#intro_page').hide();
             console.log("came to click")
         })
+        $(document).ready(function() {
+            // Check if the current page is contact.html
+            if (window.location.pathname.endsWith('contact.html')) {
+                $('#cta-btn').hide(); // Hide the CTA button
+            }
+            else{
+                $('#cta-btn').show();
+            }
+            // Additional code for "lets talk" button
+            // $("#lets-talk").on("click", function(event) {
+            //     event.preventDefault();
+            //     console.log("clicked lets talk");
+            //     $('#cta-btn').hide();
+            // });
+        });
         /***************************
 
         accordion

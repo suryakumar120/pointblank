@@ -18,7 +18,7 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>pointblank</title>
+    <title>Pointblank</title>
 
 </head>
 
@@ -44,14 +44,15 @@
         <div class="mil-preloader">
             <div class="mil-preloader-animation">
                 <div class="mil-pos-abs mil-animation-1">
-                    <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
-                    <p class="mil-h3 mil-muted">Creative</p>
-                    <p class="mil-h3 mil-muted mil-thin">Excellence</p>
+                    <p class="mil-h3 mil-muted mil-thin font-wt-300">Creative |</p>
+                    <p class="mil-h3 mil-muted">Medical </p>
+                    <p class="mil-h3 mil-muted mil-thin font-wt-300">| Consulting</p>
                 </div>
                 <div class="mil-pos-abs mil-animation-2">
                     <div class="mil-reveal-frame">
                         <p class="mil-reveal-box"></p>
-                        <p class="mil-h3 mil-muted mil-thin">ashley.com</p>
+                        <p class="mil-h3 mil-muted mil-thin"><img class="max-w-220px"
+                                src="/img/icons/pointblank_logo_white.png" /></p>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,10 @@
         <div class="mil-menu-frame">
             <!-- frame clone -->
             <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">A.</a>
+                <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
+                <!-- <span class="logo-pointblank"> <img src="/img/icons/pointblank_logo_white.png"/></span>-->
+                <a href="index.html"><span class="logo-pointblank-menu-frame "> <img
+                            src="/img/icons/main_logo_white.png" /></span></a>
                 <div class="mil-menu-btn">
                     <span></span>
                 </div>
@@ -81,43 +85,43 @@
 
                             <nav class="mil-main-menu" id="swupMenu">
                                 <ul>
-                                    <li class="mil-has-children">
+                                    <li class="mil-has-children mil-active">
                                         <a href="#.">Homepage</a>
-                                        <ul>
+                                        <!-- <ul>
                                             <li><a href="index.html">Landing page</a></li>
                                             <li><a href="home-2.html">Personal</a></li>
                                             <li><a href="portfolio-3.html">Portfolio slider</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li class="mil-has-children">
-                                        <a href="#.">Portfolio</a>
-                                        <ul>
+                                        <a href="/services.html">Services</a>
+                                        <!-- <ul>
                                             <li><a href="portfolio-1.html">Grid type 1</a></li>
                                             <li><a href="portfolio-2.html">Grid type 2</a></li>
                                             <li><a href="portfolio-3.html">Slider</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
-                                    <li class="mil-has-children mil-active">
-                                        <a href="#.">Services</a>
-                                        <ul>
+                                    <li class="mil-has-children">
+                                        <a href="/portfolio-1.html">Our Work</a>
+                                        <!-- <ul>
                                             <li><a href="services.html">Services List</a></li>
                                             <li><a href="service.html">Single service</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li class="mil-has-children">
-                                        <a href="#.">Newsletter</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog List</a></li>
+                                        <a href="/contact.html">Contact</a>
+                                        <!-- <ul>
+                                            <li><a href="blog.html"></a></li>
                                             <li><a href="publication.html">Publication</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li class="mil-has-children">
-                                        <a href="#.">Other pages</a>
-                                        <ul>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
+                                        <a href="blog.html">Blog</a>
+                                            <!-- <ul>
+                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="404.html">404</a></li>
+                                            </ul> -->
                                     </li>
                                 </ul>
                             </nav>
@@ -175,7 +179,8 @@
                                             <h6 class="mil-muted mil-mb-30">Canada</h6>
 
                                             <p class="mil-light-soft mil-up">71 South Los Carneros Road, California
-                                                <span class="mil-no-wrap">+51 174 705 812</span></p>
+                                                <span class="mil-no-wrap">+51 174 705 812</span>
+                                            </p>
 
                                         </div>
                                         <div class="col-lg-4 mil-mb-60">
@@ -202,7 +207,7 @@
         <!-- curtain end -->
 
         <!-- frame -->
-        <div class="mil-frame">
+        <div class="mil-frame" id="mil-frame">
             <div class="mil-frame-top">
                 <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
                 <a href="index.html" id="logo-pointblank"><span class="logo-pointblank logo-pointblank-lg-white"
@@ -231,7 +236,7 @@
                 </div> -->
             </div>
         </div>
-        <div class="mil-frame-duplicate">
+        <div class="mil-frame-duplicate" id="mil-frame-duplicate">
             <div class="mil-frame-top">
                 <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
                 <!-- <a href="index.html" id="logo-pointblank"><span class="logo-pointblank main-title" id="logo-pointblank">
@@ -249,13 +254,14 @@
                 </div>
             </div>
         </div>
-        <div class="cta-btn-gen">
-            <div class="mil-back-to-top cta-btn-text-gen">
-                <a href="#" class="mil-button mil-arrow-place mil-btn-space">
+
+        <div class="cta-btn" id="cta-btn">
+            <div class="mil-back-to-top cta-btn-text">
+                <a href="contact.html" class="mil-button mil-arrow-place mil-btn-space teal-green-btn" id="lets-talk">
                     <span>Let's talk</span>
                 </a>
             </div>
-            <span class="cta-icon-gen"><img src="img/icons/cta-icon.png" alt="contact us" /></span>
+            <span class="cta-icon"><img src="img/icons/lets_talk_icon.png" alt="contact us" /></span>
         </div>
         <!-- frame end -->
 
@@ -641,7 +647,7 @@
                         <div class="row">
                             <div class="col-lg-4">
 
-                                <a href="service.html" class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                <a href="service.html" class="mil-service-card-lg mil-other-card teal-green mil-more mil-mb-30">
                                     <h4 class="mil-up mil-mb-30">Branding and <br>Identity Design</h4>
                                     <p class="mil-descr mil-up mil-mb-30">Our creative agency is a team of professionals
                                         focused on helping your brand grow.</p>
@@ -659,7 +665,7 @@
                             </div>
                             <div class="col-lg-4">
 
-                                <a href="service.html" class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                <a href="service.html" class="mil-service-card-lg mil-other-card teal-green mil-more mil-mb-30">
                                     <h4 class="mil-up mil-mb-30">Advertising <br>and Marketing</h4>
                                     <p class="mil-descr mil-up mil-mb-30">Our creative agency is a team of professionals
                                         focused on helping your brand grow.</p>
@@ -677,7 +683,7 @@
                             </div>
                             <div class="col-lg-4">
 
-                                <a href="service.html" class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                <a href="service.html" class="mil-service-card-lg mil-other-card teal-green mil-more mil-mb-30">
                                     <h4 class="mil-up mil-mb-30">Creative <br>Consulting</h4>
                                     <p class="mil-descr mil-up mil-mb-30">Our creative agency is a team of professionals
                                         focused on helping your brand grow.</p>
@@ -972,6 +978,7 @@
       </script>
     <!-- ashley js -->
     <script src="js/main.js" type="module"></script>
+    <script src="js/plugins/gsap_scroll_smoother.js"></script>
     <!-- <script src="js/custom-animations.js" type="module"></script> -->
     <!-- <script src="js/main.js"></script> -->
 
