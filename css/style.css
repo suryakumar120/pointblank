@@ -5509,7 +5509,7 @@ html.is-animating .mil-menu-frame {
 }
 @media (min-width:2000px){
   .page-content{
-    width: 70vw;
+    width: 80vw;
     /* grid-gap: 5rem; */
   }
 }
