@@ -411,6 +411,19 @@ $(function () {
     // timeline.fromTo(".intro_main_sub",2, {right:'-100%',opacity:'0'}, {right:'0',ease: "expo.out",opacity:'1'},"-=2");
     // timeline.fromTo(".intro_service_title-1",{rotationX:180,transformPerspective: 1000},{rotationX: 0 ,transformPerspective: 1000 });
 
+    /*****************
+
+    Service Medico 
+     
+    ************/
+    $(document).ready(function(){
+        $('.show-more').click(function(){
+            $('.show-more').hide();
+            $('.hidden-div').show();
+
+        })
+    })
+    
     /***************************
 
     anchor scroll
@@ -1118,6 +1131,27 @@ $(function () {
     // )
     // founders.fromTo(".title-first", { xPercent: "-100" }, { xPercent: "0", duration: 1 }, "-=1");
 
+
+    /************
+    
+    Casestudy Gallery
+
+    ************/
+
+    $(document).ready(function(){
+        $(".img-responsive").click(function(){
+        var t = $(this).attr("src");
+        $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+        $("#myModal").modal();
+      });
+      
+    //   $("video").click(function(){
+    //     var v = $("video > source");
+    //     var t = v.attr("src");
+    //     $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
+    //     $("#myModal").modal();  
+    //   });
+      });//EOF Document.ready
     /***************************
  
     cursor
@@ -1699,7 +1733,38 @@ $(function () {
                 }
             };
         }
+         /*****************
 
+    Service Medico 
+     
+    ************/
+    $(document).ready(function(){
+        $('.show-more').click(function(){
+            $('.show-more').hide();
+            $('.hidden-div').show();
+
+        })
+    })
+         /************
+    
+    Casestudy Gallery
+
+    ************/
+
+    $(document).ready(function(){
+        $(".img-responsive").click(function(){
+        var t = $(this).attr("src");
+        $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+        $("#myModal").modal();
+      });
+      
+    //   $("video").click(function(){
+    //     var v = $("video > source");
+    //     var t = v.attr("src");
+    //     $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
+    //     $("#myModal").modal();  
+    //   });
+      });//EOF Document.ready
         /***************************
 
         cursor
