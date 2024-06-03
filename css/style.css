@@ -925,6 +925,9 @@ spaces
 .p-10{
   padding: 10px;
 }
+.p-2r{
+  padding: 2rem;
+}
 .mil-mr-30 {
   margin-right: 30px;
 }
@@ -2451,6 +2454,21 @@ partners
 services
 
 ------------------------------------------- */
+/* Digital solutions  */
+.digital-feature{
+  background-color: rgb(243, 243, 241)  ;
+}
+.digital-feature-boundary{
+  padding: 2rem  ;
+}
+@media screen and (min-width:1800px) {
+  .digital-feature-boundary{
+    padding-left: 1rem  ;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
 .mil-complex-text {
   display: -webkit-box;
   display: -ms-flexbox;
