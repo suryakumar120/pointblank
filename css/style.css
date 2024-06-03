@@ -6083,8 +6083,10 @@ html.is-animating .mil-menu-frame {
 #gallery img,#gallery video {
   width:100%;
   height:auto;
-  margin: 4% auto;
-  box-shadow:-3px 5px 15px #000;
+  margin: 4% 4%;
+  /* padding: 2%; */
+  /* box-shadow:-3px 5px 15px #000; */
+  border: 3px solid #53baa1;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
