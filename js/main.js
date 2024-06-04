@@ -335,9 +335,9 @@ $(function () {
     
     // text_rotate_1.play();
 
-    $(document).ready(function () {
-        $(".mil-preloader").hide();
-    });
+    // $(document).ready(function () {
+    //     $(".mil-preloader").hide();
+    // });
 
 
     var timeline = gsap.timeline();
