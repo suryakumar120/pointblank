@@ -323,7 +323,33 @@ h6,
     font-size: 21px;
   }
 }
-
+h1{
+  font-size: 95px;
+}
+@media screen and (max-width: 1400px) {
+  h1,
+.mil-h1 {
+    font-size: 74px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  h1,
+.mil-h1 {
+    font-size: 72px;
+  }
+}
+@media screen and (max-width: 992px) {
+  h1,
+.mil-h1 {
+    font-size: 58px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+.mil-h1 {
+    font-size: 34px;
+  }
+}
 .mil-no-wrap {
   white-space: nowrap;
 }
@@ -4686,7 +4712,7 @@ html.is-animating .mil-menu-frame {
   position: fixed;
   right: 5vw;
   bottom: 5vh;
-  z-index: 2;
+  z-index: 4;
   
   display: flex;
   flex-direction:row;
@@ -5611,26 +5637,26 @@ html.is-animating .mil-menu-frame {
 }
 
 .border-card .card-1:before {
-  background-image: url('https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/1.webp');
 }
 
 .border-card .card-2:before {
-  background-image: url('https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/2.webp');
 }
 
 .border-card .card-3:before {
-  background-image: url('https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/3.webp');
 }
 
 .border-card .card-4:before {
-  background-image: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/4.webp');
 }
 .border-card .card-5:before {
-  background-image: url('https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/5.webp');
 }
 
 .border-card .card-6:before {
-  background-image: url('https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ');
+  background-image: url('../img/intro/6.webp');
 }
 
 .content {
@@ -5768,7 +5794,7 @@ html.is-animating .mil-menu-frame {
 .process-card {
   height: 10rem;
   width: 15rem;
-  background-color: rgba(0, 0, 0);
+  background-color: #53baa1;
   color: white;
   display: flex;
   align-items: center;
@@ -5776,9 +5802,10 @@ html.is-animating .mil-menu-frame {
   flex-direction: column;
   gap:1.5rem;
   border-radius: 2%;
+  /* border: 2px solid #53baa1; */
 }
 .process-card img{
-  height: 50px;
+  height: 100%;
 }
 .process-card svg{
   height: 50px;
@@ -5999,6 +6026,9 @@ html.is-animating .mil-menu-frame {
 }
 .bg-skyblue{
   background-color: skyblue;
+}
+.bg-black{
+  background-color: black;
 }
 
 
@@ -6224,4 +6254,7 @@ html.is-animating .mil-menu-frame {
 
 .col-white{
   color: white;
+}
+.col-black{
+  color: black;
 }
