@@ -343,17 +343,26 @@ h1{
 .mil-h1 {
     font-size: 72px;
   }
+  .h0{
+    font-size: 72px
+  }
 }
 @media screen and (max-width: 992px) {
   h1,
 .mil-h1 {
     font-size: 58px;
   }
+  .h0{
+    font-size: 58px
+  }
 }
 @media screen and (max-width: 768px) {
   h1,
 .mil-h1 {
     font-size: 34px;
+  }
+  .h0{
+    font-size: 50px
   }
 }
 .mil-no-wrap {
@@ -2736,6 +2745,20 @@ services
   padding-top: 60px;
   padding-bottom: 20px;
 }
+@media screen and (max-width:768px) {
+  .numbers-slider{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right:0px;
+  }
+  .numbers-sm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+}
 .numbers-slide svg{
   max-width: 30px;
   max-height: 30px;
@@ -3688,6 +3711,10 @@ portfolio
   opacity: 0.2;
   cursor: not-allowed;
 }
+ .mil-disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 @media screen and (max-width: 768px) {
   .mil-works-nav {
     padding-top: 0;
@@ -3705,7 +3732,9 @@ portfolio
     display: flex;
   }
 }
-
+.free-growth-plan-submit{
+  border: unset;
+}
 /***************************
 
 map
@@ -5893,8 +5922,34 @@ html.is-animating .mil-menu-frame {
     height: 70%;
 }
 
-
-
+/* Free Growth Plan  */
+input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+  margin: unset;
+  padding: unset;
+}
+.active-form {
+  /* border: 1px solid #007bff; */
+  /* background-color: #f0f8ff; */
+  /* box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); */
+  font-weight: 600!important;
+  font-size: 15px !important;;
+}
+.second-form-main{
+  transition: all 1s ease;
+  transform: translateX(50%);
+}
+.second-form-main.active-form{
+    transform: translateX(0);
+}
+.second-form-sub{
+  transform: translate(50%);
+  transition: all 1s ease;
+}
+.second-form-sub.active-form{
+  transform: translateX(0);
+}
 .flex{
   display: flex;
 }
@@ -5903,6 +5958,9 @@ html.is-animating .mil-menu-frame {
 }
 .flex-col{
   flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
 }
 /* removed important here */
 .items-center{
@@ -5988,6 +6046,10 @@ html.is-animating .mil-menu-frame {
 .font-wt-700{
   font-weight: 700;
 }
+.py-2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .mb-2{
   margin-bottom: 10px;
 }
@@ -5999,6 +6061,9 @@ html.is-animating .mil-menu-frame {
 }
 .mt-60{
   margin-top: 60px;
+}
+.gap-1{
+  gap: 0.5rem
 }
 .gap-2{
   gap:1rem;
@@ -6030,7 +6095,10 @@ html.is-animating .mil-menu-frame {
     margin-left: 16%;
   }
 }
-
+.h-90screen{
+  height: 90dvh;
+  height: 90vh;
+}
 .bg-blue{
   background-color: blue;
 }
