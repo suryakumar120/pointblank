@@ -20,6 +20,11 @@
     <!-- page name -->
     <title>Pointblank</title>
 
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel" src="js/reactscripts/free-growth-plan.js"></script>
+
 </head>
 
 <body>
@@ -71,7 +76,7 @@
             <div class="mil-frame-top">
                 <!-- <a href="index.html" class="mil-logo mil-logo-pointblank">Pointblank</a> -->
                 <!-- <span class="logo-pointblank"> <img src="/img/icons/pointblank_logo_white.png"/></span>-->
-                <a href="index.html"><span class="logo-pointblank-menu-frame "> <img
+                <a href="index.html"><span class="logo-pointblank-menu-frame " data-no-swup> <img
                             src="/img/icons/main_logo_white.png" /></span></a>
                 <div class="mil-menu-btn">
                     <span></span>
@@ -255,14 +260,14 @@
             </div>
         </div>
 
-        <div class="cta-btn" id="cta-btn">
+        <!-- <div class="cta-btn" id="cta-btn">
             <div class="mil-back-to-top cta-btn-text">
                 <a href="contact.html" class="mil-button mil-arrow-place mil-btn-space teal-green-btn" id="lets-talk">
                     <span>Let's talk</span>
                 </a>
             </div>
             <span class="cta-icon"><img src="img/icons/lets_talk_icon.png" alt="contact us" /></span>
-        </div>
+        </div> -->
         <!-- frame end -->
 
         <!-- content -->
@@ -282,7 +287,7 @@
                 <!-- banner end -->
 
                 <!-- contact form -->
-                <section id="contact">
+                <!-- <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120"><span class="mil-thin">Get Your</span> Free Growth Plan</h3>
                         <form class="row align-items-center">
@@ -309,6 +314,12 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </section> -->
+                <section id="contact-react">
+                    <div class="container mil-p-120-90">
+                        
+                        <div id="reactFormContainer"></div>
                     </div>
                 </section>
                 <!-- contact form end -->
@@ -564,8 +575,20 @@
     <script src="js/plugins/gsap_scroll_smoother.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <!-- <script src="js/custom-animations.js" type="module"></script> -->
-    <!-- <script src="js/main.js"></script> -->
+    <script type="text/babel" src="js/reactscripts/free-growth-plan.js"></script>
+
+    <!-- Disable swup  -->
+     <script>
+           function disableSwup(){
+             const links = document.querySelectorAll('a');
+             links.forEach(link =>{
+                link.setAttribute('data-no-swup','');
+             })
+           }
+           disableSwup();
+     </script>
 
 </body>
 
