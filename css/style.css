@@ -5936,7 +5936,7 @@ input[type='checkbox']{
   font-weight: 600!important;
   font-size: 15px !important;;
 }
-.second-form-main{
+/* .second-form-main{
   transition: all 1s ease;
   transform: translateX(50%);
 }
@@ -5949,7 +5949,7 @@ input[type='checkbox']{
 }
 .second-form-sub.active-form{
   transform: translateX(0);
-}
+} */
 .flex{
   display: flex;
 }
@@ -6145,6 +6145,9 @@ input[type='checkbox']{
 }
 .boundary-2{
   border: 2px solid black;
+}
+.boundary-none{
+  border: unset;
 }
 
 .medico-sample-btn{
@@ -6362,4 +6365,8 @@ input[type='checkbox']{
   .display-md{
     display: block;
   }
+}
+
+.pointer-none{
+  pointer-events: none;
 }
