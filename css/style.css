@@ -2504,6 +2504,10 @@ partners
   width: 100%;
 }
 
+.swiper-container{
+  width: 100%;
+  overflow: hidden;
+}
 /* -------------------------------------------
 
 services
@@ -4967,12 +4971,12 @@ html.is-animating .mil-menu-frame {
 .envelope{
   z-index: 3;
   display: flex;
-  width: 50%;
+  width: 70%;
   background-color: #252324;
   border: 2px solid black;
   color: white;
   opacity: 1;
-  height: 300px;
+  height: 400px;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -5016,11 +5020,11 @@ html.is-animating .mil-menu-frame {
   .envelope{
     z-index: 3;
     display: flex;
-    width: 70%;
+    width: 80%;
     background-color: #252324;
     color: white;
     opacity: 1;
-    height: 400px;
+    height: 600px;
     align-items: center;
     justify-content: center;
     position: absolute;

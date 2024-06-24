@@ -1513,7 +1513,7 @@ $(function () {
         freeMode: true,
         breakpoints: {
             992: {
-                slidesPerView: 4,
+                slidesPerView: 6,
             },
         },
     });
@@ -1529,7 +1529,7 @@ $(function () {
         freeMode: true,
         breakpoints: {
             992: {
-                slidesPerView: 4,
+                slidesPerView: 6,
             },
         },
     });
