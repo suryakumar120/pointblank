@@ -4971,12 +4971,13 @@ html.is-animating .mil-menu-frame {
 .envelope{
   z-index: 3;
   display: flex;
-  width: 70%;
+  width: 60%;
   background-color: #252324;
   border: 2px solid black;
   color: white;
   opacity: 1;
-  height: 400px;
+  height: 450px;
+  /* min-height: fit-content; */
   align-items: center;
   justify-content: center;
   position: absolute;
