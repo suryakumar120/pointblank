@@ -143,69 +143,69 @@ $(function () {
     // gsap.set(".intro_main",{opacity:'0'});
 
     // Need to uncomment
-    $(document).ready(function () {
-        if (!sessionStorage.getItem('newUser')) {
-            $('#intro_page').show();
-            $('#intro_page').addClass("display");
-            sessionStorage.setItem('newUser', 'false');
-            // intro_timeline.play();
-            console.log("new user");
-        }
-        else{
-           console.log("old user")
-        }
-    });
-    $("#intro_logo").on("click",function(){
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_close").on("click",function(){
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_meeting_btn").on("click",function(){
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect2").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect3").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect4").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect5").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
-    $("#intro_service_redirect6").on("click",function(){
-        // event.preventDefault();
-        sessionStorage.setItem('newUser', 'false');
-        $('#intro_page').hide();
-        console.log("came to click")
-    })
+    // $(document).ready(function () {
+    //     if (!sessionStorage.getItem('newUser')) {
+    //         $('#intro_page').show();
+    //         $('#intro_page').addClass("display");
+    //         sessionStorage.setItem('newUser', 'false');
+    //         // intro_timeline.play();
+    //         console.log("new user");
+    //     }
+    //     else{
+    //        console.log("old user")
+    //     }
+    // });
+    // $("#intro_logo").on("click",function(){
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_close").on("click",function(){
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_meeting_btn").on("click",function(){
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect2").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect3").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect4").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect5").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
+    // $("#intro_service_redirect6").on("click",function(){
+    //     // event.preventDefault();
+    //     sessionStorage.setItem('newUser', 'false');
+    //     $('#intro_page').hide();
+    //     console.log("came to click")
+    // })
 
 
 
@@ -1662,32 +1662,32 @@ $(function () {
          Intro Page
          */
 
-         $(document).ready(function () {
-            if (!sessionStorage.getItem('newUser')) {
-                $('#intro_page').show();
-                $('#intro_page').addClass("display");
-                sessionStorage.setItem('newUser', 'false');
-                // intro_timeline.play();
-                console.log("new user");
-            }
-            else{
-               console.log("old user")
-            }
-        });
-        $("#intro_logo").on("click",function(){
-            $('#intro_page').hide();
-            console.log("came to click")
-        })
-        $("#intro_close").on("click",function(event){
-            event.preventDefault();
-            $('#intro_page').hide();
-            console.log("came to click")
-        })
-        $("#intro_meeting_btn").on("click",function(event){
-            event.preventDefault();
-            $('#intro_page').hide();
-            console.log("came to click")
-        })
+        //  $(document).ready(function () {
+        //     if (!sessionStorage.getItem('newUser')) {
+        //         $('#intro_page').show();    
+        //         $('#intro_page').addClass("display");
+        //         sessionStorage.setItem('newUser', 'false');
+        //         // intro_timeline.play();
+        //         console.log("new user");
+        //     }
+        //     else{
+        //        console.log("old user")
+        //     }
+        // });
+        // $("#intro_logo").on("click",function(){
+        //     $('#intro_page').hide();
+        //     console.log("came to click")
+        // })
+        // $("#intro_close").on("click",function(event){
+        //     event.preventDefault();
+        //     $('#intro_page').hide();
+        //     console.log("came to click")
+        // })
+        // $("#intro_meeting_btn").on("click",function(event){
+        //     event.preventDefault();
+        //     $('#intro_page').hide();
+        //     console.log("came to click")
+        // })
         $(document).ready(function() {
             // Check if the current page is contact.html
             if (window.location.pathname.endsWith('contact.html')) {

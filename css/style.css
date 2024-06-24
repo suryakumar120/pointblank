@@ -1156,6 +1156,20 @@ spaces
     margin-right: 50px;
     margin-bottom: 30px;
   }
+  
+}
+@media screen and (max-width:650px) {
+  .mil-no-space{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
+    height: 45px;
+  }
+  .mil-no-space svg{
+    /* width: 35px;
+    height: 35px; */
+    display: none;
+}
 }
 
 /* -------------------------------------------
@@ -4772,6 +4786,12 @@ html.is-animating .mil-menu-frame {
   justify-items: center;
   
 }
+@media screen and (max-width:650px) {
+    .cta-btn{
+      right: 1vw;
+      bottom: 1vh;
+    }
+}
 .cta-btn-undelayed{
   position: fixed;
   right: 5vw;
@@ -5050,7 +5070,7 @@ html.is-animating .mil-menu-frame {
   }
 }
 .intro_page{
-  /* display: none; */
+  display: none;  
   left: 0;
   top: 0;
   /* bottom: 0; */
@@ -6008,6 +6028,9 @@ input[type='checkbox']{
 .justify-center{
   justify-content: center ;
 }
+.text-center{
+  text-align: center;
+}
 .h-screen{
   height: 100vh;
   height: 100dvh;
@@ -6407,6 +6430,10 @@ input[type='checkbox']{
 .display-sm{
   display: block;
 }
+
+.display-sm-flex{
+  display: flex;
+}
 .display-md{
   display: none;
 }
@@ -6416,6 +6443,9 @@ input[type='checkbox']{
   }
   .display-md{
     display: block;
+  }
+  .display-sm-flex{
+    display: none;
   }
 }
 
