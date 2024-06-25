@@ -4921,6 +4921,7 @@ html.is-animating .mil-menu-frame {
 }
 .envelope-container{
   position: relative;
+  margin-bottom: 100px!important;
 }
 .envelope-container-title{
   display: flex;
