@@ -6443,6 +6443,14 @@ input[type='checkbox']{
 .display-md{
   display: none;
 }
+@media screen and (max-width:670px) {
+  .display-lg{
+    display: none;
+  }
+  
+}
+
+
 @media screen and (min-width:670px) {
   .display-sm{
     display: none;
