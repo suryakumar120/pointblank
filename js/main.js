@@ -823,7 +823,7 @@ $(function () {
         scrollTrigger: {
             trigger: ".process-cards-container",
             pin: true,
-            start: "top top", // Adjust start position if needed
+            start: "50% 50%", // Adjust start position if needed
             end: "+=100%",
             scrub: 1,
         }

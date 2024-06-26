@@ -5864,7 +5864,9 @@ html.is-animating .mil-menu-frame {
 
 
 /* Service-branding */
-
+.process-cards-container{
+  min-height: 640px;
+}
 .process-title {
   position: absolute;
   top: 50%;
@@ -6064,6 +6066,13 @@ input[type='checkbox']{
 .w-4screen{
   width: 400vh;
   width: 400dvh;
+}
+.min-h-50vh{
+  min-height: 50vh;
+  min-height: 50dvh;
+}
+.mb-50vh{
+  margin-bottom: 50vh;
 }
 .w-full{
   width: 100%;
