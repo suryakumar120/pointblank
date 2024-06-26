@@ -2211,6 +2211,32 @@ $(function () {
     
     
          */
+        // const p1 = gsap.timeline(
+        //     {
+        //         scrollTrigger: {
+        //             trigger: ".process-cards-container",
+        //             start: "top 10%",
+        //             end: "+=100%",
+        //             scrub: 1,
+        //             // pin:true,
+        //             // markers:true,
+        //         }
+        //     }
+        // )
+        // p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
+        // p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
+        // p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
+        // p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
+        // p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
+        // gsap.to(".process-cards-container", {
+        //     scrollTrigger: {
+        //         trigger: ".process-cards-container",
+        //         pin: true,
+        //         start: "top top", // Adjust start position if needed
+        //         end: "+=100%",
+        //         scrub: 1,
+        //     }
+        // });
         const p1 = gsap.timeline(
             {
                 scrollTrigger: {
@@ -2232,7 +2258,7 @@ $(function () {
             scrollTrigger: {
                 trigger: ".process-cards-container",
                 pin: true,
-                start: "top top", // Adjust start position if needed
+                start: "50% 50%", // Adjust start position if needed
                 end: "+=100%",
                 scrub: 1,
             }
