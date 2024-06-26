@@ -423,6 +423,16 @@ $(function () {
 
         })
     })
+
+    /****************
+    
+    Adding font-jost to the menu-frame
+
+    *****************/
+
+    $(document).ready(function(){
+        $('.mil-main-menu').addClass('font-jost')
+    })
     
     /***************************
 
@@ -1763,6 +1773,17 @@ $(function () {
                 }
             };
         }
+
+    /****************
+    
+    Adding font-jost to the menu-frame
+
+    *****************/
+
+    $(document).ready(function(){
+        $('.mil-main-menu').addClass('font-jost')
+    })
+    
          /*****************
 
     Service Medico 
