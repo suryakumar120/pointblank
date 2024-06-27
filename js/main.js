@@ -336,8 +336,8 @@ $(function () {
     // text_rotate_1.play();
 
     // $(document).ready(function () {
-    //     $(".mil-preloader").hide();
-    // });
+    // //     $(".mil-preloader").hide();
+    // // });
 
 
     var timeline = gsap.timeline();
@@ -769,6 +769,21 @@ $(function () {
 
 
 
+    /************
+    
+    Contact form_submission
+
+    ************/
+
+    $('contact_form').on('submit',function(e){
+        e.preventDefault();
+        var formData = {
+            name: $('input[name="name"]').val(),
+            email: $('input[name="email"]').val(),
+            query : $('input[name="query"]').val(),
+        }
+
+    })
 
     /***********************
      

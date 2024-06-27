@@ -6132,6 +6132,9 @@ input[type='checkbox']{
 .font-wt-300{
   font-weight: 300;
 }
+.font-bold{
+  font-weight: 500;
+}
 .font-wt-600{
   font-weight: 600;
 }
