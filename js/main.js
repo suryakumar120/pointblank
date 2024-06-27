@@ -335,9 +335,9 @@ $(function () {
     
     // text_rotate_1.play();
 
-    $(document).ready(function () {
-        $(".mil-preloader").hide();
-    });
+    // $(document).ready(function () {
+    //     $(".mil-preloader").hide();
+    // });
 
 
     var timeline = gsap.timeline();
@@ -2098,7 +2098,7 @@ $(function () {
         var swiper = new Swiper('.mil-infinite-show', {
             slidesPerView: 2,
             spaceBetween: 30,
-            speed: 5000,
+            speed: 6000,
             autoplay: true,
             autoplay: {
                 delay: 0,
@@ -2117,7 +2117,7 @@ $(function () {
             speed: 5000,
             autoplay: true,
             autoplay: {
-                delay: 2000,
+                delay: 0,
             },
             loop: true,
             freeMode: true,
