@@ -299,22 +299,23 @@
                     </div>
                 </div>
                 <!-- banner end -->
+                <div id="error-message" class="error-message display-none">There was an error. Please try again later.</div>
 
                 
 
                 <!-- contact form -->
-                <section id="contact">
+                <section id="contact" class="h-90screen">
                     <div class="container mil-p-0-120">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
                         <form class="row align-items-center" id="contact_form">
                             <div class="col-lg-6 mil-up">
-                                <input type="text" name="name" placeholder="What's your name">
+                                <input type="text" name="contact_name" placeholder="What's your name">
                             </div>
                             <div class="col-lg-6 mil-up">
-                                <input type="email" name="email" placeholder="Your Email">
+                                <input type="email" name="contact_email" placeholder="Your Email">
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea name="query" placeholder="Tell us about our project"></textarea>
+                                <textarea name="contact_query" placeholder="Tell us about our project"></textarea>
                             </div>
                             <div class="col-lg-8">
                                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
@@ -328,7 +329,28 @@
                             </div>
                         </form>
                     </div>
+                    <div id="contact_form_onsubmit" class="row justify-content-center display-none">
+        
+                        <div class="col-lg-8">
+                            <h3 class='mil-center mil-up mil-mb-60'>Thank you for reaching out to us.</h3>
+                            <p class="mil-text-xl mil-dark mil-up mil-mb-60"> We will get back to you soon. Meanwhile you can check out some of our case studies <a
+                                href='/portfolio-1.html'
+                                
+                            >
+                                <a href="portfolio-1.html">here</a>
+                            </a>
+        
+                            </p>
+        
+        
+        
+        
+        
+        
+                        </div>
+                    </div>
                 </section>
+                
                 <!-- contact form end -->
                 <!-- map -->
                 <!-- <div class="mil-map-frame mil-up">
@@ -644,6 +666,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="js/custom-animations.js" type="module"></script> -->
     <!-- <script src="js/main.js"></script> -->
+
+    <script type="module" src="js/plugins/spin.js"></script>
 
 </body>
 

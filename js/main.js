@@ -11,6 +11,7 @@ p.s. I am available for Freelance hire (UI design, web development). email: mill
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {Spinner} from '/js/plugins/spin.js'
 $(function () {
 
     "use strict";
@@ -120,7 +121,7 @@ $(function () {
     //         $('#mil-frame-duplicate').hide();
     //         $('#concept_intro_content').show();
     //         $('#cta-btn').hide();
-        
+
     // })
     // ScrollSmoother.create({
     //     wrapper:'concept_intro_wrapper',
@@ -272,22 +273,22 @@ $(function () {
         const titleRect = title.getBoundingClientRect();
         const titleTop = titleRect.top;
         const titleHeight = titleRect.height;
-        var titleMiddle = titleTop + titleHeight/2;
-        
-        var imgTop = titleMiddle - imageHeight/2 - containerTop;
-        console.log("titleTop= ",titleTop,"titleHeight= ",titleHeight," titleMiddle = ",titleMiddle, "imgTop", imgTop);
+        var titleMiddle = titleTop + titleHeight / 2;
+
+        var imgTop = titleMiddle - imageHeight / 2 - containerTop;
+        console.log("titleTop= ", titleTop, "titleHeight= ", titleHeight, " titleMiddle = ", titleMiddle, "imgTop", imgTop);
 
         // console.log(titleOffsetTop);
-        if(imgTop<0){
-            imgTop=0;
+        if (imgTop < 0) {
+            imgTop = 0;
         }
-        if(imgTop + imageHeight + containerTop > containerHeight+containerTop){
-            imgTop = containerHeight  - imageHeight;
+        if (imgTop + imageHeight + containerTop > containerHeight + containerTop) {
+            imgTop = containerHeight - imageHeight;
             console.log("bottom happened");
         }
         hoverImage.style.transform = `translateY(${imgTop}px)`;
         const finalTop = document.querySelector(".intro_img").getBoundingClientRect().top;
-        console.log("finaltop= ",finalTop);
+        console.log("finaltop= ", finalTop);
     }
 
     // Loop through each title element and attach event listeners
@@ -327,17 +328,17 @@ $(function () {
         });
     });
     const intro_service_titles = document.querySelector(".intro_service_titles");
-    if(intro_service_titles){
-        intro_service_titles.addEventListener("mouseleave",()=>{
+    if (intro_service_titles) {
+        intro_service_titles.addEventListener("mouseleave", () => {
             hoverImage.src = '';
         })
     }
-    
+
     // text_rotate_1.play();
 
-    // $(document).ready(function () {
-    // //     $(".mil-preloader").hide();
-    // // });
+    $(document).ready(function () {
+        $(".mil-preloader").hide();
+    });
 
 
     var timeline = gsap.timeline();
@@ -416,8 +417,8 @@ $(function () {
     Service Medico 
      
     ************/
-    $(document).ready(function(){
-        $('.show-more').click(function(){
+    $(document).ready(function () {
+        $('.show-more').click(function () {
             $('.show-more').hide();
             $('.hidden-div').show();
 
@@ -430,10 +431,10 @@ $(function () {
 
     *****************/
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.mil-main-menu').addClass('font-jost')
     })
-    
+
     /***************************
 
     anchor scroll
@@ -773,15 +774,65 @@ $(function () {
     
     Contact form_submission
 
-    ************/
+    ************/   
+    var opts = {
+        lines: 13, // The number of lines to draw
+        length: 38, // The length of each line
+        width: 17, // The line thickness
+        radius: 45, // The radius of the inner circle
+        scale: 1, // Scales overall size of the spinner
+        corners: 1, // Corner roundness (0..1)
+        speed: 1, // Rounds per second
+        rotate: 0, // The rotation offset
+        animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+        direction: 1, // 1: clockwise, -1: counterclockwise
+        color: '#000000', // CSS color or array of colors
+        fadeColor: 'transparent', // CSS color or array of colors
+        top: '50%', // Top position relative to parent
+        left: '50%', // Left position relative to parent
+        shadow: '0 0 1px transparent', // Box-shadow for the lines
+        zIndex: 2000000000, // The z-index (defaults to 2e9)
+        className: 'spinner', // The CSS class to assign to the spinner
+        position: 'absolute', // Element positioning
+      };
 
-    $('contact_form').on('submit',function(e){
+    $('#contact_form').on('submit', function (e) {
         e.preventDefault();
         var formData = {
-            name: $('input[name="name"]').val(),
-            email: $('input[name="email"]').val(),
-            query : $('input[name="query"]').val(),
+            name: $('input[name="contact_name"]').val(),
+            email: $('input[name="contact_email"]').val(),
+            query: $('textarea[name="contact_query"]').val(),
+            // time : current
         }
+        
+        var target = document.getElementById('contact');
+        var spinner = new Spinner(opts).spin(target);
+        $('#contact_form').addClass('display-none');
+        $.ajax({
+            url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(formData),
+            success: function (response) {
+                console.log("successfully saved the data", formData);
+                $('#contact_form_onsubmit').removeClass('display-none');
+                spinner.stop();
+            },
+            error: function (response) {
+                console.log("failed saving contact data", formData);
+                spinner.stop();
+                $('#contact_form').removeClass('display-none');
+                
+                var errorMessage = $('#error-message');
+                errorMessage.removeClass('display-none').addClass('show');
+                
+                setTimeout(function() {
+                    errorMessage.removeClass('show');
+                }, 3000);
+            }
+        });
+        
+
 
     })
 
@@ -1193,20 +1244,20 @@ $(function () {
 
     ************/
 
-    $(document).ready(function(){
-        $(".img-responsive").click(function(){
-        var t = $(this).attr("src");
-        $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-        $("#myModal").modal();
-      });
-      
-      $("video").click(function(){
-        var v = $("video > source");
-        var t = v.attr("src");
-        $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
-        $("#myModal").modal();  
-      });
-      });//EOF Document.ready
+    $(document).ready(function () {
+        $(".img-responsive").click(function () {
+            var t = $(this).attr("src");
+            $(".modal-body").html("<img src='" + t + "' class='modal-img'>");
+            $("#myModal").modal();
+        });
+
+        $("video").click(function () {
+            var v = $("video > source");
+            var t = v.attr("src");
+            $(".modal-body").html("<video class='model-vid' controls><source src='" + t + "' type='video/mp4'></source></video>");
+            $("#myModal").modal();
+        });
+    });//EOF Document.ready
     /***************************
  
     cursor
@@ -1713,12 +1764,12 @@ $(function () {
         //     $('#intro_page').hide();
         //     console.log("came to click")
         // })
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Check if the current page is contact.html
             if (window.location.pathname.endsWith('contact.html')) {
                 $('#cta-btn').hide(); // Hide the CTA button
             }
-            else{
+            else {
                 $('#cta-btn').show();
             }
             // Additional code for "lets talk" button
@@ -1728,6 +1779,71 @@ $(function () {
             //     $('#cta-btn').hide();
             // });
         });
+        /************
+    
+    Contact form_submission
+
+    ************/   
+    var opts = {
+        lines: 13, // The number of lines to draw
+        length: 38, // The length of each line
+        width: 17, // The line thickness
+        radius: 45, // The radius of the inner circle
+        scale: 1, // Scales overall size of the spinner
+        corners: 1, // Corner roundness (0..1)
+        speed: 1, // Rounds per second
+        rotate: 0, // The rotation offset
+        animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+        direction: 1, // 1: clockwise, -1: counterclockwise
+        color: '#000000', // CSS color or array of colors
+        fadeColor: 'transparent', // CSS color or array of colors
+        top: '50%', // Top position relative to parent
+        left: '50%', // Left position relative to parent
+        shadow: '0 0 1px transparent', // Box-shadow for the lines
+        zIndex: 2000000000, // The z-index (defaults to 2e9)
+        className: 'spinner', // The CSS class to assign to the spinner
+        position: 'absolute', // Element positioning
+      };
+
+    $('#contact_form').on('submit', function (e) {
+        e.preventDefault();
+        var formData = {
+            name: $('input[name="contact_name"]').val(),
+            email: $('input[name="contact_email"]').val(),
+            query: $('textarea[name="contact_query"]').val(),
+            // time : current
+        }
+        
+        var target = document.getElementById('contact');
+        var spinner = new Spinner(opts).spin(target);
+        $('#contact_form').addClass('display-none');
+        $.ajax({
+            url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(formData),
+            success: function (response) {
+                console.log("successfully saved the data", formData);
+                $('#contact_form_onsubmit').removeClass('display-none');
+                spinner.stop();
+            },
+            error: function (response) {
+                console.log("failed saving contact data", formData);
+                spinner.stop();
+                $('#contact_form').removeClass('display-none');
+                
+                var errorMessage = $('#error-message');
+                errorMessage.removeClass('display-none').addClass('show');
+                
+                setTimeout(function() {
+                    errorMessage.removeClass('show');
+                }, 3000);
+            }
+        });
+        
+
+
+    })
         /***************************
 
         accordion
@@ -1789,48 +1905,48 @@ $(function () {
             };
         }
 
-    /****************
+        /****************
+        
+        Adding font-jost to the menu-frame
     
-    Adding font-jost to the menu-frame
+        *****************/
 
-    *****************/
-
-    $(document).ready(function(){
-        $('.mil-main-menu').addClass('font-jost')
-    })
-    
-         /*****************
-
-    Service Medico 
-     
-    ************/
-    $(document).ready(function(){
-        $('.show-more').click(function(){
-            $('.show-more').hide();
-            $('.hidden-div').show();
-
+        $(document).ready(function () {
+            $('.mil-main-menu').addClass('font-jost')
         })
-    })
-         /************
+
+        /*****************
+
+   Service Medico 
     
-    Casestudy Gallery
+   ************/
+        $(document).ready(function () {
+            $('.show-more').click(function () {
+                $('.show-more').hide();
+                $('.hidden-div').show();
 
-    ************/
+            })
+        })
+        /************
+   
+   Casestudy Gallery
 
-    $(document).ready(function(){
-        $(".img-responsive").click(function(){
-        var t = $(this).attr("src");
-        $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-        $("#myModal").modal();
-      });
-      
-    //   $("video").click(function(){
-    //     var v = $("video > source");
-    //     var t = v.attr("src");
-    //     $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
-    //     $("#myModal").modal();  
-    //   });
-      });//EOF Document.ready
+   ************/
+
+        $(document).ready(function () {
+            $(".img-responsive").click(function () {
+                var t = $(this).attr("src");
+                $(".modal-body").html("<img src='" + t + "' class='modal-img'>");
+                $("#myModal").modal();
+            });
+
+            //   $("video").click(function(){
+            //     var v = $("video > source");
+            //     var t = v.attr("src");
+            //     $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
+            //     $("#myModal").modal();  
+            //   });
+        });//EOF Document.ready
         /***************************
 
         cursor
@@ -2305,32 +2421,32 @@ $(function () {
          **********/
         let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 650px)", () => {
-        const branding = gsap.timeline(
-            {
-                scrollTrigger: {
-                    trigger: ".brand-casestudies",
-                    start: "top 10%",
-                    end: "+=300%",
-                    scrub: 1,
-                    pin: true,
-                    // markers: true
+        mm.add("(min-width: 650px)", () => {
+            const branding = gsap.timeline(
+                {
+                    scrollTrigger: {
+                        trigger: ".brand-casestudies",
+                        start: "top 10%",
+                        end: "+=300%",
+                        scrub: 1,
+                        pin: true,
+                        // markers: true
+                    }
                 }
-            }
-        )
-        branding.fromTo(".title-1", { y: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
-        branding.fromTo(".image-1", { x: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
-        branding.fromTo(".title-2", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
-        branding.fromTo(".image-2", { xPercent: "0", scale: 0.7 }, { xPercent: "-100", duration: 1, scale: 1 }, "-=1");
-        branding.fromTo(".title-3", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
-        branding.fromTo(".image-3", { xPercent: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
-        branding.to(".title-1", { yPercent: "-200", duration: 1 });
-        branding.to(".image-1", { xPercent: "-200", duration: 1 }, "-=1");
-        branding.to(".title-2", { yPercent: "-200", duration: 1 }, "-=1");
-        branding.to(".image-2", { xPercent: "-200", duration: 1, scale: 0.7 }, "-=1");
-        branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
-        branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
-    });
+            )
+            branding.fromTo(".title-1", { y: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+            branding.fromTo(".image-1", { x: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
+            branding.fromTo(".title-2", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+            branding.fromTo(".image-2", { xPercent: "0", scale: 0.7 }, { xPercent: "-100", duration: 1, scale: 1 }, "-=1");
+            branding.fromTo(".title-3", { yPercent: "0" }, { yPercent: "-100", duration: 1 }, "-=1");
+            branding.fromTo(".image-3", { xPercent: "0" }, { xPercent: "-100", duration: 1, scale: 0.7 }, "-=1");
+            branding.to(".title-1", { yPercent: "-200", duration: 1 });
+            branding.to(".image-1", { xPercent: "-200", duration: 1 }, "-=1");
+            branding.to(".title-2", { yPercent: "-200", duration: 1 }, "-=1");
+            branding.to(".image-2", { xPercent: "-200", duration: 1, scale: 0.7 }, "-=1");
+            branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
+            branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
+        });
 
         /****************
          

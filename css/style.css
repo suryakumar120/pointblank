@@ -5656,6 +5656,33 @@ html.is-animating .mil-menu-frame {
     /* grid-gap: 5rem; */
   }
 }
+/* contact form styles */
+
+.error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff0303;
+  color: #ffffff;
+  /* border: 1px solid #f5c6cb; */
+  padding: 10px;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.error-message.show {
+  opacity: 1;
+}
+
+.display-none {
+  display: none;
+}
+
+
+
 
 .card {  
   position: relative;
@@ -6471,6 +6498,10 @@ input[type='checkbox']{
   }
   
 }
+.display-none{
+  display: none;
+}
+
 
 
 @media screen and (min-width:670px) {
@@ -6487,4 +6518,46 @@ input[type='checkbox']{
 
 .pointer-none{
   pointer-events: none;
+}
+
+
+/* spin.js css styling */
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

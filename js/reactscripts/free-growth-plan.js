@@ -890,6 +890,10 @@ const FirstForm = ({ onFormSubmit }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        const firstFormOpts = {
+            selectedOption: selectedOption,
+        }
+        localStorage.setItem('firstFormOpts', JSON.stringify(firstFormOpts));
         onFormSubmit();
         // Handle form submission logic here
         // console.log({ name, email, phone, message });
@@ -1061,7 +1065,31 @@ const SecondForm = ({ onFormSubmit, onPrevPage, activeSubForm }) => {
         // e.preventDefault();
         const selectedCategories = { brand, website, app };
         localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+        const brandOptsObject = {
+            brandOpt1: brandOpt1,
+            brandOpt2: brandOpt2,
+            brandOpt3: brandOpt3,
+            brandOpt4: brandOpt4,
+            brandOpt5: brandOpt5,
+            brandOpt6: brandOpt6,
+            brandOpt7: brandOpt7
+        };
+        const webOptsObject = {
+            webOpt1: webOpt1,
+            webOpt2: webOpt2,
+            webOpt3: webOpt3,
+            webOpt4: webOpt4
+        };
+        const appOptsObject = {
+            appOpt1: appOpt1,
+            appOpt2: appOpt2,
+            appOpt3: appOpt3,
+            appOpt4: appOpt4
+        };
+        localStorage.setItem('appOptions', JSON.stringify(appOptsObject));
+        localStorage.setItem('webOptions', JSON.stringify(webOptsObject));
 
+        localStorage.setItem('brandOptions', JSON.stringify(brandOptsObject));
         // onFormSubmit(); // Uncomment if you have this function defined elsewhere
         console.log(selectedCategories);
         onFormSubmit();
@@ -1073,9 +1101,9 @@ const SecondForm = ({ onFormSubmit, onPrevPage, activeSubForm }) => {
         onPrevPage();
     }
 
-    useEffect(()=>{
-        console.log("activeSubForm= ",activeSubForm);
-    },[])
+    useEffect(() => {
+        console.log("activeSubForm= ", activeSubForm);
+    }, [])
 
     return (
         <div class="row justify-content-center">
@@ -1249,6 +1277,7 @@ const BrandForm = ({ onFormSubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         onFormSubmit();
         // Handle form submission logic here
         // console.log("Submitted brand options:", brandOpts);
@@ -1461,7 +1490,7 @@ const WebForm = ({ onFormSubmit }) => {
     const {
         webOpt1, setWebOpt1, webOpt2, setWebOpt2, webOpt3, setWebOpt3, webOpt4, setWebOpt4, setWebsite, setSecondFormQuestionsSubmit
     } = useContext(SecondFormContext);
-    const [choosenOne,setChoosenOne] = useState(false);
+    const [choosenOne, setChoosenOne] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
         onFormSubmit();
@@ -1574,7 +1603,7 @@ const WebForm = ({ onFormSubmit }) => {
                 <div className="mil-adaptive-right mil-up mil-mb-30">
                     {/* <button type="submit" className={`mil-button second-form-submit ${!submitActive?'mil-disabled':''}`}> */}
 
-                    <button type="submit" className={`mil-button second-form-submit ${choosenOne? '':'mil-disabled'}`}>
+                    <button type="submit" className={`mil-button second-form-submit ${choosenOne ? '' : 'mil-disabled'}`}>
                         <span class="flex justify-center items-center">Next
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow-nxt">
                                 <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
@@ -1702,7 +1731,7 @@ const AppForm = ({ onFormSubmit }) => {
                 <div className="mil-adaptive-right mil-up mil-mb-30">
                     {/* <button type="submit" className={`mil-button second-form-submit ${!submitActive?'mil-disabled':''}`}> */}
 
-                    <button type="submit" className={`mil-button second-form-submit ${choosenOne? '':'mil-disabled'}`}>
+                    <button type="submit" className={`mil-button second-form-submit ${choosenOne ? '' : 'mil-disabled'}`}>
                         <span class="flex justify-center items-center">Next
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow-nxt">
                                 <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
@@ -1720,7 +1749,7 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
     const [brand, setBrand] = React.useState(false);
     const [website, setWebsite] = React.useState(false);
     const [app, setApp] = React.useState(false);
-
+    const [isloading, setIsloading] = useState(false);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -1759,10 +1788,70 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('name',formData.name)
-        onFormSubmit();
+        setIsloading(true);
+        localStorage.setItem('name', formData.name)
+        const firstFormOptsObject = JSON.parse(localStorage.getItem('firstFormOpts'))
+        const brandOptsObject = JSON.parse(localStorage.getItem('brandOptions'));
+
+        // Retrieve web options from local storage
+        const webOptsObject = JSON.parse(localStorage.getItem('webOptions'));
+
+        // Retrieve app options from local storage
+        const appOptsObject = JSON.parse(localStorage.getItem('appOptions'));
+
+        // Combine form data and retrieved options into one object
+        const selectedCategoriesObject = JSON.parse(localStorage.getItem('selectedCategories'));
+        const formDataObject = {
+            formData: formData,
+            firstFormOpts: firstFormOptsObject,
+            selectedCategories: selectedCategoriesObject,
+            brandOptions: brandOptsObject,
+            webOptions: webOptsObject,
+            appOptions: appOptsObject,
+        };
+
+
+        fetch('https://same-server-dev.azurewebsites.net/addFreeGrowthPlanData/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formDataObject)
+        })
+            .then(response => {
+
+                if (!response.ok) {
+                    setIsloading(false);
+                    document.getElementById('error-message').classList.add('show');
+                    setTimeout(() => {
+                        document.getElementById('error-message').classList.remove('show');
+                    }, 3000);
+                    throw new Error('Network response was not ok');
+
+                }
+                // return response.json();
+            })
+            .then(data => {
+                onFormSubmit();
+                console.log('Success:', data);
+                // Handle the success response here
+                setIsloading(false);
+                onFormSubmit();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                setIsloading(false);
+                document.getElementById('error-message').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('error-message').classList.remove('show');
+                }, 3000);
+                // Handle the error here
+            });
+
+
+
         // Handle form submission logic here
-        console.log(formData);
+        console.log(formDataObject);
     };
 
     const handlePrevPage = () => {
@@ -1779,6 +1868,7 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
 
     return (
         <div>
+            <div id="error-message" class="error-message">There was an error. Please try again later.</div>
             <form class="row align-items-center" onSubmit={handleSubmit}>
                 <div className="col-lg-12 mil-up flex mil-mb-30">
                     <h4>Give us some more details </h4>
@@ -1845,23 +1935,23 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
                 )
                 }
                 {website && (
-                    
-                        <div className="col-lg-6 mil-up">
-                            <input
-                                type="text"
-                                name="websiteUrl"
-                                placeholder="Website Url"
-                                value={formData.websiteUrl}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        
-                    
+
+                    <div className="col-lg-6 mil-up">
+                        <input
+                            type="text"
+                            name="websiteUrl"
+                            placeholder="Website Url"
+                            value={formData.websiteUrl}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+
                 )}
                 {website && (
-                    
-                    
+
+
                     <div className="col-lg-6 mil-up">
                         <input
                             type="text"
@@ -1872,50 +1962,50 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
                             required
                         />
                     </div>
-                
-            )}
-                {app && (
-                   
-                        <div className="col-lg-6 mil-up">
-                            <input
-                                type="text"
-                                name="appStoreLink"
-                                placeholder="App store link"
-                                value={formData.appStoreLink}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        
+
                 )}
                 {app && (
-                   
-                       
-                        <div className="col-lg-6 mil-up">
-                            <input
-                                type="text"
-                                name="playStoreLink"
-                                placeholder="Play store link"
-                                value={formData.playStoreLink}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        
+
+                    <div className="col-lg-6 mil-up">
+                        <input
+                            type="text"
+                            name="appStoreLink"
+                            placeholder="App store link"
+                            value={formData.appStoreLink}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
                 )}
                 {app && (
-                   
-                        <div className="col-lg-6 mil-up">
-                            <input
-                                type="text"
-                                name="primaryTargetAudience"
-                                placeholder="Primary target audience"
-                                value={formData.primaryTargetAudience}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                   
+
+
+                    <div className="col-lg-6 mil-up">
+                        <input
+                            type="text"
+                            name="playStoreLink"
+                            placeholder="Play store link"
+                            value={formData.playStoreLink}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                )}
+                {app && (
+
+                    <div className="col-lg-6 mil-up">
+                        <input
+                            type="text"
+                            name="primaryTargetAudience"
+                            placeholder="Primary target audience"
+                            value={formData.primaryTargetAudience}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
                 )}
                 {/* <div class="col-lg-12 mil-up">
                     <textarea placeholder="Wanna Tell Us Something?"></textarea>
@@ -1932,7 +2022,7 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
                                 Previous</span>
                         </div>
                         <div className="mil-adaptive-right mil-up mil-mb-30">
-                            <button type="submit" className="mil-button">
+                            <button type="submit" className={`mil-button ${isloading ? 'mil-disabled' : ''}`}>
                                 <span className="flex justify-center items-center">Submit
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="mil-arrow-nxt">
                                         <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
@@ -1953,7 +2043,7 @@ const FourthForm = ({ onFormSubmit }) => {
     const [brand, setBrand] = React.useState(false);
     const [website, setWebsite] = React.useState(false);
     const [app, setApp] = React.useState(false);
-    const [name,setName] = useState('');
+    const [name, setName] = useState('');
 
     const handlePharma = (e) => {
         // e.preventDefault();
@@ -1980,7 +2070,7 @@ const FourthForm = ({ onFormSubmit }) => {
 
     useEffect(() => {
         const get_name = localStorage.getItem('name');
-        if(get_name){
+        if (get_name) {
             setName(get_name);
         }
     }, [])
@@ -2039,28 +2129,28 @@ const MainComponent = () => {
 
     const handlePrevThirdForm = () => {
         const selectedCategories = localStorage.getItem('selectedCategories');
-        console.log("selectedCategories=",selectedCategories);
-        if(selectedCategories){
+        console.log("selectedCategories=", selectedCategories);
+        if (selectedCategories) {
             const parsedCategories = JSON.parse(selectedCategories);
-            if(parsedCategories.brand){
+            if (parsedCategories.brand) {
                 setActiveSubForm('brand');
             }
-            else if(parsedCategories.website){
+            else if (parsedCategories.website) {
                 setActiveSubForm('website');
             }
-            else{
+            else {
                 setActiveSubForm('app');
             }
         }
-        
+
         setSecondFormSubmit(false);
-        
+
 
     }
     return (
         <div>
             <h3 class={`mil-center mil-up mil-mb-120 ${thirdFormSubmit ? 'hidden-div' : ''}`}><span class="mil-thin">Get Your</span> Free Growth Plan</h3>
-            {!firstFormSubmit ? <FirstForm onFormSubmit={handleFirstFormSubmit} /> : (!secondFormSubmit ? <SecondForm onFormSubmit={handleSecondFormSubmit} onPrevPage={handlePrevSecondForm} activeSubForm={activeSubForm}/> : (!thirdFormSubmit ? <ThirdForm onFormSubmit={handleThirdFormSubmit} onPrevPage={handlePrevThirdForm} /> : <FourthForm />))}
+            {!firstFormSubmit ? <FirstForm onFormSubmit={handleFirstFormSubmit} /> : (!secondFormSubmit ? <SecondForm onFormSubmit={handleSecondFormSubmit} onPrevPage={handlePrevSecondForm} activeSubForm={activeSubForm} /> : (!thirdFormSubmit ? <ThirdForm onFormSubmit={handleThirdFormSubmit} onPrevPage={handlePrevThirdForm} /> : <FourthForm />))}
             {/* <FourthForm /> */}
         </div>
     )
