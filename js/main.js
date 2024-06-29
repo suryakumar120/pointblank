@@ -11,7 +11,7 @@ p.s. I am available for Freelance hire (UI design, web development). email: mill
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import {Spinner} from '/js/plugins/spin.js'
+import { Spinner } from '/js/plugins/spin.js'
 $(function () {
 
     "use strict";
@@ -336,9 +336,11 @@ $(function () {
 
     // text_rotate_1.play();
 
-    $(document).ready(function () {
-        $(".mil-preloader").hide();
-    });
+    // $(document).ready(function () {
+    //     $(".mil-preloader").hide();
+    // });
+
+   
 
 
     var timeline = gsap.timeline();
@@ -774,7 +776,7 @@ $(function () {
     
     Contact form_submission
 
-    ************/   
+    ************/
     var opts = {
         lines: 13, // The number of lines to draw
         length: 38, // The length of each line
@@ -794,7 +796,7 @@ $(function () {
         zIndex: 2000000000, // The z-index (defaults to 2e9)
         className: 'spinner', // The CSS class to assign to the spinner
         position: 'absolute', // Element positioning
-      };
+    };
 
     $('#contact_form').on('submit', function (e) {
         e.preventDefault();
@@ -804,7 +806,7 @@ $(function () {
             query: $('textarea[name="contact_query"]').val(),
             // time : current
         }
-        
+
         var target = document.getElementById('contact');
         var spinner = new Spinner(opts).spin(target);
         $('#contact_form').addClass('display-none');
@@ -822,16 +824,16 @@ $(function () {
                 console.log("failed saving contact data", formData);
                 spinner.stop();
                 $('#contact_form').removeClass('display-none');
-                
+
                 var errorMessage = $('#error-message');
                 errorMessage.removeClass('display-none').addClass('show');
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     errorMessage.removeClass('show');
                 }, 3000);
             }
         });
-        
+
 
 
     })
@@ -1431,44 +1433,54 @@ $(function () {
     ***************************/
 
     const appearance = document.querySelectorAll(".mil-up");
+    if($(window).width() > 650){
+        appearance.forEach((section) => {
+            gsap.fromTo(section, {
+                opacity: 0,
+                y: 40,
+                scale: .98,
+                ease: 'sine',
 
-    appearance.forEach((section) => {
-        gsap.fromTo(section, {
-            opacity: 0,
-            y: 40,
-            scale: .98,
-            ease: 'sine',
-
-        }, {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: .4,
-            scrollTrigger: {
-                trigger: section,
-                toggleActions: 'play none none reverse',
-            }
+            }, {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: .4,
+                scrollTrigger: {
+                    trigger: section,
+                    toggleActions: 'play none none reverse',
+                }
+            });
         });
-    });
+    }
+       
+    
+
+
+
+
 
     const scaleImage = document.querySelectorAll(".mil-scale");
 
-    scaleImage.forEach((section) => {
-        var value1 = $(section).data("value-1");
-        var value2 = $(section).data("value-2");
-        gsap.fromTo(section, {
-            ease: 'sine',
-            scale: value1,
-
-        }, {
-            scale: value2,
-            scrollTrigger: {
-                trigger: section,
-                scrub: true,
-                toggleActions: 'play none none reverse',
-            }
+    if($(window).width() > 650){
+        scaleImage.forEach((section) => {
+            var value1 = $(section).data("value-1");
+            var value2 = $(section).data("value-2");
+            gsap.fromTo(section, {
+                ease: 'sine',
+                scale: value1,
+    
+            }, {
+                scale: value2,
+                scrollTrigger: {
+                    trigger: section,
+                    scrub: true,
+                    toggleActions: 'play none none reverse',
+                }
+            });
         });
-    });
+    }
+    
 
     const parallaxImage = document.querySelectorAll(".mil-parallax");
 
@@ -1509,6 +1521,17 @@ $(function () {
             }
         });
     });
+
+    /**********
+     
+    Mobile Optimations 
+
+     **********/
+    $(document).ready(function() {
+        // Select all img elements and set loading="lazy"
+        $('img').attr('loading', 'lazy');
+    });
+
     /***************************
 
     fancybox
@@ -1783,67 +1806,67 @@ $(function () {
     
     Contact form_submission
 
-    ************/   
-    var opts = {
-        lines: 13, // The number of lines to draw
-        length: 38, // The length of each line
-        width: 17, // The line thickness
-        radius: 45, // The radius of the inner circle
-        scale: 1, // Scales overall size of the spinner
-        corners: 1, // Corner roundness (0..1)
-        speed: 1, // Rounds per second
-        rotate: 0, // The rotation offset
-        animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
-        direction: 1, // 1: clockwise, -1: counterclockwise
-        color: '#000000', // CSS color or array of colors
-        fadeColor: 'transparent', // CSS color or array of colors
-        top: '50%', // Top position relative to parent
-        left: '50%', // Left position relative to parent
-        shadow: '0 0 1px transparent', // Box-shadow for the lines
-        zIndex: 2000000000, // The z-index (defaults to 2e9)
-        className: 'spinner', // The CSS class to assign to the spinner
-        position: 'absolute', // Element positioning
-      };
+    ************/
+        var opts = {
+            lines: 13, // The number of lines to draw
+            length: 38, // The length of each line
+            width: 17, // The line thickness
+            radius: 45, // The radius of the inner circle
+            scale: 1, // Scales overall size of the spinner
+            corners: 1, // Corner roundness (0..1)
+            speed: 1, // Rounds per second
+            rotate: 0, // The rotation offset
+            animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+            direction: 1, // 1: clockwise, -1: counterclockwise
+            color: '#000000', // CSS color or array of colors
+            fadeColor: 'transparent', // CSS color or array of colors
+            top: '50%', // Top position relative to parent
+            left: '50%', // Left position relative to parent
+            shadow: '0 0 1px transparent', // Box-shadow for the lines
+            zIndex: 2000000000, // The z-index (defaults to 2e9)
+            className: 'spinner', // The CSS class to assign to the spinner
+            position: 'absolute', // Element positioning
+        };
 
-    $('#contact_form').on('submit', function (e) {
-        e.preventDefault();
-        var formData = {
-            name: $('input[name="contact_name"]').val(),
-            email: $('input[name="contact_email"]').val(),
-            query: $('textarea[name="contact_query"]').val(),
-            // time : current
-        }
-        
-        var target = document.getElementById('contact');
-        var spinner = new Spinner(opts).spin(target);
-        $('#contact_form').addClass('display-none');
-        $.ajax({
-            url: 'https://same-server-dev.azurewebsites.net/addContactData/',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(formData),
-            success: function (response) {
-                console.log("successfully saved the data", formData);
-                $('#contact_form_onsubmit').removeClass('display-none');
-                spinner.stop();
-            },
-            error: function (response) {
-                console.log("failed saving contact data", formData);
-                spinner.stop();
-                $('#contact_form').removeClass('display-none');
-                
-                var errorMessage = $('#error-message');
-                errorMessage.removeClass('display-none').addClass('show');
-                
-                setTimeout(function() {
-                    errorMessage.removeClass('show');
-                }, 3000);
+        $('#contact_form').on('submit', function (e) {
+            e.preventDefault();
+            var formData = {
+                name: $('input[name="contact_name"]').val(),
+                email: $('input[name="contact_email"]').val(),
+                query: $('textarea[name="contact_query"]').val(),
+                // time : current
             }
-        });
-        
+
+            var target = document.getElementById('contact');
+            var spinner = new Spinner(opts).spin(target);
+            $('#contact_form').addClass('display-none');
+            $.ajax({
+                url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (response) {
+                    console.log("successfully saved the data", formData);
+                    $('#contact_form_onsubmit').removeClass('display-none');
+                    spinner.stop();
+                },
+                error: function (response) {
+                    console.log("failed saving contact data", formData);
+                    spinner.stop();
+                    $('#contact_form').removeClass('display-none');
+
+                    var errorMessage = $('#error-message');
+                    errorMessage.removeClass('display-none').addClass('show');
+
+                    setTimeout(function () {
+                        errorMessage.removeClass('show');
+                    }, 3000);
+                }
+            });
 
 
-    })
+
+        })
         /***************************
 
         accordion
@@ -2080,7 +2103,7 @@ $(function () {
         ***************************/
 
         const appearance = document.querySelectorAll(".mil-up");
-
+    if($(window).width() > 650){
         appearance.forEach((section) => {
             gsap.fromTo(section, {
                 opacity: 0,
@@ -2099,16 +2122,24 @@ $(function () {
                 }
             });
         });
+    }
+       
+    
 
-        const scaleImage = document.querySelectorAll(".mil-scale");
 
+
+
+
+    const scaleImage = document.querySelectorAll(".mil-scale");
+
+    if($(window).width() > 650){
         scaleImage.forEach((section) => {
             var value1 = $(section).data("value-1");
             var value2 = $(section).data("value-2");
             gsap.fromTo(section, {
                 ease: 'sine',
                 scale: value1,
-
+    
             }, {
                 scale: value2,
                 scrollTrigger: {
@@ -2118,6 +2149,7 @@ $(function () {
                 }
             });
         });
+    }
 
         const parallaxImage = document.querySelectorAll(".mil-parallax");
 

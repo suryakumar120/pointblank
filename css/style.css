@@ -2677,7 +2677,7 @@ services
 }
 @media screen and (max-width: 768px) {
   .mil-services-grid {
-    padding-bottom: 90px;
+    padding-bottom: 40px;
   }
   .mil-services-grid .mil-services-grid-item {
     border-left: solid 1px rgba(0, 0, 0, 0.2);
@@ -6141,9 +6141,12 @@ input[type='checkbox']{
 .font-57{
   font-size: 57px;
 }
-.font-55{
-  font-size: 55px;
+@media screen and (min-width:1600px) {
+  .font-55{
+    font-size: 55px;
+  }
 }
+
 .font-50{
   font-size: 50px;
 }
@@ -6198,6 +6201,11 @@ input[type='checkbox']{
 }
 .max-w-220px{
   max-width: 220px;
+}
+@media screen and (max-width: 650px) {
+  .z-sm-5{
+    z-index: 5;
+  }
 }
 @media screen and (min-width:2000px) {
   .max-w-220px{
