@@ -401,6 +401,9 @@ blockquote {
   .mil-text-xl {
     font-size: 20px;
   }
+  .mil-text-sm-p{
+    font-size: unset;
+  }
 }
 
 .mil-upper {
@@ -1401,6 +1404,7 @@ frame
     height: 90px;
   }
 } */
+
 @media screen and (max-width: 1900px) {
   .mil-frame .mil-frame-top {
     height: 65px;
@@ -1411,6 +1415,7 @@ frame
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
   }
+  
   .mil-frame .mil-frame-top .mil-logo {
     color: rgb(255, 255, 255);
   }
@@ -1487,6 +1492,11 @@ frame
   color: rgb(0, 0, 0);
 }
 
+@media screen and (max-width:650px) {
+    .mil-frame .mil-frame-top{
+
+    }
+}
 /* -------------------------------------------
 
 menu button
@@ -1909,6 +1919,11 @@ banner
 @media screen and (max-width: 1200px) {
   .mil-inner-banner .mil-banner-content {
     padding: 180px 0 0 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  .mil-inner-banner .mil-banner-content {
+    padding: 100px 0 0 0;
   }
 }
 
@@ -3672,14 +3687,19 @@ portfolio
   display: flex ;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  flex-direction: column;
+  gap: 1.5rem;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 }
-.sm-review-slide{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width:1500px) {
+  .sm-review-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+  }
 }
+
 @media screen and (max-width:660px) {
   .homepage-number{
     width:50%
@@ -4542,7 +4562,8 @@ page transitions
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.6s;
-  transition: 0.6s;
+  transition: 0.6s ease-in-out;
+  will-change: transform;
 }
 
 .mil-curtain {
@@ -4983,12 +5004,13 @@ html.is-animating .mil-menu-frame {
   /* border: 2px solid black; */
   color: white;
   opacity: 1;
-  height: 450px;
+  height: auto;
   /* min-height: fit-content; */
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 35%;
+  
 }
 .envelope:before{
   content: '';
@@ -5951,7 +5973,7 @@ html.is-animating .mil-menu-frame {
   height: 100dvh;
   height: 100vh;
 }
-@media screen and (max-width:650px) {
+@media screen and (max-width:1000px) {
   .brand-casestudies{
     height: auto;
   }
@@ -5966,17 +5988,22 @@ html.is-animating .mil-menu-frame {
     width:100%;
   }
 }
-.brand-casestudies-images{
-  width:  60%;
-  overflow-x: auto;
-  white-space: nowrap;
+@media screen and (max-width:1500px) {
+  .casestudies-title h2{
+      font-size: 39px;
+  }
 }
 .brand-casestudies-images{
   width:  60%;
   overflow-x: auto;
   white-space: nowrap;
 }
-@media screen and (max-width:650px) {
+.brand-casestudies-images{
+  width:  60%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+@media screen and (max-width:1000px) {
   .brand-casestudies-images{
     display: none;
   }
@@ -6011,9 +6038,11 @@ html.is-animating .mil-menu-frame {
   height: 100vh;
   
 }
+
 @media screen and (max-width:650px) {
   .casestudies-title{
     height: auto;
+    padding-left: 30px;
   }
 }
 .casestudies-image{
@@ -6021,6 +6050,11 @@ html.is-animating .mil-menu-frame {
 }
 .casestudies-image img{
     height: 70%;
+}
+@media screen and (max-width:1300px) {
+  .casestudies-image img{
+    height: 55%;
+  }
 }
 
 /* Free Growth Plan  */
@@ -6120,12 +6154,7 @@ input[type='checkbox']{
   height: 22.5rem;
 }
 
-@media screen and (max-width:650px) {
-  .sm-h-60p{
-    height: 60vh;
-    height: 60dvh;
-  }
-}
+
 .font-jost{
   font-family: "Jost",sans-serif;
 }
@@ -6146,7 +6175,14 @@ input[type='checkbox']{
     font-size: 55px;
   }
 }
-
+.font-55{
+  font-size: 55px;
+}
+@media screen and (max-width:650px) {
+  .font-55{
+    font-size: 40px;
+  }
+}
 .font-50{
   font-size: 50px;
 }
@@ -6178,6 +6214,13 @@ input[type='checkbox']{
 .p-unset{
   padding: unset;
 }
+@media screen and (max-width:650px) {
+  .p-sm-0{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .mb-2{
   margin-bottom: 10px;
 }
@@ -6187,6 +6230,28 @@ input[type='checkbox']{
 .mb-20p{
   margin-bottom: 20%;
 }
+
+@media screen and (max-width:600px) {
+  .mb-sm-0{
+    margin-bottom: 0;
+  }
+  .mb-sm-30{
+    margin-bottom: 30px;
+  }
+  .p-sm-60-30{
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .mil-p-120-90{
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .mil-p-120-60{
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+
 .mt-60{
   margin-top: 60px;
 }
@@ -6212,7 +6277,7 @@ input[type='checkbox']{
       max-width: 250px;
   }
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .sm-font-40{
       font-size: 40px;
     }
@@ -6232,10 +6297,24 @@ input[type='checkbox']{
   height: 90dvh;
   height: 90vh;
 }
+.min-h-90screen{
+  min-height: 90dvh;
+  min-height: 90vh;
+}
 @media screen and (max-width:650px) {
     .sm-min-content{
       height:60vh;
     }
+}
+
+@media screen and (max-width:650px) {
+  .sm-zoom-in img{
+    transform: scale(1.5);
+  }
+  .sm-zoom-in-1-25 img{
+    transform: scale(1.25);
+  }
+  
 }
 .bg-blue{
   background-color: blue;
@@ -6300,6 +6379,15 @@ input[type='checkbox']{
   background-color: rgba(0, 0, 0, 0.1)
 }
 
+@media screen and (max-width:650px) {
+  .sm-h-60p{
+    height: 60vh;
+    height: 60dvh;
+  }
+  .sm-h-auto{
+    height: auto;
+  }
+}
 
 /* Case Studies  */
 
@@ -6316,6 +6404,19 @@ input[type='checkbox']{
   -webkit-column-count:2;
   -moz-column-count:2;
   column-count:2;
+}
+@media screen and (max-width:650px) {
+  .container-fluid{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+  .container-fluid img{
+    pointer-events: none;
+  }
 }
 @media (max-width:1200px){
   .gallery{
@@ -6504,7 +6605,18 @@ input[type='checkbox']{
   .display-lg{
     display: none;
   }
+
   
+}
+@media screen and (min-width:1501px) {
+  .display-l-xl{
+    display: none;
+  }
+}
+@media screen and (max-width:1500px) {
+  .display-xl{
+    display: none;
+  }
 }
 .display-none{
   display: none;
@@ -6567,5 +6679,17 @@ input[type='checkbox']{
   26% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Navbar sliding classes */
+
+@media screen and (max-width:650px) {
+  .nav_show{
+    top: 0;
+  
+  }
+  .nav_hide{
+    top:-80px;
   }
 }

@@ -340,7 +340,7 @@ $(function () {
     //     $(".mil-preloader").hide();
     // });
 
-   
+
 
 
     var timeline = gsap.timeline();
@@ -771,6 +771,34 @@ $(function () {
 
 
 
+    /**********
+    
+    Sliding nav bar
+
+    **********/
+    $(document).ready(function () {
+        let lastScrollY = window.scrollY;
+        const $mil_frame = $('#mil-frame');
+
+        $(window).on('scroll', function () {
+            let currentScrollY = window.scrollY;
+            let scrollDiff = Math.abs(currentScrollY - lastScrollY);
+
+            if (scrollDiff >= 10) {
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling down
+                    $mil_frame.removeClass('nav_show').addClass('nav_hide');
+                    //   console.log("scrolling down by " + scrollDiff);
+                } else {
+                    // Scrolling up
+                    $mil_frame.removeClass('nav_hide').addClass('nav_show');
+                    //   console.log("scroll up by " + scrollDiff);
+                }
+                lastScrollY = currentScrollY;
+            }
+        });
+    });
+
 
     /************
     
@@ -880,39 +908,44 @@ $(function () {
 
 
      */
-    const p1 = gsap.timeline(
-        {
+    const mm_process_cards = gsap.matchMedia();
+
+    mm_process_cards.add('(min-width: 650px', () => {
+        const p1 = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: ".process-cards-container",
+                    start: "top 10%",
+                    end: "+=100%",
+                    scrub: 1,
+                    // pin:true,
+                    // markers:true,
+                }
+            }
+        )
+        p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
+        p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
+        p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
+        p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
+        p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
+        gsap.to(".process-cards-container", {
             scrollTrigger: {
                 trigger: ".process-cards-container",
-                start: "top 10%",
+                pin: true,
+                start: "50% 50%", // Adjust start position if needed
                 end: "+=100%",
                 scrub: 1,
-                // pin:true,
-                // markers:true,
             }
-        }
-    )
-    p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
-    p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
-    p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
-    p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
-    p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
-    gsap.to(".process-cards-container", {
-        scrollTrigger: {
-            trigger: ".process-cards-container",
-            pin: true,
-            start: "50% 50%", // Adjust start position if needed
-            end: "+=100%",
-            scrub: 1,
-        }
-    });
+        });
+    })
+
 
     /**********
     Branding-casestudies
      **********/
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 650px)", () => {
+    mm.add("(min-width: 1000px)", () => {
         const branding = gsap.timeline(
             {
                 scrollTrigger: {
@@ -1433,7 +1466,7 @@ $(function () {
     ***************************/
 
     const appearance = document.querySelectorAll(".mil-up");
-    if($(window).width() > 650){
+    if ($(window).width() > 650) {
         appearance.forEach((section) => {
             gsap.fromTo(section, {
                 opacity: 0,
@@ -1453,8 +1486,8 @@ $(function () {
             });
         });
     }
-       
-    
+
+
 
 
 
@@ -1462,14 +1495,14 @@ $(function () {
 
     const scaleImage = document.querySelectorAll(".mil-scale");
 
-    if($(window).width() > 650){
+    if ($(window).width() > 650) {
         scaleImage.forEach((section) => {
             var value1 = $(section).data("value-1");
             var value2 = $(section).data("value-2");
             gsap.fromTo(section, {
                 ease: 'sine',
                 scale: value1,
-    
+
             }, {
                 scale: value2,
                 scrollTrigger: {
@@ -1480,7 +1513,7 @@ $(function () {
             });
         });
     }
-    
+
 
     const parallaxImage = document.querySelectorAll(".mil-parallax");
 
@@ -1527,7 +1560,7 @@ $(function () {
     Mobile Optimations 
 
      **********/
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Select all img elements and set loading="lazy"
         $('img').attr('loading', 'lazy');
     });
@@ -2103,53 +2136,53 @@ $(function () {
         ***************************/
 
         const appearance = document.querySelectorAll(".mil-up");
-    if($(window).width() > 650){
-        appearance.forEach((section) => {
-            gsap.fromTo(section, {
-                opacity: 0,
-                y: 40,
-                scale: .98,
-                ease: 'sine',
+        if ($(window).width() > 650) {
+            appearance.forEach((section) => {
+                gsap.fromTo(section, {
+                    opacity: 0,
+                    y: 40,
+                    scale: .98,
+                    ease: 'sine',
 
-            }, {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: .4,
-                scrollTrigger: {
-                    trigger: section,
-                    toggleActions: 'play none none reverse',
-                }
+                }, {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: .4,
+                    scrollTrigger: {
+                        trigger: section,
+                        toggleActions: 'play none none reverse',
+                    }
+                });
             });
-        });
-    }
-       
-    
+        }
 
 
 
 
 
-    const scaleImage = document.querySelectorAll(".mil-scale");
 
-    if($(window).width() > 650){
-        scaleImage.forEach((section) => {
-            var value1 = $(section).data("value-1");
-            var value2 = $(section).data("value-2");
-            gsap.fromTo(section, {
-                ease: 'sine',
-                scale: value1,
-    
-            }, {
-                scale: value2,
-                scrollTrigger: {
-                    trigger: section,
-                    scrub: true,
-                    toggleActions: 'play none none reverse',
-                }
+
+        const scaleImage = document.querySelectorAll(".mil-scale");
+
+        if ($(window).width() > 650) {
+            scaleImage.forEach((section) => {
+                var value1 = $(section).data("value-1");
+                var value2 = $(section).data("value-2");
+                gsap.fromTo(section, {
+                    ease: 'sine',
+                    scale: value1,
+
+                }, {
+                    scale: value2,
+                    scrollTrigger: {
+                        trigger: section,
+                        scrub: true,
+                        toggleActions: 'play none none reverse',
+                    }
+                });
             });
-        });
-    }
+        }
 
         const parallaxImage = document.querySelectorAll(".mil-parallax");
 
@@ -2421,39 +2454,43 @@ $(function () {
         //         scrub: 1,
         //     }
         // });
-        const p1 = gsap.timeline(
-            {
+        const mm_process_cards = gsap.matchMedia();
+
+        mm_process_cards.add('(min-width: 650px', () => {
+            const p1 = gsap.timeline(
+                {
+                    scrollTrigger: {
+                        trigger: ".process-cards-container",
+                        start: "top 10%",
+                        end: "+=100%",
+                        scrub: 1,
+                        // pin:true,
+                        // markers:true,
+                    }
+                }
+            )
+            p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
+            p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
+            p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
+            p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
+            p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
+            gsap.to(".process-cards-container", {
                 scrollTrigger: {
                     trigger: ".process-cards-container",
-                    start: "top 10%",
+                    pin: true,
+                    start: "50% 50%", // Adjust start position if needed
                     end: "+=100%",
                     scrub: 1,
-                    // pin:true,
-                    // markers:true,
                 }
-            }
-        )
-        p1.to(".process-card-1", { scale: 1.3, duration: 1, y: "-120", x: "-300" }, "-=1");
-        p1.to(".process-card-2", { scale: 1.3, duration: 1, y: "-120", x: "300" }, "-=1");
-        p1.to(".process-card-3", { scale: 1.3, duration: 1, y: "120", x: "-300" }, "-=1");
-        p1.to(".process-card-4", { scale: 1.3, duration: 1, y: "120", x: "300" }, "-=1");
-        p1.fromTo(".process-title", { scale: 0.5 }, { scale: 1.0, duration: 1, opacity: "1" }, "-=1");
-        gsap.to(".process-cards-container", {
-            scrollTrigger: {
-                trigger: ".process-cards-container",
-                pin: true,
-                start: "50% 50%", // Adjust start position if needed
-                end: "+=100%",
-                scrub: 1,
-            }
-        });
+            });
+        })
 
         /**********
         Branding-casestudies
          **********/
         let mm = gsap.matchMedia();
 
-        mm.add("(min-width: 650px)", () => {
+        mm.add("(min-width: 1000px)", () => {
             const branding = gsap.timeline(
                 {
                     scrollTrigger: {
@@ -2478,6 +2515,32 @@ $(function () {
             branding.to(".image-2", { xPercent: "-200", duration: 1, scale: 0.7 }, "-=1");
             branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
             branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
+        });
+        /** 
+        Sliding nav bar
+
+        **********/
+        $(document).ready(function () {
+            let lastScrollY = window.scrollY;
+            const $mil_frame = $('#mil-frame');
+
+            $(window).on('scroll', function () {
+                let currentScrollY = window.scrollY;
+                let scrollDiff = Math.abs(currentScrollY - lastScrollY);
+
+                if (scrollDiff >= 10) {
+                    if (currentScrollY > lastScrollY) {
+                        // Scrolling down
+                        $mil_frame.removeClass('nav_show').addClass('nav_hide');
+                        //   console.log("scrolling down by " + scrollDiff);
+                    } else {
+                        // Scrolling up
+                        $mil_frame.removeClass('nav_hide').addClass('nav_show');
+                        //   console.log("scroll up by " + scrollDiff);
+                    }
+                    lastScrollY = currentScrollY;
+                }
+            });
         });
 
         /****************
