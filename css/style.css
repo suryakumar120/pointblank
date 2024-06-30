@@ -1219,8 +1219,8 @@ preloader
   .mil-preloader .mil-preloader-animation .mil-pos-abs {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .mil-preloader .mil-preloader-animation .mil-pos-abs p {
     margin-right: 0;
@@ -6180,7 +6180,7 @@ input[type='checkbox']{
 }
 @media screen and (max-width:650px) {
   .font-55{
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 .font-50{
