@@ -872,34 +872,72 @@ $(function () {
 
 
      ********************/
-    const envelope1 = document.querySelector('.envelope1')
-    const e1 = gsap.timeline(
-        {
-            scrollTrigger: {
-                trigger: ".envelope-container",
-                start: "top top",
-                end: "+=200%",
-                scrub: 0.5,
-                pin: true,
-                // markers:true,
+    // const envelope1 = document.querySelector('.envelope1')
+    const envelope_animation_lg = gsap.matchMedia();
+
+    envelope_animation_lg.add('(min-width: 650px',()=>{
+        const e1 = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: ".envelope-container-lg",
+                    start: "top top",
+                    end: "+=200%",
+                    scrub: 0.5,
+                    pin: true,
+                    // markers:true,
+                }
             }
-        }
-    );
-    // e1.to(".envelope1", {yPercent: -350, duration: 1});
-    e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1, ease: "power1.easeIn" });
-    e1.fromTo(".envelope2", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
-    e1.to(".envelope1", { scale: 0.87, opacity: 0.3, duration: 1 });
-    e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
-    e1.fromTo(".envelope3", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
-    e1.to(".envelope1", { scale: 0.82, opacity: 0.2, duration: 1 });
-    e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 }, "-=1");
-    e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
-    e1.fromTo(".envelope4", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
-    e1.to(".envelope1", { scale: 0.82, opacity: 0.15, duration: 1 });
-    e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 }, "-=1");
-    e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 }, "-=1");
-    e1.to(".envelope4", { scale: 0.95, opacity: 0.9, duration: 1 }, "-=1");
-    e1.fromTo(".envelope5", { y: "1000" }, { y: "0", duration: 1 }, "-=1")
+        );
+        // e1.to(".envelope1", {yPercent: -350, duration: 1});
+        e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1, ease: "power1.easeIn" });
+        e1.fromTo(".envelope2", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.87, opacity: 0.3, duration: 1 });
+        e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope3", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.82, opacity: 0.2, duration: 1 });
+        e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 }, "-=1");
+        e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope4", { y: "1000" }, { y: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.82, opacity: 0.15, duration: 1 });
+        e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 }, "-=1");
+        e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 }, "-=1");
+        e1.to(".envelope4", { scale: 0.95, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope5", { y: "1000" }, { y: "0", duration: 1 }, "-=1")
+    })
+    const envelope_animation_sm = gsap.matchMedia();
+
+    envelope_animation_sm.add('(max-width: 649px',()=>{
+        const e1 = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: ".envelope-container-sm",
+                    start: "top top",
+                    end: "+=200%",
+                    scrub: 0.5,
+                    pin: true,
+                    // markers:true,
+                }
+            }
+        );
+        // e1.to(".envelope1", {yPercent: -350, duration: 1});
+        e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1, ease: "power1.easeIn" });
+        e1.fromTo(".envelope2", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.87, opacity: 0.3, duration: 1 });
+        e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope3", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.82, opacity: 0.2, duration: 1 });
+        e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 }, "-=1");
+        e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope4", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+        e1.to(".envelope1", { scale: 0.82, opacity: 0.15, duration: 1 });
+        e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 }, "-=1");
+        e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 }, "-=1");
+        e1.to(".envelope4", { scale: 0.95, opacity: 0.9, duration: 1 }, "-=1");
+        e1.fromTo(".envelope5", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+    })
+
+
+   
 
 
     /***********************
@@ -910,7 +948,7 @@ $(function () {
      */
     const mm_process_cards = gsap.matchMedia();
 
-    mm_process_cards.add('(min-width: 650px', () => {
+    mm_process_cards.add('(min-width: 650px)', () => {
         const p1 = gsap.timeline(
             {
                 scrollTrigger: {
