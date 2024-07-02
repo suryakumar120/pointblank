@@ -8,9 +8,7 @@ Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=Mille
 p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
 
 ------------------------------------------- */
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
 import { Spinner } from '/js/plugins/spin.js'
 $(function () {
 
@@ -921,14 +919,14 @@ $(function () {
         );
         // e1.to(".envelope1", {yPercent: -350, duration: 1});
         e1.to(".envelope1", { scale: 0.9, opacity: 0.9, duration: 1, ease: "power1.easeIn" });
-        e1.fromTo(".envelope2", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+        e1.fromTo(".envelope2", { x: "-1000" }, { x: "0", duration: 1 }, "-=1");
         e1.to(".envelope1", { scale: 0.87, opacity: 0.3, duration: 1 });
         e1.to(".envelope2", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
         e1.fromTo(".envelope3", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
         e1.to(".envelope1", { scale: 0.82, opacity: 0.2, duration: 1 });
         e1.to(".envelope2", { scale: 0.85, opacity: 0.3, duration: 1 }, "-=1");
         e1.to(".envelope3", { scale: 0.9, opacity: 0.9, duration: 1 }, "-=1");
-        e1.fromTo(".envelope4", { x: "1000" }, { x: "0", duration: 1 }, "-=1");
+        e1.fromTo(".envelope4", { x: "-1000" }, { x: "0", duration: 1 }, "-=1");
         e1.to(".envelope1", { scale: 0.82, opacity: 0.15, duration: 1 });
         e1.to(".envelope2", { scale: 0.85, opacity: 0.2, duration: 1 }, "-=1");
         e1.to(".envelope3", { scale: 0.9, opacity: 0.3, duration: 1 }, "-=1");
@@ -1169,60 +1167,60 @@ $(function () {
     //         console.error(error);
     //     }
     // );
-    const loader = new GLTFLoader();
-    loader.load(
-        '/img/3d/geometrynodes_scifi_sphere.glb',
-        function (gltf) {
-            const scene = new THREE.Scene();
-            const renderer = new THREE.WebGLRenderer({ alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.getElementById('model').appendChild(renderer.domElement);
-            const camera = new THREE.PerspectiveCamera(
-                45,
-                window.innerWidth / window.innerHeight,
-                1,
-                10000
-            );
+    // const loader = new GLTFLoader();
+    // loader.load(
+    //     '/img/3d/geometrynodes_scifi_sphere.glb',
+    //     function (gltf) {
+    //         const scene = new THREE.Scene();
+    //         const renderer = new THREE.WebGLRenderer({ alpha: true });
+    //         renderer.setSize(window.innerWidth, window.innerHeight);
+    //         document.getElementById('model').appendChild(renderer.domElement);
+    //         const camera = new THREE.PerspectiveCamera(
+    //             45,
+    //             window.innerWidth / window.innerHeight,
+    //             1,
+    //             10000
+    //         );
 
-            scene.add(gltf.scene);
+    //         scene.add(gltf.scene);
 
-            const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
-            const objectCenter = new THREE.Vector3();
-            boundingBox.getCenter(objectCenter);
+    //         const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
+    //         const objectCenter = new THREE.Vector3();
+    //         boundingBox.getCenter(objectCenter);
 
-            camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
-            gltf.scene.position.copy(objectCenter.negate());
-            console.log("objectCenter = ", boundingBox);
+    //         camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
+    //         gltf.scene.position.copy(objectCenter.negate());
+    //         console.log("objectCenter = ", boundingBox);
 
-            const controls = new OrbitControls(camera, renderer.domElement);
-            controls.enabled = false;
-            // controls.update();
+    //         const controls = new OrbitControls(camera, renderer.domElement);
+    //         controls.enabled = false;
+    //         // controls.update();
 
-            const light = new THREE.AmbientLight(0xffaaff);
-            light.position.set(10, 10, 10);
-            scene.add(light);
+    //         const light = new THREE.AmbientLight(0xffaaff);
+    //         light.position.set(10, 10, 10);
+    //         scene.add(light);
 
-            renderer.render(scene, camera);
+    //         renderer.render(scene, camera);
 
-            function animate() {
-                requestAnimationFrame(animate);
-                // gltf.camera.y += 0.01;
-                gltf.scene.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animate();
+    //         function animate() {
+    //             requestAnimationFrame(animate);
+    //             // gltf.camera.y += 0.01;
+    //             gltf.scene.rotation.y += 0.01;
+    //             renderer.render(scene, camera);
+    //         }
+    //         animate();
 
-            window.addEventListener('resize', function () {
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-            });
-        },
-        undefined,
-        function (error) {
-            console.error(error);
-        }
-    );
+    //         window.addEventListener('resize', function () {
+    //             renderer.setSize(window.innerWidth, window.innerHeight);
+    //             camera.aspect = window.innerWidth / window.innerHeight;
+    //             camera.updateProjectionMatrix();
+    //         });
+    //     },
+    //     undefined,
+    //     function (error) {
+    //         console.error(error);
+    //     }
+    // );
 
     const globe = gsap.timeline(
         {
@@ -2586,115 +2584,115 @@ $(function () {
          Globe
     
          ********/
-        const loader = new GLTFLoader();
-        loader.load(
-            '/img/3d/geometrynodes_scifi_sphere.glb',
-            function (gltf) {
-                const scene = new THREE.Scene();
-                const renderer = new THREE.WebGLRenderer({ alpha: true });
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                document.getElementById('model').appendChild(renderer.domElement);
-                const camera = new THREE.PerspectiveCamera(
-                    45,
-                    window.innerWidth / window.innerHeight,
-                    1,
-                    10000
-                );
+        // const loader = new GLTFLoader();
+        // loader.load(
+        //     '/img/3d/geometrynodes_scifi_sphere.glb',
+        //     function (gltf) {
+        //         const scene = new THREE.Scene();
+        //         const renderer = new THREE.WebGLRenderer({ alpha: true });
+        //         renderer.setSize(window.innerWidth, window.innerHeight);
+        //         document.getElementById('model').appendChild(renderer.domElement);
+        //         const camera = new THREE.PerspectiveCamera(
+        //             45,
+        //             window.innerWidth / window.innerHeight,
+        //             1,
+        //             10000
+        //         );
 
-                scene.add(gltf.scene);
+        //         scene.add(gltf.scene);
 
-                const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
-                const objectCenter = new THREE.Vector3();
-                boundingBox.getCenter(objectCenter);
+        //         const boundingBox = new THREE.Box3().setFromObject(gltf.scene);
+        //         const objectCenter = new THREE.Vector3();
+        //         boundingBox.getCenter(objectCenter);
 
-                camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
-                gltf.scene.position.copy(objectCenter.negate());
+        //         camera.position.set(objectCenter.x, objectCenter.y, objectCenter.z + 3);
+        //         gltf.scene.position.copy(objectCenter.negate());
 
 
-                const controls = new OrbitControls(camera, renderer.domElement);
-                controls.enabled = false;
-                // controls.update();
+        //         const controls = new OrbitControls(camera, renderer.domElement);
+        //         controls.enabled = false;
+        //         // controls.update();
 
-                const light = new THREE.AmbientLight(0xffaaff);
-                light.position.set(10, 10, 10);
-                scene.add(light);
+        //         const light = new THREE.AmbientLight(0xffaaff);
+        //         light.position.set(10, 10, 10);
+        //         scene.add(light);
 
-                renderer.render(scene, camera);
+        //         renderer.render(scene, camera);
 
-                function animate() {
-                    requestAnimationFrame(animate);
-                    // gltf.camera.y += 0.01;
-                    gltf.scene.rotation.y += 0.01;
-                    renderer.render(scene, camera);
-                }
-                animate();
+        //         function animate() {
+        //             requestAnimationFrame(animate);
+        //             // gltf.camera.y += 0.01;
+        //             gltf.scene.rotation.y += 0.01;
+        //             renderer.render(scene, camera);
+        //         }
+        //         animate();
 
-                window.addEventListener('resize', function () {
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                    camera.aspect = window.innerWidth / window.innerHeight;
-                    camera.updateProjectionMatrix();
-                });
-            },
-            undefined,
-            function (error) {
-                console.error(error);
-            }
-        );
+        //         window.addEventListener('resize', function () {
+        //             renderer.setSize(window.innerWidth, window.innerHeight);
+        //             camera.aspect = window.innerWidth / window.innerHeight;
+        //             camera.updateProjectionMatrix();
+        //         });
+        //     },
+        //     undefined,
+        //     function (error) {
+        //         console.error(error);
+        //     }
+        // );
 
-        const globe = gsap.timeline(
-            {
-                scrollTrigger: {
-                    trigger: ".globe",
-                    start: "top 10%",
-                    end: "+=300%",
-                    scrub: 1,
-                    pin: true,
-                    // markers: true
-                }
-            }
-        )
-        const picture_1 = document.querySelector(".team-picture-1");
-        gsap.set(picture_1, {
-            opacity: 0,
-        })
-        const picture_2 = document.querySelector(".team-picture-2");
-        gsap.set(picture_2, {
-            opacity: 0,
-        })
-        const picture_3 = document.querySelector(".team-picture-3");
-        gsap.set(picture_3, {
-            opacity: 0,
-        })
-        const picture_4 = document.querySelector(".team-picture-4");
-        gsap.set(picture_4, {
-            opacity: 0,
-        })
-        const picture_5 = document.querySelector(".team-picture-5");
-        gsap.set(picture_5, {
-            opacity: 0,
-        })
-        const picture_6 = document.querySelector(".team-picture-6");
-        gsap.set(picture_6, {
-            opacity: 0,
-        })
-        const picture_7 = document.querySelector(".team-picture-7");
-        gsap.set(picture_7, {
-            opacity: 0,
-        })
+        // const globe = gsap.timeline(
+        //     {
+        //         scrollTrigger: {
+        //             trigger: ".globe",
+        //             start: "top 10%",
+        //             end: "+=300%",
+        //             scrub: 1,
+        //             pin: true,
+        //             // markers: true
+        //         }
+        //     }
+        // )
+        // const picture_1 = document.querySelector(".team-picture-1");
+        // gsap.set(picture_1, {
+        //     opacity: 0,
+        // })
+        // const picture_2 = document.querySelector(".team-picture-2");
+        // gsap.set(picture_2, {
+        //     opacity: 0,
+        // })
+        // const picture_3 = document.querySelector(".team-picture-3");
+        // gsap.set(picture_3, {
+        //     opacity: 0,
+        // })
+        // const picture_4 = document.querySelector(".team-picture-4");
+        // gsap.set(picture_4, {
+        //     opacity: 0,
+        // })
+        // const picture_5 = document.querySelector(".team-picture-5");
+        // gsap.set(picture_5, {
+        //     opacity: 0,
+        // })
+        // const picture_6 = document.querySelector(".team-picture-6");
+        // gsap.set(picture_6, {
+        //     opacity: 0,
+        // })
+        // const picture_7 = document.querySelector(".team-picture-7");
+        // gsap.set(picture_7, {
+        //     opacity: 0,
+        // })
         // globe.fromTo(".team-picture-1", { yPercent: "0" }, { y: "-500", duration: 1 }, "-=1");
         // globe.fromTo(".team-picture-2", { yPercent: "0" }, { y: "-1000", duration: 2 }, "-=1");
-        globe.fromTo(".team-picture-1", { bottom: "0" }, { top: "0", duration: 3, opacity: 1 }, "-=1");
-        globe.fromTo(".team-picture-2", { bottom: "0" }, { top: "0", duration: 3, opacity: 1 }, "-=1");
+        // globe.fromTo(".team-picture-1", { bottom: "0" }, { top: "0", duration: 3, opacity: 1 }, "-=1");
+        // globe.fromTo(".team-picture-2", { bottom: "0" }, { top: "0", duration: 3, opacity: 1 }, "-=1");
 
         // globe.to(".team-picture-1", {  duration: 1 , opacity:0}, "-=1");
         // globe.to(".team-picture-2", {  duration: 1 , opacity:0 }, );
-        globe.fromTo(".team-picture-3", { bottom: "0" }, { top: "25%", duration: 3, opacity: 1 },);
-        globe.fromTo(".team-picture-4", { bottom: "0" }, { top: "25%", duration: 3, opacity: 1 }, "-=1");
+        // globe.fromTo(".team-picture-3", { bottom: "0" }, { top: "25%", duration: 3, opacity: 1 },);
+        // globe.fromTo(".team-picture-4", { bottom: "0" }, { top: "25%", duration: 3, opacity: 1 }, "-=1");
 
         // globe.to(".team-picture-3", {  duration: 1 , opacity:0}, "-=1");
         // globe.to(".team-picture-4", {  duration: 1 , opacity:0 }, );
-        globe.fromTo(".team-picture-5", { bottom: "0" }, { top: "50%", duration: 4, opacity: 1 });
-        globe.fromTo(".team-picture-6", { bottom: "0" }, { top: "50%", duration: 4, opacity: 1 }, "-=4");
+        // globe.fromTo(".team-picture-5", { bottom: "0" }, { top: "50%", duration: 4, opacity: 1 });
+        // globe.fromTo(".team-picture-6", { bottom: "0" }, { top: "50%", duration: 4, opacity: 1 }, "-=4");
 
         // globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
         // globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
