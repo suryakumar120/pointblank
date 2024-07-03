@@ -2149,7 +2149,7 @@ const MainComponent = () => {
     }
     return (
         <div>
-            <h3 class={`mil-center mil-up mil-mb-120 ${thirdFormSubmit ? 'hidden-div' : ''}`}><span class="mil-thin">Get Your</span> Free Growth Plan</h3>
+            <h3 class={`mil-center mil-up mil-mb-60 ${thirdFormSubmit ? 'hidden-div' : ''}`}><span class="mil-thin">Get Your</span> Free Growth Plan</h3>
             {!firstFormSubmit ? <FirstForm onFormSubmit={handleFirstFormSubmit} /> : (!secondFormSubmit ? <SecondForm onFormSubmit={handleSecondFormSubmit} onPrevPage={handlePrevSecondForm} activeSubForm={activeSubForm} /> : (!thirdFormSubmit ? <ThirdForm onFormSubmit={handleThirdFormSubmit} onPrevPage={handlePrevThirdForm} /> : <FourthForm />))}
             {/* <FourthForm /> */}
         </div>
