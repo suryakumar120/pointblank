@@ -829,6 +829,7 @@ $(function () {
         var formData = {
             name: $('input[name="contact_name"]').val(),
             email: $('input[name="contact_email"]').val(),
+            mobile: $('input[name="contact_mobile"]').val(),
             query: $('textarea[name="contact_query"]').val(),
             // time : current
         }
@@ -1902,6 +1903,7 @@ $(function () {
             var formData = {
                 name: $('input[name="contact_name"]').val(),
                 email: $('input[name="contact_email"]').val(),
+                mobile: $('input[name="contact_mobile"]').val(),
                 query: $('textarea[name="contact_query"]').val(),
                 // time : current
             }

@@ -239,6 +239,7 @@ const ContactMessageView = ({ messageData, handleBackToList }) => {
     const name = messageData.name.toUpperCase();
     const email = messageData.email.toUpperCase();
     const query = messageData.query;
+    const mobile = 'mobile' in messageData ? messageData.mobile : '';
     
     return (<div class="border-bottom">
 
@@ -251,6 +252,7 @@ const ContactMessageView = ({ messageData, handleBackToList }) => {
         <div class="message-data">
             <div class="client-details-contact">
                 <p> {name}</p>
+                <p> {mobile}</p>
                 <p> {email}</p>
                 
 
