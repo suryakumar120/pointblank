@@ -971,6 +971,9 @@ spaces
 .p-10{
   padding: 10px;
 }
+.p-40{
+  padding: 40px;
+}
 .p-2r{
   padding: 2rem;
 }
@@ -1001,6 +1004,9 @@ spaces
 
 .mil-mb-15 {
   margin-bottom: 15px;
+}
+.mil-mb-4{
+  margin-bottom: 4px;
 }
 
 .mil-mb-20 {
@@ -1094,6 +1100,16 @@ spaces
 @media screen and (max-width: 992px) {
   .mil-p-120-60 {
     padding-top: 90px;
+    padding-bottom: 30px;
+  }
+}
+.mil-p-60-60 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 992px) {
+  .mil-p-60-60 {
+    padding-top: 45px;
     padding-bottom: 30px;
   }
 }
@@ -2440,6 +2456,12 @@ dodecahedron
 about
 
 ------------------------------------------- */
+.partner-logo{
+  height: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .mil-about-quote {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2744,6 +2766,28 @@ services
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
+#partner-card{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border: none;
+}
+.partner-href{
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: unset;
+}
+.margin-left-unset svg{
+  margin-left: unset;
+}
+#service-card-p-small{
+  padding: 40px;
+}
 .mil-service-card-lg.mil-other-card .mil-descr {
   padding-right: 0;
 }
@@ -2755,6 +2799,15 @@ services
 }
 .mil-service-card-lg.mil-other-card:hover .mil-link svg path {
   fill: #fecc16;
+}
+#partner-card:hover {
+  background-color: unset;
+}
+.mil-service-card-lg.mil-other-card.teal-green:hover .mil-link svg {
+  background-color: rgb(0, 0, 0);
+}
+#partner-card .mil-link svg path {
+  fill: #53baa1;
 }
 .mil-service-card-lg.mil-other-card.teal-green:hover {
   background-color: #53baa1;
@@ -2768,6 +2821,20 @@ services
 @media screen and (max-width: 1200px) {
   .mil-service-card-lg.mil-other-card {
     padding: 30px;
+  }
+  #service-card-p-small{
+    padding: 25px;
+  }
+  #partner-card{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    border: none;
+  }
+  .partner-href{
+    padding-left: 15px;
+    padding-left: unset;
   }
 }
 
@@ -6894,4 +6961,8 @@ input[type='checkbox']{
 }
 .max-width-60px{
   max-width: 150px;
+}
+
+.mil-arrow-place-small svg{
+    /* margin-left: 0px; */
 }
