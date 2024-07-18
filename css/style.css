@@ -6367,6 +6367,12 @@ input[type='checkbox']{
 .mt-60{
   margin-top: 60px;
 }
+.mt-45{
+  margin-top: 45px;
+}
+.mt-15{
+  margin-top : 15px;
+}
 @media screen and (max-width:650px) {
   .mt-sm-30{
     margin-top:30px;
