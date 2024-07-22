@@ -838,7 +838,7 @@ $(function () {
         var spinner = new Spinner(opts).spin(target);
         $('#contact_form').addClass('display-none');
         $.ajax({
-            url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+            url: 'http://localhost:5000/addContactData/',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
@@ -1912,7 +1912,7 @@ $(function () {
             var spinner = new Spinner(opts).spin(target);
             $('#contact_form').addClass('display-none');
             $.ajax({
-                url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+                url: 'http://localhost:5000/addContactData/',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
