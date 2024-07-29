@@ -1479,13 +1479,13 @@ $(function () {
         fbq('trackCustom', 'use_cases');
     });
     $('#pixel_lets_talk').on("click", function () {
-        fbq('trackCustom', 'lets_talk');
+        fbq('trackCustom', 'lets_talk', {currency: "USD", value: 0.01});
     });
     $('#pixel_blog_cards').on("click", function () {
         fbq('trackCustom', 'blog_cards');
     });
     $('#lets-talk').on("click", function () {
-        fbq('trackCustom', 'free_growth_plan');
+        fbq('trackCustom', 'free_growth_plan', {currency: "USD", value: 0.01});
     });
     /***************************
 
