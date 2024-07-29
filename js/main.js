@@ -1473,6 +1473,20 @@ $(function () {
         $('.mil-menu').toggleClass('mil-active');
         $('.mil-menu-frame').toggleClass('mil-active');
     });
+
+    // Pixel events 
+    $('#view_use_cases').on("click", function () {
+        fbq('trackCustom', 'use_cases');
+    });
+    $('#pixel_lets_talk').on("click", function () {
+        fbq('trackCustom', 'lets_talk');
+    });
+    $('#pixel_blog_cards').on("click", function () {
+        fbq('trackCustom', 'blog_cards');
+    });
+    $('#lets-talk').on("click", function () {
+        fbq('trackCustom', 'free_growth_plan');
+    });
     /***************************
 
     main menu
@@ -2581,6 +2595,21 @@ $(function () {
             });
         });
 
+
+        // Pixel Events 
+
+        $('#view_use_cases').on("click", function () {
+            fbq('trackCustom', 'use_cases');
+        });
+        $('#pixel_lets_talk').on("click", function () {
+            fbq('trackCustom', 'lets_talk');
+        });
+        $('#pixel_blog_cards').on("click", function () {
+            fbq('trackCustom', 'blog_cards');
+        });
+        $('#lets-talk').on("click", function () {
+            fbq('trackCustom', 'free_growth_plan');
+        });
         /****************
          
          Globe
