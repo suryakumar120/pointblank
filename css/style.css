@@ -6432,7 +6432,10 @@ input[type='checkbox']{
       height:60vh;
     }
 }
-
+.px-lg-10{
+  padding-left: 30px;
+  padding-right: 30px;
+}
 @media screen and (max-width:650px) {
   .sm-zoom-in img{
     transform: scale(1.5);
