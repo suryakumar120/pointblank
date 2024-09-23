@@ -317,7 +317,7 @@ const MessageList = () => {
         setLoading(true);
         const fetchData = async () => {
             try {
-              const response = await fetch('https://same-server-dev.azurewebsites.net/getFreeGrowthPlanData/'); 
+              const response = await fetch('https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/getFreeGrowthPlanData/'); 
               const jsonData = await response.json(); 
               setMessages(jsonData); 
               setLoading(false);
@@ -440,7 +440,7 @@ const ContactMessageList = () => {
         setLoading(true);
         const fetchData = async () => {
             try {
-              const response = await fetch('https://same-server-dev.azurewebsites.net/getContactData/'); 
+              const response = await fetch('https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/getContactData/'); 
               const jsonData = await response.json(); 
               console.log("contact data=",jsonData);
               setMessages(jsonData); 
