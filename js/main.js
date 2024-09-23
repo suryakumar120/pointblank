@@ -466,6 +466,7 @@ $(function () {
     //         window.open($(this).attr('href'), '_blank');
     //     });
     // });
+    //Pushing the code from suryakumar120 account
     /***************************
 
     append
