@@ -832,6 +832,8 @@ $(function () {
             email: $('input[name="contact_email"]').val(),
             mobile: $('input[name="contact_mobile"]').val(),
             query: $('textarea[name="contact_query"]').val(),
+            slot_session: $('select[name="contact_slot"]').val(),
+            slot_date: $('input[name="contact_date"]').val()
             // time : current
         }
 
@@ -840,6 +842,8 @@ $(function () {
         $('#contact_form').addClass('display-none');
         $.ajax({
             url: 'https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/addContactData/',
+            // url: 'http://localhost:5000/addContactData/',
+
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
@@ -1920,6 +1924,8 @@ $(function () {
                 email: $('input[name="contact_email"]').val(),
                 mobile: $('input[name="contact_mobile"]').val(),
                 query: $('textarea[name="contact_query"]').val(),
+                slot_session: $('select[name="contact_slot"]').val(),
+                slot_date: $('input[name="contact_date"]').val()
                 // time : current
             }
 
@@ -1928,6 +1934,7 @@ $(function () {
             $('#contact_form').addClass('display-none');
             $.ajax({
                 url: 'https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/addContactData/',
+                // url: 'http://localhost:5000/addContactData/',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
