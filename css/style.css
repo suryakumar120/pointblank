@@ -7085,3 +7085,47 @@ select {
   max-width: 100%; /* Prevent overflow */
   box-sizing: border-box; /* Include padding in width */
 }
+
+/* Video Section Styles */
+.video-container {
+    overflow: hidden;
+  }
+  
+  #zoom-in-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the video covers the entire container */
+  }
+
+
+  .z-200{
+    z-index: 200;
+  }
+
+.bg-white{
+  background-color: white;
+}
+
+
+.video-overlay-icon{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  min-height: 50px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  border-radius: 50%;
+  /* color: white; */
+  font-size: 50px;
+  /* z-index: 1; */
+  cursor: pointer;
+  color: black;
+}
+
+.hidden{
+  display: none;
+}
