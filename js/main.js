@@ -94,6 +94,33 @@ $(function () {
     //     document.head.appendChild(script);
     // });
 
+    /***************************
+     * Hero intro video
+     * ***************************/
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".video-container", {
+        scale: 1.5, // Adjust the scale for the desired zoom effect
+        scrollTrigger: {
+            trigger: "#zoom-in-video",
+            start: "top bottom", // Start the animation when the top of the video hits the bottom of the viewport
+            end: "bottom top", // End the animation when the bottom of the video hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll position
+            markers: false, // For debugging purposes, remove in production
+        },
+    });
+
+    
+    $(".video-overlay-icon").click(function () {
+        const video = $(".video-container video")[0];
+        // video.setAttribute("controls", "controls");
+        video.muted = !video.muted;
+        
+        $(".mute-icon").toggleClass("hidden");
+        $(".unmute-icon").toggleClass("hidden");
+    });
+
+
     /*************
      
     Concept Intro
@@ -466,6 +493,7 @@ $(function () {
     //         window.open($(this).attr('href'), '_blank');
     //     });
     // });
+    //Pushing the code from suryakumar120 account
     /***************************
 
     append
@@ -476,6 +504,8 @@ $(function () {
         $(".mil-dodecahedron").clone().appendTo(".mil-animation");
         $(".mil-lines").clone().appendTo(".mil-lines-place");
         $(".mil-main-menu ul li.mil-active > a").clone().appendTo(".mil-current-page");
+        $(".cta-btn").addClass("hidden");
+        $("#cta-btn").addClass("hidden");
     });
 
 
@@ -627,6 +657,7 @@ $(function () {
    CTA Button General (except homepage)
 
     *****************/
+    //hide cta btn
     const cta_gen = document.querySelector(".cta-btn-gen");
     if (cta_gen) {
         gsap.set(cta_gen, {
@@ -831,6 +862,8 @@ $(function () {
             email: $('input[name="contact_email"]').val(),
             mobile: $('input[name="contact_mobile"]').val(),
             query: $('textarea[name="contact_query"]').val(),
+            slot_session: $('select[name="contact_slot"]').val(),
+            slot_date: $('input[name="contact_date"]').val()
             // time : current
         }
 
@@ -838,7 +871,9 @@ $(function () {
         var spinner = new Spinner(opts).spin(target);
         $('#contact_form').addClass('display-none');
         $.ajax({
-            url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+            url: 'https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/addContactData/',
+            // url: 'http://localhost:5000/addContactData/',
+
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
@@ -1007,6 +1042,29 @@ $(function () {
         branding.to(".image-2", { xPercent: "-200", duration: 1, scale: 0.7 }, "-=1");
         branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
         branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".video-container", {
+        scale: 1.5, // Adjust the scale for the desired zoom effect
+        scrollTrigger: {
+            trigger: "#zoom-in-video",
+            start: "top bottom", // Start the animation when the top of the video hits the bottom of the viewport
+            end: "bottom top", // End the animation when the bottom of the video hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll position
+            markers: false, // For debugging purposes, remove in production
+        },
+    });
+
+    
+    $(".video-overlay-icon").click(function () {
+        const video = $(".video-container video")[0];
+        // video.setAttribute("controls", "controls");
+        video.muted = !video.muted;
+        
+        $(".mute-icon").toggleClass("hidden");
+        $(".unmute-icon").toggleClass("hidden");
     });
 
     // To be uncommented if something goes wrong
@@ -1473,6 +1531,20 @@ $(function () {
         $('.mil-menu').toggleClass('mil-active');
         $('.mil-menu-frame').toggleClass('mil-active');
     });
+
+    // Pixel events 
+    $('#view_use_cases').on("click", function () {
+        fbq('trackCustom', 'use_cases');
+    });
+    $('#pixel_lets_talk').on("click", function () {
+        fbq('trackCustom', 'lets_talk', {currency: "USD", value: 0.01});
+    });
+    $('#pixel_blog_cards').on("click", function () {
+        fbq('trackCustom', 'blog_cards');
+    });
+    $('#lets-talk').on("click", function () {
+        fbq('trackCustom', 'free_growth_plan', {currency: "USD", value: 0.01});
+    });
     /***************************
 
     main menu
@@ -1905,6 +1977,8 @@ $(function () {
                 email: $('input[name="contact_email"]').val(),
                 mobile: $('input[name="contact_mobile"]').val(),
                 query: $('textarea[name="contact_query"]').val(),
+                slot_session: $('select[name="contact_slot"]').val(),
+                slot_date: $('input[name="contact_date"]').val()
                 // time : current
             }
 
@@ -1912,7 +1986,8 @@ $(function () {
             var spinner = new Spinner(opts).spin(target);
             $('#contact_form').addClass('display-none');
             $.ajax({
-                url: 'https://same-server-dev.azurewebsites.net/addContactData/',
+                url: 'https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/addContactData/',
+                // url: 'http://localhost:5000/addContactData/',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
@@ -2554,6 +2629,32 @@ $(function () {
             branding.to(".title-3", { yPercent: "-200", duration: 1 }, "-=1");
             branding.to(".image-3", { xPercent: "-200", duration: 1, scale: 1 }, "-=1");
         });
+
+        // video #
+
+        gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".video-container", {
+        scale: 1.5, // Adjust the scale for the desired zoom effect
+        scrollTrigger: {
+            trigger: "#zoom-in-video",
+            start: "top bottom", // Start the animation when the top of the video hits the bottom of the viewport
+            end: "bottom top", // End the animation when the bottom of the video hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll position
+            markers: false, // For debugging purposes, remove in production
+        },
+    });
+
+    
+    $(".video-overlay-icon").click(function () {
+        const video = $(".video-container video")[0];
+        // video.setAttribute("controls", "controls");
+        video.muted = !video.muted;
+        
+        $(".mute-icon").toggleClass("hidden");
+        $(".unmute-icon").toggleClass("hidden");
+    });
+
         /** 
         Sliding nav bar
 
@@ -2581,6 +2682,21 @@ $(function () {
             });
         });
 
+
+        // Pixel Events 
+
+        $('#view_use_cases').on("click", function () {
+            fbq('trackCustom', 'use_cases');
+        });
+        $('#pixel_lets_talk').on("click", function () {
+            fbq('trackCustom', 'lets_talk');
+        });
+        $('#pixel_blog_cards').on("click", function () {
+            fbq('trackCustom', 'blog_cards');
+        });
+        $('#lets-talk').on("click", function () {
+            fbq('trackCustom', 'free_growth_plan');
+        });
         /****************
          
          Globe
@@ -2743,5 +2859,31 @@ $(function () {
         });
 
     });
+
+    // GSAP for Video Zoom In
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".video-container", {
+        scale: 1.5, // Adjust the scale for the desired zoom effect
+        scrollTrigger: {
+            trigger: "#zoom-in-video",
+            start: "top bottom", // Start the animation when the top of the video hits the bottom of the viewport
+            end: "bottom top", // End the animation when the bottom of the video hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll position
+            markers: false, // For debugging purposes, remove in production
+        },
+    });
+
+    
+    $(".video-overlay-icon").click(function () {
+        const video = $(".video-container video")[0];
+        // video.setAttribute("controls", "controls");
+        video.muted = !video.muted;
+        
+        $(".mute-icon").toggleClass("hidden");
+        $(".unmute-icon").toggleClass("hidden");
+    });
+
+   
 
 });
