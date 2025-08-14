@@ -801,39 +801,39 @@ textarea {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
-input:focus,
+input,select:focus,
 textarea:focus,select:focus {
   outline: inherit;
 }
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+input,select::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+input,select::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+input,select:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
-input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
+input,select::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
-input::placeholder,
+input,select::placeholder,
 textarea::placeholder, select::placeholder {
   font-size: 12px;
   text-transform: uppercase;
@@ -846,6 +846,58 @@ textarea {
   padding: 15px 30px;
   height: 300px;
 }
+
+.custom-date-input{
+  width: 100%;
+  --webkit-appearance: none;
+}
+
+
+input[type="date"] {
+  appearance: none; /* Remove default styles */
+  -webkit-appearance: none; /* Safari */
+  position: relative;
+  height: 70px;
+  padding: 0 30px;
+  width: 100%;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-family: "Outfit", sans-serif;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(50%);
+  margin-right: 10px;
+}
+
+input[type="date"]::placeholder {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholder text support for older browsers */
+input[type="date"]:invalid {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
 
 /* -------------------------------------------
 
@@ -6198,6 +6250,12 @@ input[type='checkbox']{
 .flex-wrap{
   flex-wrap: wrap;
 }
+
+@media screen and (min-width:768px) {
+  .flex-sm{
+    display: flex;
+  }
+}
 /* removed important here */
 .items-center{
   align-items: center ; 
@@ -6432,7 +6490,10 @@ input[type='checkbox']{
       height:60vh;
     }
 }
-
+.px-lg-10{
+  padding-left: 30px;
+  padding-right: 30px;
+}
 @media screen and (max-width:650px) {
   .sm-zoom-in img{
     transform: scale(1.5);
@@ -6986,4 +7047,147 @@ input[type='checkbox']{
 
 .mil-arrow-place-small svg{
     /* margin-left: 0px; */
+}
+
+
+/* custom styling for select */
+
+select {
+  appearance: none; /* Remove default browser styling */
+  -webkit-appearance: none; /* Remove iOS-specific styling */
+  -moz-appearance: none; /* Remove Firefox-specific styling */
+  
+  border-radius: 4px; /* Add rounded corners */
+  padding: 8px 12px; /* Adjust padding */
+  background-color: #fff; /* Ensure white background */
+  font-size: 14px; /* Adjust font size */
+  font-weight: 400;
+  color: #333; /* Set text color */
+  outline: none; /* Remove focus outline */
+}
+
+/* Add a custom arrow */
+select {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgN2wtNSA1IDUgNSA1LTV6IiBmaWxsPSIjY2NjIiBzdHJva2U9Im5vbmUiLz48L3N2Zz4=');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 8px;
+}
+
+/* For iOS-specific adjustments */
+select:focus {
+  border-color: #007bff; /* Highlight border color on focus */
+}
+
+/* Ensure select fits its container */
+select {
+  width: 100%; /* Full width */
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Video Section Styles */
+.video-container {
+    overflow: hidden;
+  }
+
+  
+  #zoom-in-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the video covers the entire container */
+  }
+
+
+  .z-200{
+    z-index: 200;
+  }
+
+.bg-white{
+  background-color: white;
+}
+
+
+.video-overlay-icon{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  min-height: 50px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  border-radius: 50%;
+  /* color: white; */
+  font-size: 50px;
+  /* z-index: 1; */
+  cursor: pointer;
+  color: black;
+}
+
+.hidden{
+  display: none;
+}
+
+.video-responsive {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px; /* Optional: adds subtle rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Enhanced responsiveness for different screen sizes */
+@media (max-width: 768px) {
+    .video-responsive {
+        padding-bottom: 56.25%; /* Maintain 16:9 on mobile */
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .video-responsive {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    .video-responsive {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Optional: Add loading state */
+.video-responsive::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,3 19,12 5,21 5,3"></polygon></svg>') no-repeat center;
+    background-size: contain;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+
+.text-white{
+  color: white;
 }

@@ -276,4 +276,30 @@ $(function () {
 
     globe.to(".team-picture-5", {  duration: 1 , opacity:0}, "-=1");
     globe.to(".team-picture-6", {  duration: 1 , opacity:0 },);
+
+
+    gsap.to(".video-container", {
+        scale: 1.5, // Adjust the scale for the desired zoom effect
+        scrollTrigger: {
+            trigger: "#zoom-in-video",
+            start: "top bottom", // Start the animation when the top of the video hits the bottom of the viewport
+            end: "bottom top", // End the animation when the bottom of the video hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll position
+            markers: false, // For debugging purposes, remove in production
+        },
+    });
+    // $(document).ready(function () {
+    //     $(".cta-btn").addClass("hidden");
+    //     $("#cta-btn").addClass("hidden");
+    // });
+    
+    $(".video-overlay-icon").click(function () {
+        const video = $(".video-container video")[0];
+        // video.setAttribute("controls", "controls");
+        video.muted = !video.muted;
+        
+        $(".mute-icon").toggleClass("hidden");
+        $(".unmute-icon").toggleClass("hidden");
+    });
+
 });

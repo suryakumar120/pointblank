@@ -1811,7 +1811,7 @@ const ThirdForm = ({ onFormSubmit, onPrevPage }) => {
         };
 
 
-        fetch('https://same-server-dev.azurewebsites.net/addFreeGrowthPlanData/', {
+        fetch('https://wordle-server2-heaqgnd3encpb3ak.southeastasia-01.azurewebsites.net/addFreeGrowthPlanData/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
