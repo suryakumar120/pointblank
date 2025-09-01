@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Replace G-XXXXXXX with your Measurement ID
+    gtag('config', 'G-XXXXXXX');
+
+    // Track the click event
+    gtag('event', 'link_click', {
+      event_category: 'Promotions',
+      event_label: 'Stiolto Respimat',
+      value: 1
+    });
+
+    // Redirect after a short delay to ensure tracking fires
+    setTimeout(function(){
+      window.location.href = "https://www.adsoftheworld.com/campaigns/kitchen-f290b5ad-91ac-4080-8a2c-cbf65e843ad2";
+    }, 500);
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the page...</p>
+</body>
+</html>
